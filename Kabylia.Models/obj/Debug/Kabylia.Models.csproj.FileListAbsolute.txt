@@ -1,0 +1,16 @@
+C:\Users\yalou\source\repos\DeliveryFoodApp\Kabylia.Models\bin\Debug\Kabylia.Models.dll.config
+C:\Users\yalou\source\repos\DeliveryFoodApp\Kabylia.Models\bin\Debug\Kabylia.Models.dll
+C:\Users\yalou\source\repos\DeliveryFoodApp\Kabylia.Models\bin\Debug\Kabylia.Models.pdb
+C:\Users\yalou\source\repos\DeliveryFoodApp\Kabylia.Models\bin\Debug\EntityFramework.dll
+C:\Users\yalou\source\repos\DeliveryFoodApp\Kabylia.Models\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\yalou\source\repos\DeliveryFoodApp\Kabylia.Models\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+C:\Users\yalou\source\repos\DeliveryFoodApp\Kabylia.Models\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\yalou\source\repos\DeliveryFoodApp\Kabylia.Models\bin\Debug\EntityFramework.xml
+C:\Users\yalou\source\repos\DeliveryFoodApp\Kabylia.Models\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\yalou\source\repos\DeliveryFoodApp\Kabylia.Models\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+C:\Users\yalou\source\repos\DeliveryFoodApp\Kabylia.Models\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\yalou\source\repos\DeliveryFoodApp\Kabylia.Models\obj\Debug\Kabylia.Models.csprojAssemblyReference.cache
+C:\Users\yalou\source\repos\DeliveryFoodApp\Kabylia.Models\obj\Debug\Kabylia.Models.csproj.CoreCompileInputs.cache
+C:\Users\yalou\source\repos\DeliveryFoodApp\Kabylia.Models\obj\Debug\Kabylia.Models.csproj.CopyComplete
+C:\Users\yalou\source\repos\DeliveryFoodApp\Kabylia.Models\obj\Debug\Kabylia.Models.dll
+C:\Users\yalou\source\repos\DeliveryFoodApp\Kabylia.Models\obj\Debug\Kabylia.Models.pdb
