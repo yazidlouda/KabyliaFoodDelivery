@@ -4,6 +4,8 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Kabylia.Data;
+using Kabylia.Models.Restaurant;
 
 namespace Kabylia.Models.Customer
 {
@@ -19,6 +21,8 @@ namespace Kabylia.Models.Customer
         public string Email { get; set; }
         public string Address { get; set; }
         public ContactPreference ContactPreference { get; set; }
-        public int MembershipLevel { get; set; }
+        public int MembershipLevel { get; set; }        
+        //public string RestaurantName { get; set; }
+       
     }
 }

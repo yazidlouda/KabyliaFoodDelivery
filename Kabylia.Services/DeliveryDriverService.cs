@@ -66,7 +66,8 @@ namespace Kabylia.Services
                                     new DeliveryDriverListItem
                                     {
                                         DriverId = e.DriverId,
-                                        FirstName = e.LastName,
+                                        FirstName = e.FirstName,
+                                        LastName = e.LastName,
                                         Username = e.Username,
                                         Email = e.Email,
                                         PhoneNumber = e.PhoneNumber,

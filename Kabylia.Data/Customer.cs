@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,6 +21,12 @@ namespace Kabylia.Data
         public string Address { get; set; }
         public ContactPreference ContactPreference { get; set; }
         public int MembershipLevel { get; set; }
+       
+       
+        //[ForeignKey(nameof(Restaurant))]
+        //[Required]
+        //public int RestaurantId { get; set; }
+        //public virtual Restaurant Restaurant { get; set; }
 
         //public Restaurant FavortiteRestaurant {get;set;}
         //public Payment Payment {get;set;}
