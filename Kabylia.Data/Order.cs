@@ -15,5 +15,9 @@ namespace Kabylia.Data
         public double Price { get; set; }
         public DateTime DateOfOrder { get; set; }
         public double DeliveryCharge { get; set; }
+        public int CustomerId { get; set; }
+        public virtual Customer Customer { get; set; }
+        public int RestaurantId { get; set; }
+        public virtual Restaurant Restaurant { get; set; }
     }
 }

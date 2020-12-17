@@ -17,6 +17,7 @@ namespace Kabylia.Models.Customer
         public string Address { get; set; }
         public ContactPreference ContactPreference { get; set; }
         public int MembershipLevel { get; set; }
+        //public int RestaurantId { get; set; }
 
         //public Restaurant FavortiteRestaurant {get;set;}
         //public Payment Payment {get;set;}

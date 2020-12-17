@@ -141,15 +141,15 @@ namespace Kabylia.Services
                         ClosingTime=entity.ClosingTime,
                         Area=entity.Area,
                         Review=entity.Review,
-                        Customer = entity.Customer
-                                .Select(
-                                    x => new CustomerListItem
-                                    {
-                                        FirstName=x.FirstName,
-                                        LastName=x.LastName,
-                                        Address=x.Address,
-                                    }
-                                ).ToList()
+                        //Customer = entity.Customer
+                        //        .Select(
+                        //            x => new CustomerListItem
+                        //            {
+                        //                FirstName=x.FirstName,
+                        //                LastName=x.LastName,
+                        //                Address=x.Address,
+                        //            }
+                        //        ).ToList()
                     };
             }
         }
@@ -176,14 +176,14 @@ namespace Kabylia.Services
                         ClosingTime = entity.ClosingTime,
                         Area = entity.Area,
                         Review = entity.Review,
-                        Customer = entity.Customer
-                                .Select(
-                                    x => new CustomerListItem
-                                    {
-                                        FirstName = x.FirstName,
-                                        LastName = x.LastName
-                                    }
-                                ).ToList()
+                        //Customer = entity.Customer
+                        //        .Select(
+                        //            x => new CustomerListItem
+                        //            {
+                        //                FirstName = x.FirstName,
+                        //                LastName = x.LastName
+                        //            }
+                        //        ).ToList()
                     };
             }
         }

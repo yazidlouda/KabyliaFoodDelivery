@@ -20,7 +20,7 @@ namespace Kabylia.Data
         public string Area { get; set; }
         public string Review { get; set; }
         public List<string> Menu { get; set; }
-        public virtual List<Customer> Customer { get; set; } = new List<Customer>();
+        //public virtual List<Customer> Customer { get; set; } = new List<Customer>();
 
         //public Order Order {get;set;}
         //public Payment payment { get; set; }

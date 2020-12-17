@@ -1,5 +1,6 @@
 ﻿using Kabylia.Data;
 using Kabylia.Models.Customer;
+using Kabylia.Models.Restaurant;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -31,8 +32,8 @@ namespace Kabylia.Services
                    Phone=model.Phone,
                    Email=model.Email,
                    Address=model.Address,
-                   MembershipLevel=model.MembershipLevel
-
+                   MembershipLevel=model.MembershipLevel,
+                   //RestaurantId=model.RestaurantId
                 };
 
             using (var ctx = new ApplicationDbContext())
@@ -53,7 +54,9 @@ namespace Kabylia.Services
                     Phone = model.Phone,
                     Email = model.Email,
                     Address = model.Address,
-                    MembershipLevel = model.MembershipLevel
+                    MembershipLevel = model.MembershipLevel,
+                   //RestaurantId=model.RestaurantId
+
                 };
 
             using (var ctx = new ApplicationDbContext())
@@ -82,7 +85,10 @@ namespace Kabylia.Services
                                     Phone = e.Phone,
                                     Email = e.Email,
                                     Address = e.Address,
-                                    MembershipLevel = e.MembershipLevel
+                                    MembershipLevel = e.MembershipLevel,
+                                   //RestaurantName= e.Restaurant.Name
+                                  
+
                                 }
                         ).ToListAsync();
                 return query.OrderBy(e => e.CustomerId);
@@ -108,7 +114,9 @@ namespace Kabylia.Services
                                     Phone = e.Phone,
                                     Email = e.Email,
                                     Address = e.Address,
-                                    MembershipLevel = e.MembershipLevel
+                                    MembershipLevel = e.MembershipLevel,
+                                   // RestaurantName = e.Restaurant.Name
+
                                 }
                         );
                 return query.ToList().OrderBy(e => e.CustomerId);
@@ -134,7 +142,9 @@ namespace Kabylia.Services
                         Phone = entity.Phone,
                         Email = entity.Email,
                         Address = entity.Address,
-                        MembershipLevel = entity.MembershipLevel
+                        MembershipLevel = entity.MembershipLevel,
+                        //RestaurantName = entity.Restaurant.Name
+
                     };
             }
         }
@@ -156,7 +166,9 @@ namespace Kabylia.Services
                         Phone = entity.Phone,
                         Email = entity.Email,
                         Address = entity.Address,
-                        MembershipLevel = entity.MembershipLevel
+                        MembershipLevel = entity.MembershipLevel,
+                       // RestaurantName = entity.Restaurant.Name
+
                     };
             }
         }
@@ -176,6 +188,7 @@ namespace Kabylia.Services
                 entity.Email = note.Email;
                 entity.Address = note.Address;
                 entity.MembershipLevel = note.MembershipLevel;
+                //entity.RestaurantId = note.RestaurantId;
 
                 //ctx.Entry(entity).State = EntityState.Modified;
                 return await ctx.SaveChangesAsync() == 1;
@@ -196,8 +209,9 @@ namespace Kabylia.Services
                 entity.Email = note.Email;
                 entity.Address = note.Address;
                 entity.MembershipLevel = note.MembershipLevel;
+                //entity.RestaurantId = note.RestaurantId;
 
-                
+
                 return ctx.SaveChanges() == 1;
             }
         }

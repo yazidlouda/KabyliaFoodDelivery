@@ -37,7 +37,7 @@ namespace Kabylia.Data
         public DbSet<DeliveryDriver> DeliveryDrivers { get; set; } //DB Set for DeliveryDriver
         public DbSet<Order> Orders{ get; set; } //DB Set for Order
         public DbSet<Transaction> Transactions { get; set; } //DB Set for Transaction
-
+       
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -48,6 +48,17 @@ namespace Kabylia.Data
                 .Configurations
                 .Add(new IdentityUserLoginConfiguration())
                 .Add(new IdentityUserRoleConfiguration());
+            //modelBuilder.Conventions.Remove<OneToManyCascadeDeleteConvention>();
+
+            //modelBuilder.Entity<Order>()
+            //   .HasRequired(f => f.Status)
+            //   .WithRequiredDependent()
+            //   .WillCascadeOnDelete(false);
+
+            //modelBuilder.Entity<Restaurant>()
+            //   .HasRequired(f => f.Status)
+            //   .WithRequiredDependent()
+            //   .WillCascadeOnDelete(false);
         }
     }
 

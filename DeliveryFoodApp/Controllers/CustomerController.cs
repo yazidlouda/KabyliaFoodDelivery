@@ -110,6 +110,7 @@ namespace DeliveryFoodApp.Controllers
                 var model =
                     new CustomerEdit
                     {
+                        CustomerId=detail.CustomerId,
                         FirstName = detail.FirstName,
                         LastName = detail.LastName,
                         Username = detail.Username,
@@ -120,7 +121,7 @@ namespace DeliveryFoodApp.Controllers
                         MembershipLevel=detail.MembershipLevel
                     };
 
-                ViewBag.CategoryID = await GetRestaurantsAsync();
+               
 
                 return View(model);
             }
@@ -133,18 +134,18 @@ namespace DeliveryFoodApp.Controllers
                 if (note.CustomerId != id)
                 {
                     ModelState.AddModelError("", "ID Mismatch");
-                    ViewBag.CategoryID = await GetRestaurantsAsync();
+                   
 
                     return View(note);
                 }
                 var service = CreateCustomerService();
                 if (await service.UpdateCustomerAsync(note))
                 {
-                    TempData["SaveResult"] = "Your note was successfully updated.";
+                    TempData["SaveResult"] = "Customer was successfully updated.";
                     return RedirectToAction("Index");
                 }
-                ViewBag.CategoryID = await GetRestaurantsAsync();
-                ModelState.AddModelError("", "Your note could not be updated.");
+               
+                ModelState.AddModelError("", "Customer could not be updated.");
                 return View(note);
             }
 
