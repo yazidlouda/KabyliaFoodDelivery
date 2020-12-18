@@ -201,7 +201,9 @@ namespace Kabylia.Services
                 var entity =
                     ctx
                         .Customers
-                        .Single(e => e.CustomerId == note.CustomerId );
+                        .Where(e => e.CustomerId == note.CustomerId )
+                        .FirstOrDefault();
+
                 entity.FirstName = note.FirstName;
                 entity.LastName = note.LastName;
                 entity.Username = note.Username;

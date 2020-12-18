@@ -104,8 +104,9 @@ namespace DeliveryFoodApp.Controllers
             var model =
                 new RestaurantEdit
                 {
-                   Name=detail.Name,
-                   Phone = detail.Phone,
+                  RestaurantId=detail.RestaurantId,
+                  Name=detail.Name,
+                  Phone = detail.Phone,
                   Address = detail.Address,
                   Email = detail.Email,
                   OpeningTime=detail.OpeningTime,
@@ -114,7 +115,7 @@ namespace DeliveryFoodApp.Controllers
                   Review=detail.Review
                 };
 
-            ViewBag.RestaurantId = await GetRestaurantsAsync();
+            //ViewBag.RestaurantId = await GetRestaurantsAsync();
 
             return View(model);
         }
@@ -127,18 +128,18 @@ namespace DeliveryFoodApp.Controllers
             if (note.RestaurantId != id)
             {
                 ModelState.AddModelError("", "ID Mismatch");
-                ViewBag.CategoryID = await GetRestaurantsAsync();
+               // ViewBag.CategoryID = await GetRestaurantsAsync();
 
                 return View(note);
             }
             var service = CreateRestaurantService();
             if (await service.UpdateRestaurantAsync(note))
             {
-                TempData["SaveResult"] = "Restaurant was successfully updated.";
+                TempData["SaveResult"] = "Restaurant informations successfully updated.";
                 return RedirectToAction("Index");
             }
-            ViewBag.CategoryID = await GetRestaurantsAsync();
-            ModelState.AddModelError("", "Restaurant could not be updated.");
+            //ViewBag.CategoryID = await GetRestaurantsAsync();
+            ModelState.AddModelError("", "Restaurant informations could not be updated.");
             return View(note);
         }
 
