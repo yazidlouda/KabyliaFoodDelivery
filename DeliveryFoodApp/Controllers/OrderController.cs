@@ -103,6 +103,7 @@ namespace DeliveryFoodApp.Controllers
             var model =
                 new OrderEdit
                 {
+                    OrderId=detail.OrderId,
                     Menu = detail.Menu,
                     Price = detail.Price,
                     DeliveryCharge = detail.DeliveryCharge,
@@ -111,7 +112,7 @@ namespace DeliveryFoodApp.Controllers
                   
                 };
 
-            ViewBag.CategoryID = await GetOrdersAsync();
+            //ViewBag.CategoryID = await GetOrdersAsync();
 
             return View(model);
         }
@@ -124,7 +125,7 @@ namespace DeliveryFoodApp.Controllers
             if (note.OrderId != id)
             {
                 ModelState.AddModelError("", "ID Mismatch");
-                ViewBag.CategoryID = await GetOrdersAsync();
+                //ViewBag.CategoryID = await GetOrdersAsync();
 
                 return View(note);
             }
@@ -134,7 +135,7 @@ namespace DeliveryFoodApp.Controllers
                 TempData["SaveResult"] = "Order was successfully updated.";
                 return RedirectToAction("Index");
             }
-            ViewBag.CategoryID = await GetOrdersAsync();
+            //ViewBag.CategoryID = await GetOrdersAsync();
             ModelState.AddModelError("", "Order could not be updated.");
             return View(note);
         }

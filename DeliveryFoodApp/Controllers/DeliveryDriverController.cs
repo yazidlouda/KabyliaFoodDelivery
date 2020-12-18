@@ -103,6 +103,7 @@ namespace DeliveryFoodApp.Controllers
             var model =
                 new DeliveryDriverEdit
                 {
+                    DriverId=detail.DriverId,
                     FirstName = detail.FirstName,
                     LastName = detail.LastName,
                     Username = detail.Username,
@@ -112,7 +113,7 @@ namespace DeliveryFoodApp.Controllers
                    
                 };
 
-            ViewBag.RestaurantId = await GetDeliveryDriversAsync();
+            //ViewBag.RestaurantId = await GetDeliveryDriversAsync();
 
             return View(model);
         }
@@ -125,17 +126,17 @@ namespace DeliveryFoodApp.Controllers
             if (note.DriverId != id)
             {
                 ModelState.AddModelError("", "ID Mismatch");
-                ViewBag.CategoryID = await GetDeliveryDriversAsync();
+               // ViewBag.CategoryID = await GetDeliveryDriversAsync();
 
                 return View(note);
             }
             var service = CreateDeliveryDriverService();
             if (await service.UpdateDeliveryDriverAsync(note))
             {
-                TempData["SaveResult"] = "DeliveryDriver was successfully updated.";
+                TempData["SaveResult"] = "DeliveryDriver informations successfully updated.";
                 return RedirectToAction("Index");
             }
-            ViewBag.CategoryID = await GetDeliveryDriversAsync();
+            //ViewBag.CategoryID = await GetDeliveryDriversAsync();
             ModelState.AddModelError("", "DeliveryDriver could not be updated.");
             return View(note);
         }

@@ -89,7 +89,7 @@ namespace Kabylia.Services
                                        // Menu=e.Menu
                                     }
                     ).ToListAsync();
-                return query;
+                return query.OrderBy(e => e.RestaurantId);
             }
         }
         public IEnumerable<RestaurantListItem> GetRestaurants()
@@ -116,7 +116,7 @@ namespace Kabylia.Services
                                         // NumOfNote = e.Notes.Count()
                                     }
                     ).ToList();
-                return query;
+                return query.OrderBy(e => e.RestaurantId);
             }
         }
 
@@ -161,8 +161,8 @@ namespace Kabylia.Services
                 var entity =
                     ctx
                         .Restaurants
-                        .Where(e => e.RestaurantId == id)
-                        .FirstOrDefault();
+                        .Single(e => e.RestaurantId == id);
+                        //.FirstOrDefault();
                 return
                     new RestaurantDetails
                     {
