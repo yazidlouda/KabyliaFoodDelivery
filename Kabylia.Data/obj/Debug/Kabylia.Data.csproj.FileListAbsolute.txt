@@ -14,3 +14,6 @@ C:\Users\yalou\source\repos\DeliveryFoodApp\Kabylia.Data\obj\Debug\Kabylia.Data.
 C:\Users\yalou\source\repos\DeliveryFoodApp\Kabylia.Data\obj\Debug\Kabylia.Data.csproj.CopyComplete
 C:\Users\yalou\source\repos\DeliveryFoodApp\Kabylia.Data\obj\Debug\Kabylia.Data.dll
 C:\Users\yalou\source\repos\DeliveryFoodApp\Kabylia.Data\obj\Debug\Kabylia.Data.pdb
+C:\Users\yalou\source\repos\DeliveryFoodApp\Kabylia.Data\obj\Debug\Kabylia.Data.Migrations.first.resources
+C:\Users\yalou\source\repos\DeliveryFoodApp\Kabylia.Data\obj\Debug\Kabylia.Data.csproj.GenerateResource.cache
+C:\Users\yalou\source\repos\DeliveryFoodApp\Kabylia.Data\obj\Debug\Kabylia.Data.Migrations.second.resources

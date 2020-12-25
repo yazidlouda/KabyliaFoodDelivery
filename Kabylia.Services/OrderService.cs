@@ -19,7 +19,7 @@ namespace Kabylia.Services
                     // OwnerID = _userId,
 
                    // OrderId = model.OrderId,
-                    Menu = model.Menu,
+                   // Menu = model.,
                     Price = model.Price,
                     DateOfOrder = DateTime.Now,
                     DeliveryCharge = model.DeliveryCharge,
@@ -41,7 +41,7 @@ namespace Kabylia.Services
                 {
 
                     //OrderId = model.OrderId,
-                    Menu = model.Menu,
+                   // Menu = model.Menu,
                     Price = model.Price,
                     DateOfOrder = DateTime.Now,
                     DeliveryCharge = model.DeliveryCharge,
@@ -71,7 +71,7 @@ namespace Kabylia.Services
                                 new OrderListItem
                                 {
                                     OrderId =e.OrderId,
-                                    Menu = e.Menu,
+                                    //Menu = e.Menu,
                                     Price = e.Price,
                                     DateOfOrder = e.DateOfOrder,
                                     DeliveryCharge = e.DeliveryCharge,
@@ -98,7 +98,7 @@ namespace Kabylia.Services
                                 new OrderListItem
                                 {
                                     OrderId = e.OrderId,
-                                    Menu = e.Menu,
+                                    //Menu = e.Menu,
                                     Price = e.Price,
                                     DateOfOrder = e.DateOfOrder,
                                     DeliveryCharge = e.DeliveryCharge,
@@ -124,7 +124,7 @@ namespace Kabylia.Services
                     new OrderDetails
                     {
                         OrderId = entity.OrderId,
-                        Menu = entity.Menu,
+                        //Menu = entity.Menu,
                         Price = entity.Price,
                         DateOfOrder = DateTime.Now,
                         DeliveryCharge = entity.DeliveryCharge,
@@ -147,7 +147,7 @@ namespace Kabylia.Services
                     new OrderDetails
                     {
                         OrderId = entity.OrderId,
-                        Menu = entity.Menu,
+                        //Menu = entity.Menu,
                         Price = entity.Price,
                         DateOfOrder = DateTime.Now,
                         DeliveryCharge = entity.DeliveryCharge,
@@ -166,7 +166,7 @@ namespace Kabylia.Services
                         .Orders
                         .Where(e => e.OrderId == note.OrderId)
                         .FirstOrDefaultAsync();
-                entity.Menu = note.Menu;
+               // entity.Menu = note.Menu;
                 entity.Price = note.Price;
                 entity.DeliveryCharge = note.DeliveryCharge;
                 entity.CustomerId = note.CustomerId;
@@ -186,7 +186,7 @@ namespace Kabylia.Services
                         .Orders
                         .Where(e => e.OrderId == note.OrderId)
                         .FirstOrDefault();
-                entity.Menu = note.Menu;
+                //entity.Menu = note.Menu;
                 entity.Price = note.Price;
                 entity.DeliveryCharge = note.DeliveryCharge;
                 entity.CustomerId = note.CustomerId;

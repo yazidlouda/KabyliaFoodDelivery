@@ -115,3 +115,6 @@ C:\Users\yalou\source\repos\DeliveryFoodApp\DeliveryFoodApp\bin\Kabylia.Models.p
 C:\Users\yalou\source\repos\DeliveryFoodApp\DeliveryFoodApp\bin\Kabylia.Models.dll.config
 C:\Users\yalou\source\repos\DeliveryFoodApp\DeliveryFoodApp\bin\Kabylia.Services.pdb
 C:\Users\yalou\source\repos\DeliveryFoodApp\DeliveryFoodApp\bin\Kabylia.Services.dll.config
+C:\Users\yalou\source\repos\DeliveryFoodApp\DeliveryFoodApp\obj\Debug\DeliveryFoodApp.Migrations.InitialCreate.resources
+C:\Users\yalou\source\repos\DeliveryFoodApp\DeliveryFoodApp\obj\Debug\DeliveryFoodApp.csproj.GenerateResource.cache
+C:\Users\yalou\source\repos\DeliveryFoodApp\DeliveryFoodApp\obj\Debug\DeliveryFoodApp.Migrations.third.resources

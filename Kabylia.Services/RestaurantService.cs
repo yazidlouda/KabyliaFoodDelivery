@@ -12,13 +12,6 @@ namespace Kabylia.Services
 {
    public class RestaurantService
     {
-        //private readonly Guid _userId;
-
-        //public CategoryService(Guid userID)
-        //{
-        //    _userId = userID;
-        //}
-
         public async Task<bool> CreateRestaurantAsync(RestaurantCreate model)
         {
             var entity =
@@ -33,7 +26,7 @@ namespace Kabylia.Services
                     ClosingTime= model.ClosingTime,
                     Area= model.Area,
                     Review=model.Review,
-                    //Menu=model.Menu
+                    MenuId=model.MenuId
 
                 };
             using (var ctx = new ApplicationDbContext())
@@ -56,6 +49,8 @@ namespace Kabylia.Services
                     ClosingTime = model.ClosingTime,
                     Area = model.Area,
                     Review = model.Review,
+                    MenuId = model.MenuId
+
                     //Menu = model.Menu
 
                 };
@@ -78,6 +73,7 @@ namespace Kabylia.Services
                                     new RestaurantListItem
                                     {
                                         RestaurantId = e.RestaurantId,
+                                        MenuId=e.MenuId,
                                         Name = e.Name,
                                         Phone=e.Phone,
                                         Email=e.Email,
@@ -86,6 +82,7 @@ namespace Kabylia.Services
                                         ClosingTime=e.ClosingTime,
                                         Area=e.Area,
                                         Review=e.Review,
+                                        MenuName=e.Menu.Name
                                        // Menu=e.Menu
                                     }
                     ).ToListAsync();
@@ -104,6 +101,8 @@ namespace Kabylia.Services
                                     new RestaurantListItem
                                     {
                                         RestaurantId = e.RestaurantId,
+                                        MenuId = e.MenuId,
+
                                         Name = e.Name,
                                         Phone = e.Phone,
                                         Email = e.Email,
@@ -112,6 +111,8 @@ namespace Kabylia.Services
                                         ClosingTime = e.ClosingTime,
                                         Area = e.Area,
                                         Review = e.Review,
+                                        MenuName = e.Menu.Name
+
                                         //Menu = e.Menu
                                         // NumOfNote = e.Notes.Count()
                                     }
@@ -141,15 +142,9 @@ namespace Kabylia.Services
                         ClosingTime=entity.ClosingTime,
                         Area=entity.Area,
                         Review=entity.Review,
-                        //Customer = entity.Customer
-                        //        .Select(
-                        //            x => new CustomerListItem
-                        //            {
-                        //                FirstName=x.FirstName,
-                        //                LastName=x.LastName,
-                        //                Address=x.Address,
-                        //            }
-                        //        ).ToList()
+                        MenuId=entity.MenuId,
+                        MenuName=entity.Menu.Name
+                       
                     };
             }
         }
@@ -176,14 +171,9 @@ namespace Kabylia.Services
                         ClosingTime = entity.ClosingTime,
                         Area = entity.Area,
                         Review = entity.Review,
-                        //Customer = entity.Customer
-                        //        .Select(
-                        //            x => new CustomerListItem
-                        //            {
-                        //                FirstName = x.FirstName,
-                        //                LastName = x.LastName
-                        //            }
-                        //        ).ToList()
+                        MenuId = entity.MenuId,
+                        MenuName = entity.Menu.Name
+                      
                     };
             }
         }
@@ -205,6 +195,7 @@ namespace Kabylia.Services
                 entity.ClosingTime = category.ClosingTime;
                 entity.Area = category.Area;
                 entity.Review = category.Review;
+               //entity.MenuId = category.MenuId;
 
                 return await ctx.SaveChangesAsync() == 1;
             }
@@ -227,6 +218,7 @@ namespace Kabylia.Services
                 entity.ClosingTime = category.ClosingTime;
                 entity.Area = category.Area;
                 entity.Review = category.Review;
+                entity.MenuId = category.MenuId;
 
                 return ctx.SaveChanges() == 1;
             }
