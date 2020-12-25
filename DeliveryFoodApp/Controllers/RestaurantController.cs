@@ -40,17 +40,17 @@ namespace DeliveryFoodApp.Controllers
 
 
 
-        public async Task<IEnumerable<SelectListItem>> GetRestaurantsAsync()
+        public async Task<IEnumerable<SelectListItem>> GetMenuAsync()
         {
             // var userId = Guid.Parse(User.Identity.GetUserId());
-            var catService = new RestaurantService();
-            var categoryList = await catService.GetRestaurantsAsync();
+            var catService = new MenuService();
+            var categoryList = await catService.GetMenuAsync();
 
             var catSelectList = categoryList.Select(
                                         e =>
                                             new SelectListItem
                                             {
-                                                Value = e.RestaurantId.ToString(),
+                                                Value = e.MenuId.ToString(),
                                                 Text = e.Name
                                             }
                                         ).ToList();
@@ -62,7 +62,7 @@ namespace DeliveryFoodApp.Controllers
             var service = CreateRestaurantService();
 
             ViewBag.SyncOrAsync = "Asynchronous";
-            ViewBag.RestaurantId = await GetRestaurantsAsync();
+            ViewBag.MenuId = await GetMenuAsync();
 
             return View();
         }
@@ -75,7 +75,7 @@ namespace DeliveryFoodApp.Controllers
         {
             if (!ModelState.IsValid)
             {
-                ViewBag.RestaurantId = await GetRestaurantsAsync();
+                ViewBag.MenuId = await GetMenuAsync();
                 return View(note);
 
             }
@@ -84,13 +84,13 @@ namespace DeliveryFoodApp.Controllers
 
             if (await service.CreateRestaurantAsync(note))
             {
-                TempData["SaveResult"] = "Your note was created.";
+                TempData["SaveResult"] = "Restaurant created.";
                 return RedirectToAction("Index");
 
             }
 
-            ModelState.AddModelError("", "Note could not be created.");
-            ViewBag.RestaurantId = await GetRestaurantsAsync();
+            ModelState.AddModelError("", "Restaurant could not be created.");
+            ViewBag.MenuId = await GetMenuAsync();
 
             return View(note);
         }
@@ -115,7 +115,7 @@ namespace DeliveryFoodApp.Controllers
                   Review=detail.Review
                 };
 
-            //ViewBag.RestaurantId = await GetRestaurantsAsync();
+            ViewBag.MenutId = await GetMenuAsync();
 
             return View(model);
         }
@@ -128,7 +128,7 @@ namespace DeliveryFoodApp.Controllers
             if (note.RestaurantId != id)
             {
                 ModelState.AddModelError("", "ID Mismatch");
-               // ViewBag.CategoryID = await GetRestaurantsAsync();
+                ViewBag.MenuId = await GetMenuAsync();
 
                 return View(note);
             }
@@ -138,7 +138,7 @@ namespace DeliveryFoodApp.Controllers
                 TempData["SaveResult"] = "Restaurant informations successfully updated.";
                 return RedirectToAction("Index");
             }
-            //ViewBag.CategoryID = await GetRestaurantsAsync();
+            ViewBag.MenuId = await GetMenuAsync();
             ModelState.AddModelError("", "Restaurant informations could not be updated.");
             return View(note);
         }
@@ -157,7 +157,7 @@ namespace DeliveryFoodApp.Controllers
         {
             var service = CreateRestaurantService();
             await service.DeleteRestaurantAsync(id);
-            TempData["SaveResult"] = "Your note was successfully deleted.";
+            TempData["SaveResult"] = "Restaurant was successfully deleted.";
 
             return RedirectToAction("Index");
         }

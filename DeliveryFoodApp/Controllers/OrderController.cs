@@ -104,7 +104,7 @@ namespace DeliveryFoodApp.Controllers
                 new OrderEdit
                 {
                     OrderId=detail.OrderId,
-                    Menu = detail.Menu,
+                    //Menu = detail.Menu,
                     Price = detail.Price,
                     DeliveryCharge = detail.DeliveryCharge,
                     CustomerName = detail.CustomerName,

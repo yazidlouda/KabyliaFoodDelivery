@@ -62,6 +62,10 @@
     <Compile Include="DeliveryDriver\DeliveryDriverDetails.cs" />
     <Compile Include="DeliveryDriver\DeliveryDriverEdit.cs" />
     <Compile Include="DeliveryDriver\DeliveryDriverListItem.cs" />
+    <Compile Include="Menu\MenuCreate.cs" />
+    <Compile Include="Menu\MenuDetails.cs" />
+    <Compile Include="Menu\MenuEdit.cs" />
+    <Compile Include="Menu\MenuListItem.cs" />
     <Compile Include="Order\OrderCreate.cs" />
     <Compile Include="Order\OrderDetails.cs" />
     <Compile Include="Order\OrderEdit.cs" />
@@ -71,6 +75,10 @@
     <Compile Include="Restaurant\RestaurantDetails.cs" />
     <Compile Include="Restaurant\RestaurantEdit.cs" />
     <Compile Include="Restaurant\RestaurantListItem.cs" />
+    <Compile Include="Transaction\TransactionCreate.cs" />
+    <Compile Include="Transaction\TransactionDetails.cs" />
+    <Compile Include="Transaction\TransactionEdit.cs" />
+    <Compile Include="Transaction\TransactionListItem.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

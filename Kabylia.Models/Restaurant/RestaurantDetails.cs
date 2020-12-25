@@ -1,4 +1,5 @@
-﻿using Kabylia.Models.Customer;
+﻿using Kabylia.Data;
+using Kabylia.Models.Customer;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,8 +19,9 @@ namespace Kabylia.Models.Restaurant
         public string ClosingTime { get; set; }
         public string Area { get; set; }
         public string Review { get; set; }
-       // public List<Customer> Customer { get; set; }
-        public List<string> Menu { get; set; }
+        // public List<Customer> Customer { get; set; }
+        public int MenuId { get; set; }
+        public string MenuName { get; set; }
         public List<CustomerListItem> Customer { get; set; } = new List<CustomerListItem>();
 
     }

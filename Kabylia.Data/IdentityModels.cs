@@ -37,7 +37,9 @@ namespace Kabylia.Data
         public DbSet<DeliveryDriver> DeliveryDrivers { get; set; } //DB Set for DeliveryDriver
         public DbSet<Order> Orders{ get; set; } //DB Set for Order
         public DbSet<Transaction> Transactions { get; set; } //DB Set for Transaction
-       
+        public DbSet<Menu> Menu { get; set; } //DB Set for Transaction
+
+
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

@@ -14,8 +14,8 @@ namespace Kabylia.Data
         public double Amount { get; set; }
         public DateTime DateOfTransaction { get; set; }
 
-        // public Customer Customer { get; set; }
-        public Order Order { get; set; }
+        public int OrderId { get; set; }
+        public virtual Order Order { get; set; }
         // public Restaurant Restaurant { get; set; }
 
     }

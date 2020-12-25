@@ -19,7 +19,8 @@ namespace Kabylia.Data
         public string ClosingTime { get; set; }
         public string Area { get; set; }
         public string Review { get; set; }
-        public List<string> Menu { get; set; }
+        public int MenuId { get; set; }
+        public virtual Menu Menu { get; set; }
         //public virtual List<Customer> Customer { get; set; } = new List<Customer>();
 
         //public Order Order {get;set;}

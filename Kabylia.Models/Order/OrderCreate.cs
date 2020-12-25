@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Kabylia.Data;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,13 +10,15 @@ namespace Kabylia.Models.Order
    public class OrderCreate
     {
         //public int OrderId { get; set; }
-        public string Menu { get; set; }
+        //public string Menu { get; set; }
         public double Price { get; set; }
        // public DateTime DateOfOrder { get; set; }
         public double DeliveryCharge { get; set; }
         public int CustomerId { get; set; }
        // public string Customer { get; set; }
         public int RestaurantId { get; set; }
-       // public  string RestaurantName { get; set; }
+        // public  string RestaurantName { get; set; }
+        //public List<Menu> Menu { get; set; }
+
     }
 }
