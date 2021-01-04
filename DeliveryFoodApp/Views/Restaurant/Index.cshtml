@@ -43,14 +43,12 @@
             @Html.DisplayNameFor(model => model.ClosingTime)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Area)
+            @Html.DisplayNameFor(model => model.AreaName)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Review)
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.MenuName)
-        </th>
+       
         <th></th>
     </tr>
 
@@ -79,14 +77,12 @@
         @Html.DisplayFor(modelItem => item.ClosingTime)
     </td>
     <td>
-        @Html.DisplayFor(modelItem => item.Area)
+        @Html.DisplayFor(modelItem => item.AreaName)
     </td>
     <td>
         @Html.DisplayFor(modelItem => item.Review)
     </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.MenuName)
-    </td>
+    
     <td>
         @Html.ActionLink("Edit", "Edit", new { id = item.RestaurantId }) |
         @Html.ActionLink("Details", "Details", new { id = item.RestaurantId }) |

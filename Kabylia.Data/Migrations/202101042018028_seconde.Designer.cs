@@ -7,13 +7,13 @@ namespace Kabylia.Data.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.0-30225")]
-    public sealed partial class second : IMigrationMetadata
+    public sealed partial class seconde : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(second));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(seconde));
         
         string IMigrationMetadata.Id
         {
-            get { return "202012252137237_second"; }
+            get { return "202101042018028_seconde"; }
         }
         
         string IMigrationMetadata.Source

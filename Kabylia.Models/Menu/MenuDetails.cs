@@ -15,6 +15,7 @@ namespace Kabylia.Models.Menu
         public string Name { get; set; }
         public int Price { get; set; }
         public string Description { get; set; }
-        public List<RestaurantListItem> Notes { get; set; } = new List<RestaurantListItem>();
+        public int RestaurantId { get; set; }
+        public string RestaurantName { get; set; }
     }
 }

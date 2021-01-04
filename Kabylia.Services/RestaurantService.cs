@@ -1,5 +1,6 @@
 ﻿using Kabylia.Data;
 using Kabylia.Models.Customer;
+using Kabylia.Models.Menu;
 using Kabylia.Models.Restaurant;
 using System;
 using System.Collections.Generic;
@@ -24,9 +25,9 @@ namespace Kabylia.Services
                     Address= model.Address,
                     OpeningTime= model.OpeningTime,
                     ClosingTime= model.ClosingTime,
-                    Area= model.Area,
+                    AreaId= model.AreaId,
                     Review=model.Review,
-                    MenuId=model.MenuId
+                    //MenuId=model.MenuId
 
                 };
             using (var ctx = new ApplicationDbContext())
@@ -47,9 +48,10 @@ namespace Kabylia.Services
                     Address = model.Address,
                     OpeningTime = model.OpeningTime,
                     ClosingTime = model.ClosingTime,
-                    Area = model.Area,
+                    AreaId = model.AreaId,
                     Review = model.Review,
-                    MenuId = model.MenuId
+                    
+                   // MenuId = model.MenuId
 
                     //Menu = model.Menu
 
@@ -73,16 +75,17 @@ namespace Kabylia.Services
                                     new RestaurantListItem
                                     {
                                         RestaurantId = e.RestaurantId,
-                                        MenuId=e.MenuId,
+                                       // MenuId=e.MenuId,
                                         Name = e.Name,
                                         Phone=e.Phone,
                                         Email=e.Email,
                                         Address=e.Address,
                                         OpeningTime=e.OpeningTime,
                                         ClosingTime=e.ClosingTime,
-                                        Area=e.Area,
+                                        AreaName=e.Area.AreaName,
                                         Review=e.Review,
-                                        MenuName=e.Menu.Name
+                                        NumberOfMenu=e.Menu.Count()
+                                        //MenuName=e.Menu.Name
                                        // Menu=e.Menu
                                     }
                     ).ToListAsync();
@@ -101,7 +104,7 @@ namespace Kabylia.Services
                                     new RestaurantListItem
                                     {
                                         RestaurantId = e.RestaurantId,
-                                        MenuId = e.MenuId,
+                                       // MenuId = e.MenuId,
 
                                         Name = e.Name,
                                         Phone = e.Phone,
@@ -109,9 +112,12 @@ namespace Kabylia.Services
                                         Address = e.Address,
                                         OpeningTime = e.OpeningTime,
                                         ClosingTime = e.ClosingTime,
-                                        Area = e.Area,
+                                        AreaName = e.Area.AreaName,
+
                                         Review = e.Review,
-                                        MenuName = e.Menu.Name
+                                        NumberOfMenu = e.Menu.Count()
+
+                                        //MenuName = e.Menu.Name
 
                                         //Menu = e.Menu
                                         // NumOfNote = e.Notes.Count()
@@ -140,11 +146,22 @@ namespace Kabylia.Services
                         Address = entity.Address,
                         OpeningTime=entity.OpeningTime,
                         ClosingTime=entity.ClosingTime,
-                        Area=entity.Area,
-                        Review=entity.Review,
-                        MenuId=entity.MenuId,
-                        MenuName=entity.Menu.Name
-                       
+                        AreaId = entity.AreaId,
+                        AreaName = entity.Area.AreaName,
+                        Review =entity.Review,
+                        Menu = entity.Menu
+                        .Select(
+                                    x => new MenuListItem
+                                    {
+                                        MenuId = x.MenuId,
+                                        Name = x.Name,
+                                        Description = x.Description,
+                                        Price = x.Price
+                                    }
+                                ).ToList()
+                        //MenuId=entity.MenuId,
+                        //MenuName=entity.Menu.Name
+
                     };
             }
         }
@@ -169,11 +186,22 @@ namespace Kabylia.Services
                         Address = entity.Address,
                         OpeningTime = entity.OpeningTime,
                         ClosingTime = entity.ClosingTime,
-                        Area = entity.Area,
+                        AreaId = entity.AreaId,
+                        AreaName = entity.Area.AreaName,
                         Review = entity.Review,
-                        MenuId = entity.MenuId,
-                        MenuName = entity.Menu.Name
-                      
+                        Menu = entity.Menu
+                         .Select(
+                                    x => new MenuListItem
+                                    {
+                                        MenuId = x.MenuId,
+                                        Name = x.Name,
+                                        Description = x.Description,
+                                        Price = x.Price
+                                    }
+                                ).ToList()
+                        //MenuId = entity.MenuId,
+                        //MenuName = entity.Menu.Name
+
                     };
             }
         }
@@ -193,7 +221,7 @@ namespace Kabylia.Services
                 entity.Address = category.Address;
                 entity.OpeningTime = category.OpeningTime;
                 entity.ClosingTime = category.ClosingTime;
-                entity.Area = category.Area;
+                entity.AreaId = category.AreaId;
                 entity.Review = category.Review;
                //entity.MenuId = category.MenuId;
 
@@ -216,9 +244,9 @@ namespace Kabylia.Services
                 entity.Address = category.Address;
                 entity.OpeningTime = category.OpeningTime;
                 entity.ClosingTime = category.ClosingTime;
-                entity.Area = category.Area;
+                entity.AreaId = category.AreaId;
                 entity.Review = category.Review;
-                entity.MenuId = category.MenuId;
+               // entity.MenuId = category.MenuId;
 
                 return ctx.SaveChanges() == 1;
             }

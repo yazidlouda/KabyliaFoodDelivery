@@ -3,10 +3,19 @@ namespace Kabylia.Data.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class first : DbMigration
+    public partial class InitialCreate : DbMigration
     {
         public override void Up()
         {
+            CreateTable(
+                "dbo.Area",
+                c => new
+                    {
+                        AreaId = c.Int(nullable: false, identity: true),
+                        AreaName = c.String(nullable: false, maxLength: 50),
+                    })
+                .PrimaryKey(t => t.AreaId);
+            
             CreateTable(
                 "dbo.Customer",
                 c => new
@@ -47,24 +56,10 @@ namespace Kabylia.Data.Migrations
                         Name = c.String(),
                         Price = c.Int(nullable: false),
                         Description = c.String(),
-                    })
-                .PrimaryKey(t => t.MenuId);
-            
-            CreateTable(
-                "dbo.Order",
-                c => new
-                    {
-                        OrderId = c.Int(nullable: false, identity: true),
-                        Price = c.Double(nullable: false),
-                        DateOfOrder = c.DateTime(nullable: false),
-                        DeliveryCharge = c.Double(nullable: false),
-                        CustomerId = c.Int(nullable: false),
                         RestaurantId = c.Int(nullable: false),
                     })
-                .PrimaryKey(t => t.OrderId)
-                .ForeignKey("dbo.Customer", t => t.CustomerId, cascadeDelete: true)
+                .PrimaryKey(t => t.MenuId)
                 .ForeignKey("dbo.Restaurant", t => t.RestaurantId, cascadeDelete: true)
-                .Index(t => t.CustomerId)
                 .Index(t => t.RestaurantId);
             
             CreateTable(
@@ -78,13 +73,30 @@ namespace Kabylia.Data.Migrations
                         Address = c.String(),
                         OpeningTime = c.String(),
                         ClosingTime = c.String(),
-                        Area = c.String(),
+                        AreaId = c.Int(nullable: false),
                         Review = c.String(),
-                        MenuId = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.RestaurantId)
-                .ForeignKey("dbo.Menu", t => t.MenuId, cascadeDelete: true)
-                .Index(t => t.MenuId);
+                .ForeignKey("dbo.Area", t => t.AreaId, cascadeDelete: true)
+                .Index(t => t.AreaId);
+            
+            CreateTable(
+                "dbo.Order",
+                c => new
+                    {
+                        OrderId = c.Int(nullable: false, identity: true),
+                        Menu = c.String(),
+                        Price = c.Double(nullable: false),
+                        DateOfOrder = c.DateTime(nullable: false),
+                        DeliveryCharge = c.Double(nullable: false),
+                        CustomerId = c.Int(nullable: false),
+                        RestaurantId = c.Int(nullable: false),
+                    })
+                .PrimaryKey(t => t.OrderId)
+                .ForeignKey("dbo.Customer", t => t.CustomerId, cascadeDelete: true)
+                .ForeignKey("dbo.Restaurant", t => t.RestaurantId, cascadeDelete: true)
+                .Index(t => t.CustomerId)
+                .Index(t => t.RestaurantId);
             
             CreateTable(
                 "dbo.IdentityRole",
@@ -179,27 +191,30 @@ namespace Kabylia.Data.Migrations
             DropForeignKey("dbo.Transaction", "OrderId", "dbo.Order");
             DropForeignKey("dbo.IdentityUserRole", "IdentityRole_Id", "dbo.IdentityRole");
             DropForeignKey("dbo.Order", "RestaurantId", "dbo.Restaurant");
-            DropForeignKey("dbo.Restaurant", "MenuId", "dbo.Menu");
             DropForeignKey("dbo.Order", "CustomerId", "dbo.Customer");
+            DropForeignKey("dbo.Menu", "RestaurantId", "dbo.Restaurant");
+            DropForeignKey("dbo.Restaurant", "AreaId", "dbo.Area");
             DropIndex("dbo.IdentityUserLogin", new[] { "ApplicationUser_Id" });
             DropIndex("dbo.IdentityUserClaim", new[] { "ApplicationUser_Id" });
             DropIndex("dbo.Transaction", new[] { "OrderId" });
             DropIndex("dbo.IdentityUserRole", new[] { "ApplicationUser_Id" });
             DropIndex("dbo.IdentityUserRole", new[] { "IdentityRole_Id" });
-            DropIndex("dbo.Restaurant", new[] { "MenuId" });
             DropIndex("dbo.Order", new[] { "RestaurantId" });
             DropIndex("dbo.Order", new[] { "CustomerId" });
+            DropIndex("dbo.Restaurant", new[] { "AreaId" });
+            DropIndex("dbo.Menu", new[] { "RestaurantId" });
             DropTable("dbo.IdentityUserLogin");
             DropTable("dbo.IdentityUserClaim");
             DropTable("dbo.ApplicationUser");
             DropTable("dbo.Transaction");
             DropTable("dbo.IdentityUserRole");
             DropTable("dbo.IdentityRole");
-            DropTable("dbo.Restaurant");
             DropTable("dbo.Order");
+            DropTable("dbo.Restaurant");
             DropTable("dbo.Menu");
             DropTable("dbo.DeliveryDriver");
             DropTable("dbo.Customer");
+            DropTable("dbo.Area");
         }
     }
 }

@@ -16,9 +16,12 @@ namespace Kabylia.Models.Restaurant
         public string Address { get; set; }
         public string OpeningTime { get; set; }
         public string ClosingTime { get; set; }
-        public string Area { get; set; }
+        public int AreaId { get; set; }
+        public string AreaName { get; set; }
         public string Review { get; set; }
-        public string MenuName { get; set; }
-        public int MenuId { get; set; }
+        public int NumberOfMenu { get; set; }
+
+        // public string MenuName { get; set; }
+        //public int MenuId { get; set; }
     }
 }
