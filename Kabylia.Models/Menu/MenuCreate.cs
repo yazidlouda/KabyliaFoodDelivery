@@ -13,5 +13,7 @@ namespace Kabylia.Models.Menu
         public string Name { get; set; }
         public int Price { get; set; }
         public string Description { get; set; }
+        [Display(Name = "Restaurant")]
+        public int RestaurantId { get; set; }
     }
 }

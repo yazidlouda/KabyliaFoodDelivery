@@ -10,6 +10,7 @@ namespace Kabylia.Data.Migrations
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
+            ContextKey = "Kabylia.Data.ApplicationDbContext";
         }
 
         protected override void Seed(Kabylia.Data.ApplicationDbContext context)

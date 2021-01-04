@@ -37,7 +37,23 @@ namespace DeliveryFoodApp.Controllers
             return View(model);
         }
 
+        public async Task<IEnumerable<SelectListItem>> GetRestaurantAsync()
+        {
+            // var userId = Guid.Parse(User.Identity.GetUserId());
+            var catService = new RestaurantService();
+            var categoryList = await catService.GetRestaurantsAsync();
 
+            var catSelectList = categoryList.Select(
+                                        e =>
+                                            new SelectListItem
+                                            {
+                                                Value = e.RestaurantId.ToString(),
+                                                Text = e.Name
+                                            }
+                                        ).ToList();
+
+            return catSelectList;
+        }
 
         public async Task<IEnumerable<SelectListItem>> GetMenuAsync()
         {
@@ -61,7 +77,7 @@ namespace DeliveryFoodApp.Controllers
             var service = CreateMenuService();
 
             ViewBag.SyncOrAsync = "Asynchronous";
-            ViewBag.CategoryID = await GetMenuAsync();
+            ViewBag.RestaurantId = await GetRestaurantAsync();
 
             return View();
         }
@@ -74,7 +90,8 @@ namespace DeliveryFoodApp.Controllers
         {
             if (!ModelState.IsValid)
             {
-                ViewBag.CategoryID = await GetMenuAsync();
+                ViewBag.RestaurantId = await GetRestaurantAsync();
+
                 return View(note);
 
             }
@@ -89,7 +106,8 @@ namespace DeliveryFoodApp.Controllers
             }
 
             ModelState.AddModelError("", "Menu could not be created.");
-            ViewBag.CategoryID = await GetMenuAsync();
+            ViewBag.RestaurantId = await GetRestaurantAsync();
+
 
             return View(note);
         }
@@ -110,6 +128,7 @@ namespace DeliveryFoodApp.Controllers
                   
                 };
 
+            ViewBag.RestaurantId = await GetRestaurantAsync();
 
 
             return View(model);
@@ -123,6 +142,7 @@ namespace DeliveryFoodApp.Controllers
             if (note.MenuId != id)
             {
                 ModelState.AddModelError("", "ID Mismatch");
+                ViewBag.RestaurantId = await GetRestaurantAsync();
 
 
                 return View(note);
@@ -133,6 +153,7 @@ namespace DeliveryFoodApp.Controllers
                 TempData["SaveResult"] = "Menu was successfully updated.";
                 return RedirectToAction("Index");
             }
+            ViewBag.RestaurantId = await GetRestaurantAsync();
 
             ModelState.AddModelError("", "Menu could not be updated.");
             return View(note);

@@ -38,6 +38,8 @@ namespace Kabylia.Data
         public DbSet<Order> Orders{ get; set; } //DB Set for Order
         public DbSet<Transaction> Transactions { get; set; } //DB Set for Transaction
         public DbSet<Menu> Menu { get; set; } //DB Set for Transaction
+        public DbSet<Area> Area { get; set; } //DB Set for Transaction
+
 
 
 

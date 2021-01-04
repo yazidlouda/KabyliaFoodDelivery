@@ -17,10 +17,13 @@ namespace Kabylia.Data
         public string Address { get; set; }
         public string OpeningTime { get; set; }
         public string ClosingTime { get; set; }
-        public string Area { get; set; }
+        public int AreaId { get; set; }
+        public virtual Area Area { get; set; }
         public string Review { get; set; }
-        public int MenuId { get; set; }
-        public virtual Menu Menu { get; set; }
+        public virtual List<Menu> Menu { get; set; } = new List<Menu>();
+
+        // public int MenuId { get; set; }
+        //public virtual Menu Menu { get; set; }
         //public virtual List<Customer> Customer { get; set; } = new List<Customer>();
 
         //public Order Order {get;set;}

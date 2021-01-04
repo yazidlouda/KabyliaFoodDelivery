@@ -57,12 +57,30 @@ namespace DeliveryFoodApp.Controllers
 
             return catSelectList;
         }
+        public async Task<IEnumerable<SelectListItem>> GetAreaAsync()
+        {
+            // var userId = Guid.Parse(User.Identity.GetUserId());
+            var catService = new AreaService();
+            var categoryList = await catService.GetAreaAsync();
+
+            var catSelectList = categoryList.Select(
+                                        e =>
+                                            new SelectListItem
+                                            {
+                                                Value = e.AreaId.ToString(),
+                                                Text = e.AreaName
+                                            }
+                                        ).ToList();
+
+            return catSelectList;
+        }
         public async Task<ActionResult> Create()
         {
             var service = CreateRestaurantService();
 
             ViewBag.SyncOrAsync = "Asynchronous";
             ViewBag.MenuId = await GetMenuAsync();
+            ViewBag.AreaId = await GetAreaAsync();
 
             return View();
         }
@@ -75,6 +93,8 @@ namespace DeliveryFoodApp.Controllers
         {
             if (!ModelState.IsValid)
             {
+                ViewBag.AreaId = await GetAreaAsync();
+
                 ViewBag.MenuId = await GetMenuAsync();
                 return View(note);
 
@@ -90,6 +110,7 @@ namespace DeliveryFoodApp.Controllers
             }
 
             ModelState.AddModelError("", "Restaurant could not be created.");
+            ViewBag.AreaId = await GetAreaAsync();
             ViewBag.MenuId = await GetMenuAsync();
 
             return View(note);
@@ -111,9 +132,11 @@ namespace DeliveryFoodApp.Controllers
                   Email = detail.Email,
                   OpeningTime=detail.OpeningTime,
                   ClosingTime=detail.ClosingTime,
-                  Area=detail.Area,
+                  AreaId=detail.AreaId,
                   Review=detail.Review
                 };
+            ViewBag.SyncOrAsync = "Asynchronous";
+            ViewBag.AreaId = await GetAreaAsync();
 
             ViewBag.MenutId = await GetMenuAsync();
 
@@ -129,6 +152,7 @@ namespace DeliveryFoodApp.Controllers
             {
                 ModelState.AddModelError("", "ID Mismatch");
                 ViewBag.MenuId = await GetMenuAsync();
+                ViewBag.AreaId = await GetAreaAsync();
 
                 return View(note);
             }
@@ -139,6 +163,8 @@ namespace DeliveryFoodApp.Controllers
                 return RedirectToAction("Index");
             }
             ViewBag.MenuId = await GetMenuAsync();
+            ViewBag.AreaId = await GetAreaAsync();
+
             ModelState.AddModelError("", "Restaurant informations could not be updated.");
             return View(note);
         }

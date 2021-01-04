@@ -21,7 +21,7 @@ namespace Kabylia.Services
                     Name = model.Name,
                     Price = model.Price,
                     Description = model.Description,
-                   
+                   RestaurantId=model.RestaurantId
                 };
 
             using (var ctx = new ApplicationDbContext())
@@ -39,6 +39,7 @@ namespace Kabylia.Services
                     Name = model.Name,
                     Price = model.Price,
                     Description = model.Description,
+                    RestaurantId = model.RestaurantId
 
                 };
 
@@ -65,8 +66,8 @@ namespace Kabylia.Services
                                     Name = e.Name,
                                     Description = e.Description,
                                     Price = e.Price,
-                                   
-
+                                   //RestaurantId=e.RestaurantId,
+                                  // RestaurantName=e.Restaurant.Name
 
                                 }
                         ).ToListAsync();
@@ -90,7 +91,8 @@ namespace Kabylia.Services
                                     Name = e.Name,
                                     Description = e.Description,
                                     Price = e.Price,
-                                    
+                                   // RestaurantId = e.RestaurantId,
+                                   // RestaurantName = e.Restaurant.Name
 
                                 }
                         );
@@ -114,7 +116,8 @@ namespace Kabylia.Services
                         Name = entity.Name,
                         Description = entity.Description,
                         Price = entity.Price,
-                      
+                        RestaurantId = entity.RestaurantId,
+                        RestaurantName = entity.Restaurant.Name
 
                     };
             }
@@ -136,7 +139,8 @@ namespace Kabylia.Services
                         Name = entity.Name,
                         Description = entity.Description,
                         Price = entity.Price,
-                       
+                        RestaurantId = entity.RestaurantId,
+                        RestaurantName = entity.Restaurant.Name
 
                     };
             }
@@ -153,7 +157,7 @@ namespace Kabylia.Services
                 entity.Name = note.Name;
                 entity.Description = note.Description;
                 entity.Price = note.Price;
-               
+                entity.RestaurantId = note.RestaurantId;
                 return await ctx.SaveChangesAsync() == 1;
             }
         }
@@ -170,6 +174,7 @@ namespace Kabylia.Services
                 entity.Name = note.Name;
                 entity.Description = note.Description;
                 entity.Price = note.Price;
+                entity.RestaurantId = note.RestaurantId;
 
 
                 return ctx.SaveChanges() == 1;

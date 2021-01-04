@@ -20,3 +20,25 @@ C:\Users\yalou\source\repos\DeliveryFoodApp\Kabylia.Services\bin\Debug\Kabylia.D
 C:\Users\yalou\source\repos\DeliveryFoodApp\Kabylia.Services\bin\Debug\Kabylia.Data.dll.config
 C:\Users\yalou\source\repos\DeliveryFoodApp\Kabylia.Services\bin\Debug\Kabylia.Models.pdb
 C:\Users\yalou\source\repos\DeliveryFoodApp\Kabylia.Services\bin\Debug\Kabylia.Models.dll.config
+C:\Users\yalou\OneDrive\Bureau\Red Badge\KabyliaFoodDelivery\Kabylia.Services\bin\Debug\Kabylia.Services.dll.config
+C:\Users\yalou\OneDrive\Bureau\Red Badge\KabyliaFoodDelivery\Kabylia.Services\bin\Debug\Kabylia.Services.dll
+C:\Users\yalou\OneDrive\Bureau\Red Badge\KabyliaFoodDelivery\Kabylia.Services\bin\Debug\Kabylia.Services.pdb
+C:\Users\yalou\OneDrive\Bureau\Red Badge\KabyliaFoodDelivery\Kabylia.Services\bin\Debug\EntityFramework.dll
+C:\Users\yalou\OneDrive\Bureau\Red Badge\KabyliaFoodDelivery\Kabylia.Services\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\yalou\OneDrive\Bureau\Red Badge\KabyliaFoodDelivery\Kabylia.Services\bin\Debug\Kabylia.Data.dll
+C:\Users\yalou\OneDrive\Bureau\Red Badge\KabyliaFoodDelivery\Kabylia.Services\bin\Debug\Kabylia.Models.dll
+C:\Users\yalou\OneDrive\Bureau\Red Badge\KabyliaFoodDelivery\Kabylia.Services\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+C:\Users\yalou\OneDrive\Bureau\Red Badge\KabyliaFoodDelivery\Kabylia.Services\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\yalou\OneDrive\Bureau\Red Badge\KabyliaFoodDelivery\Kabylia.Services\bin\Debug\Kabylia.Data.pdb
+C:\Users\yalou\OneDrive\Bureau\Red Badge\KabyliaFoodDelivery\Kabylia.Services\bin\Debug\Kabylia.Data.dll.config
+C:\Users\yalou\OneDrive\Bureau\Red Badge\KabyliaFoodDelivery\Kabylia.Services\bin\Debug\Kabylia.Models.pdb
+C:\Users\yalou\OneDrive\Bureau\Red Badge\KabyliaFoodDelivery\Kabylia.Services\bin\Debug\Kabylia.Models.dll.config
+C:\Users\yalou\OneDrive\Bureau\Red Badge\KabyliaFoodDelivery\Kabylia.Services\bin\Debug\EntityFramework.xml
+C:\Users\yalou\OneDrive\Bureau\Red Badge\KabyliaFoodDelivery\Kabylia.Services\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\yalou\OneDrive\Bureau\Red Badge\KabyliaFoodDelivery\Kabylia.Services\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+C:\Users\yalou\OneDrive\Bureau\Red Badge\KabyliaFoodDelivery\Kabylia.Services\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\yalou\OneDrive\Bureau\Red Badge\KabyliaFoodDelivery\Kabylia.Services\obj\Debug\Kabylia.Services.csprojAssemblyReference.cache
+C:\Users\yalou\OneDrive\Bureau\Red Badge\KabyliaFoodDelivery\Kabylia.Services\obj\Debug\Kabylia.Services.csproj.CoreCompileInputs.cache
+C:\Users\yalou\OneDrive\Bureau\Red Badge\KabyliaFoodDelivery\Kabylia.Services\obj\Debug\Kabylia.Services.csproj.CopyComplete
+C:\Users\yalou\OneDrive\Bureau\Red Badge\KabyliaFoodDelivery\Kabylia.Services\obj\Debug\Kabylia.Services.dll
+C:\Users\yalou\OneDrive\Bureau\Red Badge\KabyliaFoodDelivery\Kabylia.Services\obj\Debug\Kabylia.Services.pdb
