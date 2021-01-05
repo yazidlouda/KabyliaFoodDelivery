@@ -180,15 +180,6 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202012172146506_InitialCreate.cs" />
-    <Compile Include="Migrations\202012172146506_InitialCreate.Designer.cs">
-      <DependentUpon>202012172146506_InitialCreate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202012181643297_third.cs" />
-    <Compile Include="Migrations\202012181643297_third.Designer.cs">
-      <DependentUpon>202012181643297_third.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\google_map.cs">
       <DependentUpon>Model1.tt</DependentUpon>
@@ -329,6 +320,7 @@
     <Content Include="Views\Menu\MenuSelectable.cshtml" />
     <Content Include="Views\Restaurant\SelectableMenu.cshtml" />
     <Content Include="Views\Home\Create.cshtml" />
+    <Content Include="Views\Home\OrderSummary.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -359,14 +351,6 @@
       <Project>{fc928520-b83c-47b0-ac24-732a5cfd4908}</Project>
       <Name>Kabylia.Services</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\202012172146506_InitialCreate.resx">
-      <DependentUpon>202012172146506_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202012181643297_third.resx">
-      <DependentUpon>202012181643297_third.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

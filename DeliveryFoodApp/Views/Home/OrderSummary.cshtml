@@ -1,0 +1,51 @@
+﻿@model Kabylia.Models.Order.OrderDetails
+
+@{
+    ViewBag.Title = "OrderSummary";
+}
+
+<h2>OrderSummary</h2>
+
+<div>
+    <h4>OrderDetails</h4>
+    <hr />
+    <dl class="dl-horizontal">
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CustomerName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CustomerName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RestaurantName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RestaurantName)
+        </dd>
+        <dl class="dl-horizontal">
+            @foreach (var item in Model.Menu)
+            {
+
+                <dt>@Html.DisplayNameFor(modelItem => item.Name)</dt>
+                <dd>@Html.DisplayFor(modelItem => item.Name)</dd>
+                <dt>@Html.DisplayNameFor(modelItem => item.Description)</dt>
+                <dd>@Html.DisplayFor(modelItem => item.Description)</dd>
+                <dt>@Html.DisplayNameFor(modelItem => item.Price)</dt>
+                <dd>@Html.DisplayFor(modelItem => item.Price)</dd>
+
+                <dd></dd>
+                <dd>@Html.ActionLink("View Menu", "Details", "Menu", new { id = item.MenuId }, null)</dd>
+                <br />
+            }
+
+        </dl>
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new {  id = Model.OrderId}) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -231,9 +231,6 @@ C:\Users\yalou\OneDrive\Bureau\Red Badge\KabyliaFoodDelivery\DeliveryFoodApp\bin
 C:\Users\yalou\OneDrive\Bureau\Red Badge\KabyliaFoodDelivery\DeliveryFoodApp\bin\Microsoft.Owin.Security.OAuth.xml
 C:\Users\yalou\OneDrive\Bureau\Red Badge\KabyliaFoodDelivery\DeliveryFoodApp\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 C:\Users\yalou\OneDrive\Bureau\Red Badge\KabyliaFoodDelivery\DeliveryFoodApp\obj\Debug\DeliveryFoodApp.csprojAssemblyReference.cache
-C:\Users\yalou\OneDrive\Bureau\Red Badge\KabyliaFoodDelivery\DeliveryFoodApp\obj\Debug\DeliveryFoodApp.Migrations.InitialCreate.resources
-C:\Users\yalou\OneDrive\Bureau\Red Badge\KabyliaFoodDelivery\DeliveryFoodApp\obj\Debug\DeliveryFoodApp.Migrations.third.resources
-C:\Users\yalou\OneDrive\Bureau\Red Badge\KabyliaFoodDelivery\DeliveryFoodApp\obj\Debug\DeliveryFoodApp.csproj.GenerateResource.cache
 C:\Users\yalou\OneDrive\Bureau\Red Badge\KabyliaFoodDelivery\DeliveryFoodApp\obj\Debug\DeliveryFoodApp.csproj.CoreCompileInputs.cache
 C:\Users\yalou\OneDrive\Bureau\Red Badge\KabyliaFoodDelivery\DeliveryFoodApp\obj\Debug\DeliveryFoodApp.csproj.CopyComplete
 C:\Users\yalou\OneDrive\Bureau\Red Badge\KabyliaFoodDelivery\DeliveryFoodApp\obj\Debug\DeliveryFoodApp.dll

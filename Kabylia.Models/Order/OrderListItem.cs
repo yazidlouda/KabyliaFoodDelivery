@@ -1,4 +1,5 @@
 ﻿using Kabylia.Data;
+using Kabylia.Models.Menu;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,7 +19,10 @@ namespace Kabylia.Models.Order
         public string CustomerName { get; set; }
        // public int RestaurantId { get; set; }
         public string RestaurantName { get; set; }
-       // public List<Menu> Menu { get; set; }
+        public string DriverName { get; set; }
+
+        // public List<Menu> Menu { get; set; }
+        public virtual List<MenuListItem> Menu { get; set; } = new List<MenuListItem>();
 
     }
 }

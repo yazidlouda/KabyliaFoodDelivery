@@ -1,6 +1,7 @@
 ﻿using Kabylia.Data;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,9 +15,13 @@ namespace Kabylia.Models.Order
         public double Price { get; set; }
        // public DateTime DateOfOrder { get; set; }
         public double DeliveryCharge { get; set; }
+        [Display(Name = "Customer")]
         public int CustomerId { get; set; }
-       // public string Customer { get; set; }
+        [Display(Name = "Restaurant")]
         public int RestaurantId { get; set; }
+        [Display(Name = "Driver")]
+        public int DriverId { get; set; }
+
         // public  string RestaurantName { get; set; }
         //public List<Menu> Menu { get; set; }
 

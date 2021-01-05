@@ -39,18 +39,52 @@ namespace DeliveryFoodApp.Controllers
 
 
 
-        public async Task<IEnumerable<SelectListItem>> GetOrdersAsync()
+        public async Task<IEnumerable<SelectListItem>> GetCustomerAsync()
         {
             // var userId = Guid.Parse(User.Identity.GetUserId());
-            var catService = new OrderService();
-            var categoryList = await catService.GetOrdersAsync();
+            var catService = new CustomerService();
+            var categoryList = await catService.GetCustomersAsync();
 
             var catSelectList = categoryList.Select(
                                         e =>
                                             new SelectListItem
                                             {
-                                                Value = e.OrderId.ToString(),
-                                                Text = e.CustomerName
+                                                Value = e.CustomerId.ToString(),
+                                                Text = e.FirstName+" "+e.LastName
+                                            }
+                                        ).ToList();
+
+            return catSelectList;
+        }
+        public async Task<IEnumerable<SelectListItem>> GetRestaurantAsync()
+        {
+            // var userId = Guid.Parse(User.Identity.GetUserId());
+            var catService = new RestaurantService();
+            var categoryList = await catService.GetRestaurantsAsync();
+
+            var catSelectList = categoryList.Select(
+                                        e =>
+                                            new SelectListItem
+                                            {
+                                                Value = e.RestaurantId.ToString(),
+                                                Text = e.Name
+                                            }
+                                        ).ToList();
+
+            return catSelectList;
+        }
+        public async Task<IEnumerable<SelectListItem>> GetDriverAsync()
+        {
+            // var userId = Guid.Parse(User.Identity.GetUserId());
+            var catService = new DeliveryDriverService();
+            var categoryList = await catService.GetDeliveryDriversAsync();
+
+            var catSelectList = categoryList.Select(
+                                        e =>
+                                            new SelectListItem
+                                            {
+                                                Value = e.DriverId.ToString(),
+                                                Text = e.FirstName + " " + e.LastName
                                             }
                                         ).ToList();
 
@@ -61,8 +95,9 @@ namespace DeliveryFoodApp.Controllers
             var service = CreateOrderService();
 
             ViewBag.SyncOrAsync = "Asynchronous";
-            ViewBag.CategoryID = await GetOrdersAsync();
-
+            ViewBag.CustomerId = await GetCustomerAsync();
+            ViewBag.RestaurantId = await GetRestaurantAsync();
+            ViewBag.DriverId = await GetDriverAsync();
             return View();
         }
 
@@ -74,7 +109,10 @@ namespace DeliveryFoodApp.Controllers
         {
             if (!ModelState.IsValid)
             {
-                ViewBag.CategoryID = await GetOrdersAsync();
+                ViewBag.CustomerId = await GetCustomerAsync();
+                ViewBag.RestaurantId = await GetRestaurantAsync();
+                ViewBag.DriverId = await GetDriverAsync();
+
                 return View(note);
 
             }
@@ -89,7 +127,9 @@ namespace DeliveryFoodApp.Controllers
             }
 
             ModelState.AddModelError("", "Note could not be created.");
-            ViewBag.CategoryID = await GetOrdersAsync();
+            ViewBag.CustomerId = await GetCustomerAsync();
+            ViewBag.RestaurantId = await GetRestaurantAsync();
+            ViewBag.DriverId = await GetDriverAsync();
 
             return View(note);
         }
@@ -125,7 +165,9 @@ namespace DeliveryFoodApp.Controllers
             if (note.OrderId != id)
             {
                 ModelState.AddModelError("", "ID Mismatch");
-                //ViewBag.CategoryID = await GetOrdersAsync();
+                ViewBag.CustomerId = await GetCustomerAsync();
+                ViewBag.RestaurantId = await GetRestaurantAsync();
+                ViewBag.DriverId = await GetDriverAsync();
 
                 return View(note);
             }
@@ -135,7 +177,10 @@ namespace DeliveryFoodApp.Controllers
                 TempData["SaveResult"] = "Order was successfully updated.";
                 return RedirectToAction("Index");
             }
-            //ViewBag.CategoryID = await GetOrdersAsync();
+            ViewBag.CustomerId = await GetCustomerAsync();
+            ViewBag.RestaurantId = await GetRestaurantAsync();
+            ViewBag.DriverId = await GetDriverAsync();
+
             ModelState.AddModelError("", "Order could not be updated.");
             return View(note);
         }

@@ -18,7 +18,9 @@ namespace Kabylia.Models.Order
         public string CustomerName { get; set; }
         public int RestaurantId { get; set; }
         public string RestaurantName { get; set; }
-       // public List<Menu> Menu { get; set; }
+        public int DriverId { get; set; }
+        public string DriverName { get; set; }
+        // public List<Menu> Menu { get; set; }
 
     }
 }
