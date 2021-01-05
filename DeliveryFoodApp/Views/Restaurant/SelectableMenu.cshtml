@@ -1,0 +1,32 @@
+﻿@model Kabylia.Models.Restaurant.RestaurantDetails
+
+@{
+    ViewBag.Title = "MenuDetails";
+}
+
+<h2>MenuDetails</h2>
+
+<div>
+
+    <h4>Menu</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        @foreach (var item in Model.Menu)
+        {
+        <li class="list-group-item">
+            <div class="checkbox">
+                <input type="checkbox" id="Check_@item.MenuId" />
+                <label for="Check_@item.MenuId">@item.Name</label>
+            </div>
+
+        </li>
+
+        }
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.RestaurantId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
+</p>

@@ -325,6 +325,10 @@
     <Content Include="Views\Area\Details.cshtml" />
     <Content Include="Views\Area\Edit.cshtml" />
     <Content Include="Views\Area\Index.cshtml" />
+    <Content Include="Views\Restaurant\MenuDetails.cshtml" />
+    <Content Include="Views\Menu\MenuSelectable.cshtml" />
+    <Content Include="Views\Restaurant\SelectableMenu.cshtml" />
+    <Content Include="Views\Home\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

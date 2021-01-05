@@ -74,7 +74,31 @@ namespace Kabylia.Services
                 return query.OrderBy(e => e.MenuId);
             }
         }
+        public async Task<IEnumerable<SelectableMenu>> GetSelectableMenuAsync()
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var query = await
+                    ctx
+                        .Menu
+                        //.Where(e => e.OwnerID == _userId)
+                        .Select(
+                            e =>
+                                new SelectableMenu
+                                {
+                                    MenuId = e.MenuId,
+                                    Name = e.Name,
+                                    Description = e.Description,
+                                    Price = e.Price,
+                                    Select=e.Select
+                                    //RestaurantId=e.RestaurantId,
+                                    // RestaurantName=e.Restaurant.Name
 
+                                }
+                        ).ToListAsync();
+                return query.OrderBy(e => e.MenuId);
+            }
+        }
         public IEnumerable<MenuListItem> GetMenu()
         {
             using (var ctx = new ApplicationDbContext())
@@ -93,6 +117,31 @@ namespace Kabylia.Services
                                     Price = e.Price,
                                    // RestaurantId = e.RestaurantId,
                                    // RestaurantName = e.Restaurant.Name
+
+                                }
+                        );
+                return query.ToList().OrderBy(e => e.MenuId);
+            }
+        }
+        public IEnumerable<SelectableMenu> GetSelectableMenu()
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var query =
+                    ctx
+                        .Menu
+                        //.Where(e => e.OwnerID == _userId)
+                        .Select(
+                            e =>
+                                new SelectableMenu
+                                {
+                                    MenuId = e.MenuId,
+                                    Name = e.Name,
+                                    Description = e.Description,
+                                    Price = e.Price,
+                                    Select=e.Select
+                                    // RestaurantId = e.RestaurantId,
+                                    // RestaurantName = e.Restaurant.Name
 
                                 }
                         );
@@ -157,7 +206,7 @@ namespace Kabylia.Services
                 entity.Name = note.Name;
                 entity.Description = note.Description;
                 entity.Price = note.Price;
-                entity.RestaurantId = note.RestaurantId;
+                //entity.RestaurantId = note.RestaurantId;
                 return await ctx.SaveChangesAsync() == 1;
             }
         }
@@ -174,7 +223,7 @@ namespace Kabylia.Services
                 entity.Name = note.Name;
                 entity.Description = note.Description;
                 entity.Price = note.Price;
-                entity.RestaurantId = note.RestaurantId;
+               // entity.RestaurantId = note.RestaurantId;
 
 
                 return ctx.SaveChanges() == 1;

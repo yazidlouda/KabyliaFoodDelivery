@@ -81,8 +81,15 @@
         <dd>
             @Html.DisplayFor(model => model.Review)
         </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.NumberOfMenu)
+        </dt>
 
+        <dd>
+            @Html.DisplayFor(model => model.Menu.Count)
+        </dd>
     </dl>
+    <hr />
     <h4>Menu</h4>
     <hr />
     <dl class="dl-horizontal">
@@ -95,13 +102,40 @@
             <dd>@Html.DisplayFor(modelItem => item.Description)</dd>
             <dt>@Html.DisplayNameFor(modelItem => item.Price)</dt>
             <dd>@Html.DisplayFor(modelItem => item.Price)</dd>
+
             <dd></dd>
             <dd>@Html.ActionLink("View Menu", "Details", "Menu", new { id = item.MenuId }, null)</dd>
+            <br />
         }
 
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new {  id = Model.RestaurantId  }) |
+    @Html.ActionLink("Edit", "Edit", new { id = Model.RestaurantId }) |
     @Html.ActionLink("Back to List", "Index")
 </p>
+@section scripts {
+    <script language="javascript" type="text/javascript">
+        $(document).ready(function () {
+            $("i[data-toggle='star']")
+                .css({ "cursor": "pointer" })
+                .click(function (e) {
+                    var target = $(e.target);
+                    var RestaurantId = target.attr("data-id");
+                    var starSet = target.hasClass("glyphicon-star");
+                    $.ajax({
+                        method: starSet ? "DELETE" : "PUT",
+                        url: "/api/Restaurant/" + RestaurantId + "/starAsync",
+                        data: null
+                    })
+                        .done(function (r) {
+                            target.removeClass();
+                            target.addClass("glyphicon " + (starSet ? "glyphicon-star-empty" : "glyphicon-star"));
+                        })
+                        .fail(function (r) {
+                            alert("Failed to change star status");
+                        });
+                });
+        });
+    </script>
+}

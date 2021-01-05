@@ -1,0 +1,24 @@
+﻿@model IEnumerable<Kabylia.Models.Menu.SelectableMenu>
+
+@{
+    ViewBag.Title = "MenuSelectable";
+}
+
+<h2>MenuSelectable</h2>
+
+
+@foreach (var item in Model) {
+    <li class="list-group-item">
+        <div class="checkbox">
+            <input type="checkbox" id="Check_@item.MenuId" />
+            <label for="Check_@item.MenuId">@item.Name</label>
+        </div>
+
+    </li>
+   
+      
+       
+    
+}
+
+

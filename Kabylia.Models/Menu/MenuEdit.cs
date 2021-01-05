@@ -12,9 +12,10 @@ namespace Kabylia.Models.Menu
         public int MenuId { get; set; }
         [Display(Name = "Category Name")]
         public string Name { get; set; }
-        public int Price { get; set; }
+        public double Price { get; set; }
         public string Description { get; set; }
         public int RestaurantId { get; set; }
+        public bool Select { get; set; }
 
     }
 }

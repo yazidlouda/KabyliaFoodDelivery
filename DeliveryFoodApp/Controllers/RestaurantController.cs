@@ -37,7 +37,14 @@ namespace DeliveryFoodApp.Controllers
 
             return View(model);
         }
+        public async Task<ActionResult> MenuDetails(int id)
+        {
 
+            var svc = CreateRestaurantService();
+            var model = await svc.GetRestaurantByIdAsync(id);
+
+            return View(model);
+        }
 
 
         public async Task<IEnumerable<SelectListItem>> GetMenuAsync()
