@@ -25,7 +25,8 @@ namespace Kabylia.Services
                     DeliveryCharge = model.DeliveryCharge,
                     CustomerId = model.CustomerId,
                    // MembershipLevel = model.MembershipLevel,
-                    RestaurantId = model.RestaurantId
+                    RestaurantId = model.RestaurantId,
+                    DriverId=model.DriverId
                 };
 
             using (var ctx = new ApplicationDbContext())
@@ -47,7 +48,8 @@ namespace Kabylia.Services
                     DeliveryCharge = model.DeliveryCharge,
                     CustomerId = model.CustomerId,
                     // MembershipLevel = model.MembershipLevel,
-                    RestaurantId = model.RestaurantId
+                    RestaurantId = model.RestaurantId,
+                    DriverId = model.DriverId
 
                 };
 
@@ -76,8 +78,8 @@ namespace Kabylia.Services
                                     DateOfOrder = e.DateOfOrder,
                                     DeliveryCharge = e.DeliveryCharge,
                                     CustomerName = e.Customer.FirstName +" "+ e.Customer.LastName,
-                                    RestaurantName = e.Restaurant.Name
-
+                                    RestaurantName = e.Restaurant.Name,
+                                    DriverName=e.DeliveryDriver.FirstName+" "+e.DeliveryDriver.LastName
 
                                 }
                         ).ToListAsync();
@@ -103,7 +105,8 @@ namespace Kabylia.Services
                                     DateOfOrder = e.DateOfOrder,
                                     DeliveryCharge = e.DeliveryCharge,
                                     CustomerName = e.Customer.FirstName + " " + e.Customer.LastName,
-                                    RestaurantName = e.Restaurant.Name
+                                    RestaurantName = e.Restaurant.Name,
+                                    DriverName = e.DeliveryDriver.FirstName + " " + e.DeliveryDriver.LastName
 
                                 }
                         );
@@ -129,8 +132,8 @@ namespace Kabylia.Services
                         DateOfOrder = DateTime.Now,
                         DeliveryCharge = entity.DeliveryCharge,
                         CustomerName = entity.Customer.FirstName + " " + entity.Customer.LastName,
-                        RestaurantName = entity.Restaurant.Name
-
+                        RestaurantName = entity.Restaurant.Name,
+                        DriverName=entity.DeliveryDriver.FirstName+" "+entity.DeliveryDriver.LastName
                     };
             }
         }
@@ -152,7 +155,8 @@ namespace Kabylia.Services
                         DateOfOrder = DateTime.Now,
                         DeliveryCharge = entity.DeliveryCharge,
                         CustomerName = entity.Customer.FirstName + " " + entity.Customer.LastName,
-                        RestaurantName = entity.Restaurant.Name
+                        RestaurantName = entity.Restaurant.Name,
+                        DriverName = entity.DeliveryDriver.FirstName + " " + entity.DeliveryDriver.LastName
 
                     };
             }
@@ -171,6 +175,7 @@ namespace Kabylia.Services
                 entity.DeliveryCharge = note.DeliveryCharge;
                 entity.CustomerId = note.CustomerId;
                 entity.RestaurantId = note.RestaurantId;
+                entity.DriverId = note.DriverId;
                 //entity.Customer.FirstName = note.CustomerName;
 
                 //ctx.Entry(entity).State = EntityState.Modified;
@@ -191,6 +196,8 @@ namespace Kabylia.Services
                 entity.DeliveryCharge = note.DeliveryCharge;
                 entity.CustomerId = note.CustomerId;
                 entity.RestaurantId = note.RestaurantId;
+                entity.DriverId = note.DriverId;
+
                 //entity.Customer.FirstName = note.CustomerName;
 
                 return ctx.SaveChanges() == 1;

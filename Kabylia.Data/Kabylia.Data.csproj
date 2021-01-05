@@ -61,23 +61,6 @@
     <Compile Include="IdentityModels.cs" />
     <Compile Include="Menu.cs" />
     <Compile Include="MenuItem.cs" />
-    <Compile Include="Migrations\202101041927237_InitialCreate.cs" />
-    <Compile Include="Migrations\202101041927237_InitialCreate.Designer.cs">
-      <DependentUpon>202101041927237_InitialCreate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202101042018028_seconde.cs" />
-    <Compile Include="Migrations\202101042018028_seconde.Designer.cs">
-      <DependentUpon>202101042018028_seconde.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202101042034406_addedMenuListToRestaurant.cs" />
-    <Compile Include="Migrations\202101042034406_addedMenuListToRestaurant.Designer.cs">
-      <DependentUpon>202101042034406_addedMenuListToRestaurant.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202101050055211_addedSelectableMenu.cs" />
-    <Compile Include="Migrations\202101050055211_addedSelectableMenu.Designer.cs">
-      <DependentUpon>202101050055211_addedSelectableMenu.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Order.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Restaurant.cs" />
@@ -86,20 +69,6 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\202101041927237_InitialCreate.resx">
-      <DependentUpon>202101041927237_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202101042018028_seconde.resx">
-      <DependentUpon>202101042018028_seconde.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202101042034406_addedMenuListToRestaurant.resx">
-      <DependentUpon>202101042034406_addedMenuListToRestaurant.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202101050055211_addedSelectableMenu.resx">
-      <DependentUpon>202101050055211_addedSelectableMenu.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

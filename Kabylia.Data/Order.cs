@@ -19,6 +19,8 @@ namespace Kabylia.Data
         public virtual Customer Customer { get; set; }
         public int RestaurantId { get; set; }
         public virtual Restaurant Restaurant { get; set; }
+        public int DriverId { get; set; }
+        public virtual DeliveryDriver DeliveryDriver { get; set; }
         //public  List<Menu> Menu { get; set; }
 
     }
