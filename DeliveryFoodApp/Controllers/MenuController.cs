@@ -26,7 +26,12 @@ namespace DeliveryFoodApp.Controllers
             return View(model);
         }
 
-
+        public async Task<ActionResult> MenuSelectable()
+        {
+            var service = CreateMenuService();
+            var model = await service.GetSelectableMenuAsync();
+            return View(model);
+        }
 
         public async Task<ActionResult> Details(int id)
         {
@@ -72,6 +77,7 @@ namespace DeliveryFoodApp.Controllers
 
             return catSelectList;
         }
+       
         public async Task<ActionResult> Create()
         {
             var service = CreateMenuService();

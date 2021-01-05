@@ -70,6 +70,7 @@
     <Compile Include="Menu\MenuDetails.cs" />
     <Compile Include="Menu\MenuEdit.cs" />
     <Compile Include="Menu\MenuListItem.cs" />
+    <Compile Include="Menu\SelectableMenu.cs" />
     <Compile Include="Order\OrderCreate.cs" />
     <Compile Include="Order\OrderDetails.cs" />
     <Compile Include="Order\OrderEdit.cs" />

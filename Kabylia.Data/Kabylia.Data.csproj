@@ -69,6 +69,14 @@
     <Compile Include="Migrations\202101042018028_seconde.Designer.cs">
       <DependentUpon>202101042018028_seconde.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202101042034406_addedMenuListToRestaurant.cs" />
+    <Compile Include="Migrations\202101042034406_addedMenuListToRestaurant.Designer.cs">
+      <DependentUpon>202101042034406_addedMenuListToRestaurant.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202101050055211_addedSelectableMenu.cs" />
+    <Compile Include="Migrations\202101050055211_addedSelectableMenu.Designer.cs">
+      <DependentUpon>202101050055211_addedSelectableMenu.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Order.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -85,6 +93,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202101042018028_seconde.resx">
       <DependentUpon>202101042018028_seconde.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202101042034406_addedMenuListToRestaurant.resx">
+      <DependentUpon>202101042034406_addedMenuListToRestaurant.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202101050055211_addedSelectableMenu.resx">
+      <DependentUpon>202101050055211_addedSelectableMenu.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -27,6 +27,7 @@ namespace Kabylia.Services
                     ClosingTime= model.ClosingTime,
                     AreaId= model.AreaId,
                     Review=model.Review,
+                    
                     //MenuId=model.MenuId
 
                 };
@@ -205,7 +206,64 @@ namespace Kabylia.Services
                     };
             }
         }
+        public async Task<RestaurantDetails> GetMenuRestaurantByIdAsync(int id)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity = await
+                    ctx
+                        .Restaurants
+                        .Where(e => e.RestaurantId == id)
+                        .FirstOrDefaultAsync();
+                return
+                    new RestaurantDetails
+                    {
+                      
+                        Menu = entity.Menu
+                        .Select(
+                                    x => new MenuListItem
+                                    {
+                                        MenuId = x.MenuId,
+                                        Name = x.Name,
+                                        Description = x.Description,
+                                        Price = x.Price
+                                    }
+                                ).ToList()
+                       
 
+                    };
+            }
+        }
+
+        public RestaurantDetails GetMenuRestaurantByID(int id)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Restaurants
+                        .Single(e => e.RestaurantId == id);
+                //.FirstOrDefault();
+                return
+                    new RestaurantDetails
+                    {
+
+                       
+                        Menu = entity.Menu
+                         .Select(
+                                    x => new MenuListItem
+                                    {
+                                        MenuId = x.MenuId,
+                                        Name = x.Name,
+                                        Description = x.Description,
+                                        Price = x.Price
+                                    }
+                                ).ToList()
+                       
+
+                    };
+            }
+        }
         public async Task<bool> UpdateRestaurantAsync(RestaurantEdit category)
         {
             using (var ctx = new ApplicationDbContext())
