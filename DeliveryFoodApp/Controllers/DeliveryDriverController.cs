@@ -36,7 +36,23 @@ namespace DeliveryFoodApp.Controllers
 
             return View(model);
         }
+        public async Task<IEnumerable<SelectListItem>> GetOrderAsync()
+        {
+            // var userId = Guid.Parse(User.Identity.GetUserId());
+            var catService = new OrderService();
+            var categoryList = await catService.GetOrdersAsync();
 
+            var catSelectList = categoryList.Select(
+                                        e =>
+                                            new SelectListItem
+                                            {
+                                                Value = e.OrderId.ToString(),
+                                                Text = e.OrderId.ToString()
+                                            }
+                                        ).ToList();
+
+            return catSelectList;
+        }
 
 
         public async Task<IEnumerable<SelectListItem>> GetDeliveryDriversAsync()
@@ -62,6 +78,7 @@ namespace DeliveryFoodApp.Controllers
 
             ViewBag.SyncOrAsync = "Asynchronous";
             ViewBag.RestaurantId = await GetDeliveryDriversAsync();
+            ViewBag.OrderId = await GetOrderAsync();
 
             return View();
         }
@@ -75,6 +92,8 @@ namespace DeliveryFoodApp.Controllers
             if (!ModelState.IsValid)
             {
                 ViewBag.RestaurantId = await GetDeliveryDriversAsync();
+                ViewBag.OrderId = await GetOrderAsync();
+
                 return View(note);
 
             }
@@ -90,6 +109,7 @@ namespace DeliveryFoodApp.Controllers
 
             ModelState.AddModelError("", "DeliveryDriver could not be created.");
             ViewBag.RestaurantId = await GetDeliveryDriversAsync();
+            ViewBag.OrderId = await GetOrderAsync();
 
             return View(note);
         }
@@ -112,6 +132,9 @@ namespace DeliveryFoodApp.Controllers
                     IsActive = detail.IsActive,
                    
                 };
+            ViewBag.SyncOrAsync = "Asynchronous";
+
+            ViewBag.OrderId = await GetOrderAsync();
 
             //ViewBag.RestaurantId = await GetDeliveryDriversAsync();
 
@@ -126,7 +149,10 @@ namespace DeliveryFoodApp.Controllers
             if (note.DriverId != id)
             {
                 ModelState.AddModelError("", "ID Mismatch");
-               // ViewBag.CategoryID = await GetDeliveryDriversAsync();
+               
+                ViewBag.OrderId = await GetOrderAsync();
+
+                // ViewBag.CategoryID = await GetDeliveryDriversAsync();
 
                 return View(note);
             }
@@ -136,6 +162,8 @@ namespace DeliveryFoodApp.Controllers
                 TempData["SaveResult"] = "DeliveryDriver informations successfully updated.";
                 return RedirectToAction("Index");
             }
+            ViewBag.OrderId = await GetOrderAsync();
+
             //ViewBag.CategoryID = await GetDeliveryDriversAsync();
             ModelState.AddModelError("", "DeliveryDriver could not be updated.");
             return View(note);

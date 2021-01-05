@@ -20,7 +20,8 @@ namespace Kabylia.Models.Order
        // public int RestaurantId { get; set; }
         public string RestaurantName { get; set; }
         public string DriverName { get; set; }
-
+        public string RestaurantAddress { get; set; }
+        public string CustomerAddress { get; set; }
         // public List<Menu> Menu { get; set; }
         public virtual List<MenuListItem> Menu { get; set; } = new List<MenuListItem>();
 

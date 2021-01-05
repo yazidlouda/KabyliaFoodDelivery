@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Kabylia.Models.Order;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,6 +17,9 @@ namespace Kabylia.Models.DeliveryDriver
         public string PhoneNumber { get; set; }
         public string Email { get; set; }
         public bool IsActive { get; set; }
+        public int DelivryCount { get; set; }
+        public List<OrderListItem> Order { get; set; } = new List<OrderListItem>();
+
         //public int DeliveryCount { get; set; }
     }
 }

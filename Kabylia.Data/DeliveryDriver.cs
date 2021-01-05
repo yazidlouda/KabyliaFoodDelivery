@@ -19,6 +19,7 @@ namespace Kabylia.Data
         public string Email { get; set; }
         public bool IsActive { get; set; }
         public int DeliveryCount { get; set; }
+        public virtual List<Order> Order { get; set; } = new List<Order>();
 
         //public Order Order {get;set;}
         //Public Schedul Schedule {get;set;}

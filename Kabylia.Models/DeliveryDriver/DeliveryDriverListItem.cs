@@ -16,6 +16,8 @@ namespace Kabylia.Models.DeliveryDriver
         public string PhoneNumber { get; set; }
         public string Email { get; set; }
         public bool IsActive { get; set; }
-       // public int DeliveryCount { get; set; }
+        public int DelivryCount { get; set; }
+
+        // public int DeliveryCount { get; set; }
     }
 }

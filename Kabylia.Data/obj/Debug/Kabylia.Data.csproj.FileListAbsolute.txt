@@ -33,3 +33,6 @@ C:\Users\yalou\OneDrive\Bureau\Red Badge\KabyliaFoodDelivery\Kabylia.Data\obj\De
 C:\Users\yalou\OneDrive\Bureau\Red Badge\KabyliaFoodDelivery\Kabylia.Data\obj\Debug\Kabylia.Data.csproj.CopyComplete
 C:\Users\yalou\OneDrive\Bureau\Red Badge\KabyliaFoodDelivery\Kabylia.Data\obj\Debug\Kabylia.Data.dll
 C:\Users\yalou\OneDrive\Bureau\Red Badge\KabyliaFoodDelivery\Kabylia.Data\obj\Debug\Kabylia.Data.pdb
+C:\Users\yalou\OneDrive\Bureau\Red Badge\KabyliaFoodDelivery\Kabylia.Data\obj\Debug\Kabylia.Data.Migrations.InitialCreate.resources
+C:\Users\yalou\OneDrive\Bureau\Red Badge\KabyliaFoodDelivery\Kabylia.Data\obj\Debug\Kabylia.Data.csproj.GenerateResource.cache
+C:\Users\yalou\OneDrive\Bureau\Red Badge\KabyliaFoodDelivery\Kabylia.Data\obj\Debug\Kabylia.Data.Migrations.addedListOfOrdertoDelivryDriver.resources
