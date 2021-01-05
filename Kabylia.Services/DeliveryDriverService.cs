@@ -1,5 +1,6 @@
 ﻿using Kabylia.Data;
 using Kabylia.Models.DeliveryDriver;
+using Kabylia.Models.Order;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -72,7 +73,7 @@ namespace Kabylia.Services
                                         Email = e.Email,
                                         PhoneNumber = e.PhoneNumber,
                                         IsActive = e.IsActive,
-                                        
+                                        DelivryCount=e.Order.Count()
                                     }
                     ).ToListAsync();
                 return query;
@@ -95,6 +96,8 @@ namespace Kabylia.Services
                                         Email = e.Email,
                                         PhoneNumber = e.PhoneNumber,
                                         IsActive = e.IsActive,
+                                        DelivryCount = e.Order.Count()
+
                                     }
                     ).ToList();
                 return query;
@@ -120,8 +123,18 @@ namespace Kabylia.Services
                         Username = entity.Username,
                         PhoneNumber = entity.PhoneNumber,
                         IsActive = entity.IsActive,
-                      
-                       
+                        Order = entity.Order
+                        .Select(
+                                    x => new OrderListItem
+                                    {
+                                        OrderId = x.OrderId,
+                                        CustomerName = x.Customer.FirstName+" "+x.Customer.LastName,
+                                        CustomerAddress=x.Customer.Address,
+                                        RestaurantName = x.Restaurant.Name,
+                                         RestaurantAddress=x.Restaurant.Address
+                                    }
+                                ).ToList()
+
                     };
             }
         }
@@ -146,7 +159,17 @@ namespace Kabylia.Services
                         Username = entity.Username,
                         PhoneNumber = entity.PhoneNumber,
                         IsActive = entity.IsActive,
-
+                        Order = entity.Order
+                        .Select(
+                                    x => new OrderListItem
+                                    {
+                                        OrderId = x.OrderId,
+                                        CustomerName = x.Customer.FirstName + " " + x.Customer.LastName,
+                                        CustomerAddress = x.Customer.Address,
+                                        RestaurantName = x.Restaurant.Name,
+                                        RestaurantAddress = x.Restaurant.Address
+                                    }
+                                ).ToList()
 
                     };
             }
