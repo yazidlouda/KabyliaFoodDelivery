@@ -48,7 +48,12 @@
         <th>
             @Html.DisplayNameFor(model => model.Review)
         </th>
-       
+        <th>
+            @Html.DisplayNameFor(model => model.Latitude)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Longitude)
+        </th>
         <th></th>
     </tr>
 
@@ -82,7 +87,12 @@
     <td>
         @Html.DisplayFor(modelItem => item.Review)
     </td>
-    
+    <td>
+        @Html.DisplayFor(modelItem => item.Latitude)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Longitude)
+    </td>
     <td>
         @Html.ActionLink("Edit", "Edit", new { id = item.RestaurantId }) |
         @Html.ActionLink("Details", "Details", new { id = item.RestaurantId }) |
@@ -92,3 +102,29 @@
     }
 
 </table>
+@section scripts {
+    <script language="javascript" type="text/javascript">
+     $(document).ready(function () {
+         $("i[data-toggle='star']")
+             .css({ "cursor": "pointer" })
+             .click(function (e) {
+                 var target = $(e.target);
+                 var noteId = target.attr("data-id");
+                 var starSet = target.hasClass("glyphicon-star");
+
+                 $.ajax({
+                     method: starSet ? "DELETE" : "PUT",
+                     url: "/api/note/" + noteId + "/star",
+                     data: null
+                 })
+                 .done(function (r) {
+                     target.removeClass();
+                     target.addClass("glyphicon " + (starSet ? "glyphicon-star-empty" : "glyphicon-star"));
+                 })
+                 .fail(function (r) {
+                     alert("Failed to change star status");
+                 });
+             });
+     });
+    </script>
+}

@@ -20,7 +20,8 @@ namespace Kabylia.Data
         public bool IsActive { get; set; }
         public int DeliveryCount { get; set; }
         public virtual List<Order> Order { get; set; } = new List<Order>();
-
+        public double Latitude { get; set; }
+        public double Longitude { get; set; }
         //public Order Order {get;set;}
         //Public Schedul Schedule {get;set;}
         //public Payment payment { get; set; }

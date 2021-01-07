@@ -17,7 +17,8 @@ namespace Kabylia.Models.DeliveryDriver
         public string Email { get; set; }
         public bool IsActive { get; set; }
         public int OrderId { get; set; }
-
+        public double Latitude { get; set; }
+        public double Longitude { get; set; }
         //public int DeliveryCount { get; set; }
     }
 }

@@ -22,6 +22,8 @@ namespace Kabylia.Models.Restaurant
         public string Review { get; set; }
         [Display(Name = "Menu")]
         public int? MenuId { get; set; }
+        public double Latitude { get; set; }
+        public double Longitude { get; set; }
         //public List<string> Menu { get; set; }
         // public int MenuId { get; set; }
 

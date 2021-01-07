@@ -19,6 +19,8 @@ namespace Kabylia.Models.Restaurant
         public int AreaId { get; set; }
         public string Review { get; set; }
         public int MenuId { get; set; }
+        public double Latitude { get; set; }
+        public double Longitude { get; set; }
 
     }
 }

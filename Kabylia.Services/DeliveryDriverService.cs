@@ -24,8 +24,9 @@ namespace Kabylia.Services
                     Username = model.Username,
                     PhoneNumber = model.PhoneNumber,
                     IsActive = model.IsActive,
-                   
-                   
+                    Latitude = model.Latitude,
+                    Longitude = model.Longitude
+
 
                 };
             using (var ctx = new ApplicationDbContext())
@@ -46,7 +47,8 @@ namespace Kabylia.Services
                     Username = model.Username,
                     PhoneNumber = model.PhoneNumber,
                     IsActive = model.IsActive,
-
+                    Latitude = model.Latitude,
+                    Longitude = model.Longitude
                 };
             using (var ctx = new ApplicationDbContext())
             {
@@ -72,6 +74,8 @@ namespace Kabylia.Services
                                         Username = e.Username,
                                         Email = e.Email,
                                         PhoneNumber = e.PhoneNumber,
+                                        Latitude = e.Latitude,
+                                        Longitude = e.Longitude,
                                         IsActive = e.IsActive,
                                         DelivryCount=e.Order.Count()
                                     }
@@ -95,6 +99,8 @@ namespace Kabylia.Services
                                         Username = e.Username,
                                         Email = e.Email,
                                         PhoneNumber = e.PhoneNumber,
+                                        Latitude = e.Latitude,
+                                        Longitude = e.Longitude,
                                         IsActive = e.IsActive,
                                         DelivryCount = e.Order.Count()
 
@@ -123,6 +129,8 @@ namespace Kabylia.Services
                         Username = entity.Username,
                         PhoneNumber = entity.PhoneNumber,
                         IsActive = entity.IsActive,
+                        Latitude = entity.Latitude,
+                        Longitude = entity.Longitude,
                         Order = entity.Order
                         .Select(
                                     x => new OrderListItem
@@ -131,7 +139,9 @@ namespace Kabylia.Services
                                         CustomerName = x.Customer.FirstName+" "+x.Customer.LastName,
                                         CustomerAddress=x.Customer.Address,
                                         RestaurantName = x.Restaurant.Name,
-                                         RestaurantAddress=x.Restaurant.Address
+                                        RestaurantAddress=x.Restaurant.Address,
+                                        RestaurantLatitude=x.Restaurant.Latitude,
+                                        RestaurantLongitude=x.Restaurant.Longitude
                                     }
                                 ).ToList()
 
@@ -159,6 +169,8 @@ namespace Kabylia.Services
                         Username = entity.Username,
                         PhoneNumber = entity.PhoneNumber,
                         IsActive = entity.IsActive,
+                        Latitude = entity.Latitude,
+                        Longitude = entity.Longitude,
                         Order = entity.Order
                         .Select(
                                     x => new OrderListItem
@@ -167,7 +179,9 @@ namespace Kabylia.Services
                                         CustomerName = x.Customer.FirstName + " " + x.Customer.LastName,
                                         CustomerAddress = x.Customer.Address,
                                         RestaurantName = x.Restaurant.Name,
-                                        RestaurantAddress = x.Restaurant.Address
+                                        RestaurantAddress = x.Restaurant.Address,
+                                        RestaurantLatitude = x.Restaurant.Latitude,
+                                        RestaurantLongitude = x.Restaurant.Longitude
                                     }
                                 ).ToList()
 
@@ -190,7 +204,8 @@ namespace Kabylia.Services
                 entity.Username = category.Username;
                 entity.PhoneNumber = category.PhoneNumber;
                 entity.IsActive = category.IsActive;
-               
+                entity.Latitude = category.Latitude;
+                entity.Longitude = category.Longitude;
 
                 return await ctx.SaveChangesAsync() == 1;
             }
@@ -211,7 +226,8 @@ namespace Kabylia.Services
                 entity.Username = category.Username;
                 entity.PhoneNumber = category.PhoneNumber;
                 entity.IsActive = category.IsActive;
-
+                entity.Latitude = category.Latitude;
+                entity.Longitude = category.Longitude;
                 return ctx.SaveChanges() == 1;
             }
         }

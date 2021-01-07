@@ -42,3 +42,11 @@ C:\Users\yalou\OneDrive\Bureau\Red Badge\KabyliaFoodDelivery\Kabylia.Services\ob
 C:\Users\yalou\OneDrive\Bureau\Red Badge\KabyliaFoodDelivery\Kabylia.Services\obj\Debug\Kabylia.Services.csproj.CopyComplete
 C:\Users\yalou\OneDrive\Bureau\Red Badge\KabyliaFoodDelivery\Kabylia.Services\obj\Debug\Kabylia.Services.dll
 C:\Users\yalou\OneDrive\Bureau\Red Badge\KabyliaFoodDelivery\Kabylia.Services\obj\Debug\Kabylia.Services.pdb
+C:\Users\yalou\OneDrive\Bureau\Red Badge\KabyliaFoodDelivery\Kabylia.Services\bin\Debug\Newtonsoft.Json.dll
+C:\Users\yalou\OneDrive\Bureau\Red Badge\KabyliaFoodDelivery\Kabylia.Services\bin\Debug\System.Net.Http.Formatting.dll
+C:\Users\yalou\OneDrive\Bureau\Red Badge\KabyliaFoodDelivery\Kabylia.Services\bin\Debug\System.Web.Http.dll
+C:\Users\yalou\OneDrive\Bureau\Red Badge\KabyliaFoodDelivery\Kabylia.Services\bin\Debug\System.Web.Http.WebHost.dll
+C:\Users\yalou\OneDrive\Bureau\Red Badge\KabyliaFoodDelivery\Kabylia.Services\bin\Debug\Newtonsoft.Json.xml
+C:\Users\yalou\OneDrive\Bureau\Red Badge\KabyliaFoodDelivery\Kabylia.Services\bin\Debug\System.Net.Http.Formatting.xml
+C:\Users\yalou\OneDrive\Bureau\Red Badge\KabyliaFoodDelivery\Kabylia.Services\bin\Debug\System.Web.Http.xml
+C:\Users\yalou\OneDrive\Bureau\Red Badge\KabyliaFoodDelivery\Kabylia.Services\bin\Debug\System.Web.Http.WebHost.xml

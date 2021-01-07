@@ -27,7 +27,8 @@ namespace Kabylia.Services
                     ClosingTime= model.ClosingTime,
                     AreaId= model.AreaId,
                     Review=model.Review,
-                    
+                    Latitude=model.Latitude,
+                    Longitude=model.Longitude
                     //MenuId=model.MenuId
 
                 };
@@ -51,8 +52,9 @@ namespace Kabylia.Services
                     ClosingTime = model.ClosingTime,
                     AreaId = model.AreaId,
                     Review = model.Review,
-                    
-                   // MenuId = model.MenuId
+                    Latitude = model.Latitude,
+                    Longitude = model.Longitude
+                    // MenuId = model.MenuId
 
                     //Menu = model.Menu
 
@@ -85,7 +87,9 @@ namespace Kabylia.Services
                                         ClosingTime=e.ClosingTime,
                                         AreaName=e.Area.AreaName,
                                         Review=e.Review,
-                                        NumberOfMenu=e.Menu.Count()
+                                        Latitude=e.Latitude,
+                                        Longitude=e.Longitude,
+                                        NumberOfMenu =e.Menu.Count()
                                         //MenuName=e.Menu.Name
                                        // Menu=e.Menu
                                     }
@@ -114,7 +118,8 @@ namespace Kabylia.Services
                                         OpeningTime = e.OpeningTime,
                                         ClosingTime = e.ClosingTime,
                                         AreaName = e.Area.AreaName,
-
+                                        Latitude = e.Latitude,
+                                        Longitude = e.Longitude,
                                         Review = e.Review,
                                         NumberOfMenu = e.Menu.Count()
 
@@ -150,6 +155,8 @@ namespace Kabylia.Services
                         AreaId = entity.AreaId,
                         AreaName = entity.Area.AreaName,
                         Review =entity.Review,
+                        Latitude=entity.Latitude,
+                        Longitude=entity.Longitude,
                         Menu = entity.Menu
                         .Select(
                                     x => new MenuListItem
@@ -190,6 +197,8 @@ namespace Kabylia.Services
                         AreaId = entity.AreaId,
                         AreaName = entity.Area.AreaName,
                         Review = entity.Review,
+                        Latitude = entity.Latitude,
+                        Longitude = entity.Longitude,
                         Menu = entity.Menu
                          .Select(
                                     x => new MenuListItem
@@ -281,7 +290,9 @@ namespace Kabylia.Services
                 entity.ClosingTime = category.ClosingTime;
                 entity.AreaId = category.AreaId;
                 entity.Review = category.Review;
-               //entity.MenuId = category.MenuId;
+                entity.Latitude = category.Latitude;
+                entity.Longitude = category.Longitude;
+                //entity.MenuId = category.MenuId;
 
                 return await ctx.SaveChangesAsync() == 1;
             }
@@ -304,7 +315,9 @@ namespace Kabylia.Services
                 entity.ClosingTime = category.ClosingTime;
                 entity.AreaId = category.AreaId;
                 entity.Review = category.Review;
-               // entity.MenuId = category.MenuId;
+                entity.Latitude = category.Latitude;
+                entity.Longitude = category.Longitude;
+                // entity.MenuId = category.MenuId;
 
                 return ctx.SaveChanges() == 1;
             }

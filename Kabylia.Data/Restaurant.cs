@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
@@ -20,8 +21,11 @@ namespace Kabylia.Data
         public int AreaId { get; set; }
         public virtual Area Area { get; set; }
         public string Review { get; set; }
+        public double Latitude { get; set; }
+        public double Longitude { get; set; }
         public virtual List<Menu> Menu { get; set; } = new List<Menu>();
-
+        [DefaultValue(false)]
+        public bool IsStarred { get; set; }
         // public int MenuId { get; set; }
         //public virtual Menu Menu { get; set; }
         //public virtual List<Customer> Customer { get; set; } = new List<Customer>();

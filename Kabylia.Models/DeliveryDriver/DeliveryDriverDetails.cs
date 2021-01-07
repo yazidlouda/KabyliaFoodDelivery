@@ -1,4 +1,6 @@
-﻿using Kabylia.Models.Order;
+﻿using Kabylia.Models.Customer;
+using Kabylia.Models.Order;
+using Kabylia.Models.Restaurant;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,7 +21,10 @@ namespace Kabylia.Models.DeliveryDriver
         public bool IsActive { get; set; }
         public int DelivryCount { get; set; }
         public List<OrderListItem> Order { get; set; } = new List<OrderListItem>();
-
+        public OrderListItem Orders { get; set; }= new OrderListItem();
+       
+        public double Latitude { get; set; }
+        public double Longitude { get; set; }
         //public int DeliveryCount { get; set; }
     }
 }
