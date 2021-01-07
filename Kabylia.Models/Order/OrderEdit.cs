@@ -20,6 +20,8 @@ namespace Kabylia.Models.Order
         public string RestaurantName { get; set; }
         public int DriverId { get; set; }
         public string DriverName { get; set; }
+        public double RestaurantLatitude { get; set; }
+        public double RestaurantLongitude { get; set; }
         // public List<Menu> Menu { get; set; }
 
     }

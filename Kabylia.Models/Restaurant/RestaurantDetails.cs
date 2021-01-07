@@ -21,6 +21,8 @@ namespace Kabylia.Models.Restaurant
         public int AreaId { get; set; }
         public string AreaName { get; set; }
         public string Review { get; set; }
+        public double Latitude { get; set; }
+        public double Longitude { get; set; }
         // public List<Customer> Customer { get; set; }
         //public int MenuId { get; set; }
         //public string MenuName { get; set; }

@@ -13,7 +13,6 @@
         <dt>
             @Html.DisplayNameFor(model => model.DriverId)
         </dt>
-
         <dd>
             @Html.DisplayFor(model => model.DriverId)
         </dd>
@@ -66,38 +65,159 @@
             @Html.DisplayFor(model => model.IsActive)
         </dd>
         <dt>
+            @Html.DisplayNameFor(model => model.Latitude)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Latitude)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Longitude)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Longitude)
+        </dd>
+        <dt>
             @Html.DisplayNameFor(model => model.Order.Count)
         </dt>
 
         <dd>
             @Html.DisplayFor(model => model.Order.Count)
         </dd>
-    </dl>
-    <hr />
-    <h4>Deliveries</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        @foreach (var item in Model.Order)
-        {
+       
+            <hr />
+            <h4>Deliveries</h4>
+            <hr />
+            <dl class="dl-horizontal">
+                @foreach (var item in Model.Order)
+                {
 
-            <dt>@Html.DisplayNameFor(modelItem => item.OrderId)</dt>
-            <dd>@Html.DisplayFor(modelItem => item.OrderId)</dd>
-            <dt>@Html.DisplayNameFor(modelItem => item.CustomerName)</dt>
-            <dd>@Html.DisplayFor(modelItem => item.CustomerName)</dd>
-            <dt>@Html.DisplayNameFor(modelItem => item.CustomerAddress)</dt>
-            <dd>@Html.DisplayFor(modelItem => item.CustomerAddress)</dd>
-            <dt>@Html.DisplayNameFor(modelItem => item.RestaurantName)</dt>
-            <dd>@Html.DisplayFor(modelItem => item.RestaurantName)</dd>
-            <dt>@Html.DisplayNameFor(modelItem => item.RestaurantAddress)</dt>
-            <dd>@Html.DisplayFor(modelItem => item.RestaurantAddress)</dd>
-            <dd></dd>
-            <dd>@Html.ActionLink("View Orders", "Details", "Order", new { id = item.OrderId }, null)</dd>
-            <br />
-        }
+                    <h4 style="color:Red">Customer:</h4>
+                    <dt>@Html.DisplayNameFor(modelItem => item.CustomerName)</dt>
+                    <dd>@Html.DisplayFor(modelItem => item.CustomerName)</dd>
+                    <dt>@Html.DisplayNameFor(modelItem => item.CustomerAddress)</dt>
+                    <dd>@Html.DisplayFor(modelItem => item.CustomerAddress)</dd>
 
-    </dl>
+                    <br />
+                    <h4 style="color:Red">Restaurant:</h4>
+                    <dt>@Html.DisplayNameFor(modelItem => item.RestaurantName)</dt>
+                    <dd>@Html.DisplayFor(modelItem => item.RestaurantName)</dd>
+                    <dt>@Html.DisplayNameFor(modelItem => item.RestaurantAddress)</dt>
+                    <dd>@Html.DisplayFor(modelItem => item.RestaurantAddress)</dd>
+
+                    <dt>@Html.DisplayNameFor(modelItem => item.RestaurantLatitude)</dt>
+                    <dd>@Html.DisplayFor(modelItem => item.RestaurantLatitude)</dd>
+                    <dt>@Html.DisplayNameFor(modelItem => item.RestaurantLongitude)</dt>
+                    <dd>@Html.DisplayFor(modelItem => item.RestaurantLongitude)</dd>
+                    <dd>
+
+                    </dd>
+                    <br />
+                    <dd>@Html.ActionLink("View Orders", "Details", "Order", new { id = item.OrderId }, null)</dd>
+                    <br />
+                }
+
+            </dl>
+            <dd>
+                <style>
+                    #map {
+                        height: 600px;
+                        width: 600px;
+                    }
+
+
+                    html,
+                    body {
+                        height: 100%;
+                        margin: 0;
+                        padding: 0;
+                    }
+
+                    #floating-panel {
+                        position: absolute;
+                        z-index: 5;
+                        background-color: #000000;
+                        padding: 5px;
+                        border: 1px solid #999;
+                        text-align: center;
+                        font-family: "Roboto", "sans-serif";
+                        color: black;
+                        line-height: 30px;
+                        padding-left: 10px;
+                    }
+                </style>
+                <br /><br />
+                <section>
+                    <div id="map"></div>
+                    <div id="floating-panel">
+                        <b style="color:antiquewhite">Mode of Travel: </b>
+                        <select id="mode">
+                            <option value="DRIVING">Driving</option>
+                            <option value="WALKING">Walking</option>
+                            <option value="BICYCLING">Bicycling</option>
+                            <option value="TRANSIT">Transit</option>
+                        </select>
+
+                    </div>
+                </section>
+                <script>
+
+                var map;
+                function initMap() {
+                    const directionsRenderer = new google.maps.DirectionsRenderer();
+                    const directionsService = new google.maps.DirectionsService();
+                    const map = new google.maps.Map(document.getElementById("map"), {
+                        zoom: 14,
+                        center: { lat:  @foreach (var item in Model.Order){@Html.DisplayFor(modelItem => item.RestaurantLatitude)}, lng:  @foreach (var item in Model.Order){@Html.DisplayFor(modelItem => item.RestaurantLongitude)} },
+                    });
+                    directionsRenderer.setMap(map);
+                    calculateAndDisplayRoute(directionsService, directionsRenderer);
+                    document.getElementById("mode").addEventListener("change", () => {
+                        calculateAndDisplayRoute(directionsService, directionsRenderer);
+                    });
+                }
+
+                function calculateAndDisplayRoute(directionsService, directionsRenderer) {
+                    const selectedMode = document.getElementById("mode").value;
+                    directionsService.route(
+                        {
+                            origin: { lat: @Model.Latitude, lng: @Model.Longitude },
+
+                            destination: { lat: @foreach (var item in Model.Order){@Html.DisplayFor(modelItem => item.RestaurantLatitude)}, lng:@foreach (var item in Model.Order){@Html.DisplayFor(modelItem => item.RestaurantLongitude)}},
+
+
+                            // Note that Javascript allows us to access the constant
+                            // using square brackets and a string value as its
+                            // "property."
+                            travelMode: google.maps.TravelMode[selectedMode],
+                        },
+                        (response, status) => {
+                            if (status == "OK") {
+                                directionsRenderer.setDirections(response);
+                            } else {
+                                window.alert("Directions request failed due to " + status);
+                            }
+                        }
+                    );
+                }
+                </script>
+                <title>Travel Modes in Directions</title>
+                <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+                <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBggS3eBJImaqRo6yCIUtMtU1M7uufu_QE&callback=initMap&libraries=&v=weekly"
+                        defer></script>
+
+
+
+
+
+            </dd>
+
+        </dl>
+   
 </div>
+
 <p>
-    @Html.ActionLink("Edit", "Edit", new {  id = Model.DriverId }) |
+    @Html.ActionLink("Edit", "Edit", new { id = Model.DriverId }) |
     @Html.ActionLink("Back to List", "Index")
 </p>

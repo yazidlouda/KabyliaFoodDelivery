@@ -138,6 +138,10 @@ namespace DeliveryFoodApp.Controllers
 
         public async Task<ActionResult> Edit(int id)
         {
+            ViewBag.SyncOrAsync = "Asynchronous";
+            ViewBag.CustomerId = await GetCustomerAsync();
+            ViewBag.RestaurantId = await GetRestaurantAsync();
+            ViewBag.DriverId = await GetDriverAsync();
             var service = CreateOrderService();
             var detail = await service.GetOrderByIdAsync(id);
             var model =
@@ -149,7 +153,8 @@ namespace DeliveryFoodApp.Controllers
                     DeliveryCharge = detail.DeliveryCharge,
                     CustomerName = detail.CustomerName,
                     RestaurantName = detail.RestaurantName,
-                  
+                    RestaurantLatitude=detail.RestaurantLatitude,
+                    RestaurantLongitude=detail.RestaurantLongitude
                 };
 
             //ViewBag.CategoryID = await GetOrdersAsync();

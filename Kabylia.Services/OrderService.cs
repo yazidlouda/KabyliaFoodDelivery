@@ -79,7 +79,9 @@ namespace Kabylia.Services
                                     DeliveryCharge = e.DeliveryCharge,
                                     CustomerName = e.Customer.FirstName +" "+ e.Customer.LastName,
                                     RestaurantName = e.Restaurant.Name,
-                                    DriverName=e.DeliveryDriver.FirstName+" "+e.DeliveryDriver.LastName
+                                    DriverName=e.DeliveryDriver.FirstName+" "+e.DeliveryDriver.LastName,
+                                    RestaurantLatitude=e.Restaurant.Latitude,
+                                    RestaurantLongitude=e.Restaurant.Longitude
 
                                 }
                         ).ToListAsync();
@@ -106,8 +108,9 @@ namespace Kabylia.Services
                                     DeliveryCharge = e.DeliveryCharge,
                                     CustomerName = e.Customer.FirstName + " " + e.Customer.LastName,
                                     RestaurantName = e.Restaurant.Name,
-                                    DriverName = e.DeliveryDriver.FirstName + " " + e.DeliveryDriver.LastName
-
+                                    DriverName = e.DeliveryDriver.FirstName + " " + e.DeliveryDriver.LastName,
+                                     RestaurantLatitude = e.Restaurant.Latitude,
+                                    RestaurantLongitude = e.Restaurant.Longitude
                                 }
                         );
                 return query.ToList().OrderBy(e => e.OrderId);
@@ -133,7 +136,9 @@ namespace Kabylia.Services
                         DeliveryCharge = entity.DeliveryCharge,
                         CustomerName = entity.Customer.FirstName + " " + entity.Customer.LastName,
                         RestaurantName = entity.Restaurant.Name,
-                        DriverName=entity.DeliveryDriver.FirstName+" "+entity.DeliveryDriver.LastName
+                        DriverName=entity.DeliveryDriver.FirstName+" "+entity.DeliveryDriver.LastName,
+                        RestaurantLatitude=entity.Restaurant.Latitude,
+                        RestaurantLongitude=entity.Restaurant.Longitude
                     };
             }
         }
@@ -156,8 +161,9 @@ namespace Kabylia.Services
                         DeliveryCharge = entity.DeliveryCharge,
                         CustomerName = entity.Customer.FirstName + " " + entity.Customer.LastName,
                         RestaurantName = entity.Restaurant.Name,
-                        DriverName = entity.DeliveryDriver.FirstName + " " + entity.DeliveryDriver.LastName
-
+                        DriverName = entity.DeliveryDriver.FirstName + " " + entity.DeliveryDriver.LastName,
+                        RestaurantLatitude = entity.Restaurant.Latitude,
+                        RestaurantLongitude = entity.Restaurant.Longitude
                     };
             }
         }
@@ -168,7 +174,7 @@ namespace Kabylia.Services
                 var entity = await
                     ctx
                         .Orders
-                        .Where(e => e.OrderId == note.OrderId)
+                        .Where(e => e.OrderId == note.OrderId )
                         .FirstOrDefaultAsync();
                // entity.Menu = note.Menu;
                 entity.Price = note.Price;
@@ -189,7 +195,7 @@ namespace Kabylia.Services
                 var entity =
                     ctx
                         .Orders
-                        .Where(e => e.OrderId == note.OrderId)
+                        .Where(e => e.OrderId == note.OrderId )
                         .FirstOrDefault();
                 //entity.Menu = note.Menu;
                 entity.Price = note.Price;

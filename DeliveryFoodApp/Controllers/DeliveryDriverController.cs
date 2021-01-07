@@ -130,7 +130,8 @@ namespace DeliveryFoodApp.Controllers
                     Email = detail.Email,
                     PhoneNumber = detail.PhoneNumber,
                     IsActive = detail.IsActive,
-                   
+                   Latitude=detail.Latitude,
+                   Longitude=detail.Longitude
                 };
             ViewBag.SyncOrAsync = "Asynchronous";
 

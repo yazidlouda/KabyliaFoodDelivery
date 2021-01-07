@@ -235,3 +235,9 @@ C:\Users\yalou\OneDrive\Bureau\Red Badge\KabyliaFoodDelivery\DeliveryFoodApp\obj
 C:\Users\yalou\OneDrive\Bureau\Red Badge\KabyliaFoodDelivery\DeliveryFoodApp\obj\Debug\DeliveryFoodApp.csproj.CopyComplete
 C:\Users\yalou\OneDrive\Bureau\Red Badge\KabyliaFoodDelivery\DeliveryFoodApp\obj\Debug\DeliveryFoodApp.dll
 C:\Users\yalou\OneDrive\Bureau\Red Badge\KabyliaFoodDelivery\DeliveryFoodApp\obj\Debug\DeliveryFoodApp.pdb
+C:\Users\yalou\OneDrive\Bureau\Red Badge\KabyliaFoodDelivery\DeliveryFoodApp\bin\System.Net.Http.Formatting.dll
+C:\Users\yalou\OneDrive\Bureau\Red Badge\KabyliaFoodDelivery\DeliveryFoodApp\bin\System.Web.Http.dll
+C:\Users\yalou\OneDrive\Bureau\Red Badge\KabyliaFoodDelivery\DeliveryFoodApp\bin\System.Web.Http.WebHost.dll
+C:\Users\yalou\OneDrive\Bureau\Red Badge\KabyliaFoodDelivery\DeliveryFoodApp\bin\System.Net.Http.Formatting.xml
+C:\Users\yalou\OneDrive\Bureau\Red Badge\KabyliaFoodDelivery\DeliveryFoodApp\bin\System.Web.Http.xml
+C:\Users\yalou\OneDrive\Bureau\Red Badge\KabyliaFoodDelivery\DeliveryFoodApp\bin\System.Web.Http.WebHost.xml
