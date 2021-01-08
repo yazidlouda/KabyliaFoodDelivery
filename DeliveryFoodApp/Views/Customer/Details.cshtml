@@ -74,11 +74,23 @@
             @Html.DisplayFor(model => model.MembershipLevel)
         </dd>
 
-     
+        <dt>
+            @Html.DisplayNameFor(model => model.Latitude)
+        </dt>
 
+        <dd>
+            @Html.DisplayFor(model => model.Latitude)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Longitude)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Longitude)
+        </dd>
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Edit", "Edit", new {  id = Model.CustomerId  }) |
     @Html.ActionLink("Back to List", "Index")
 </p>

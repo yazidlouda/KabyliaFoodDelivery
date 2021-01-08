@@ -154,7 +154,9 @@ namespace DeliveryFoodApp.Controllers
                     CustomerName = detail.CustomerName,
                     RestaurantName = detail.RestaurantName,
                     RestaurantLatitude=detail.RestaurantLatitude,
-                    RestaurantLongitude=detail.RestaurantLongitude
+                    RestaurantLongitude=detail.RestaurantLongitude,
+                    CustomerLatitude = detail.CustomerLatitude,
+                    CustomerLongitude = detail.CustomerLongitude
                 };
 
             //ViewBag.CategoryID = await GetOrdersAsync();

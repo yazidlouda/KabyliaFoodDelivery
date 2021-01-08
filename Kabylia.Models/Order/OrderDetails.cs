@@ -23,7 +23,8 @@ namespace Kabylia.Models.Order
         public string DriverName { get; set; }
         public double RestaurantLatitude { get; set; }
         public double RestaurantLongitude { get; set; }
-
+        public double CustomerLatitude { get; set; }
+        public double CustomerLongitude { get; set; }
         //public List<Menu> Menu { get; set; }
         public List<MenuListItem> Menu { get; set; } = new List<MenuListItem>();
 
