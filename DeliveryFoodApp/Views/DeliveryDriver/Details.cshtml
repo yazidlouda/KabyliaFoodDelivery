@@ -98,7 +98,10 @@
                     <dd>@Html.DisplayFor(modelItem => item.CustomerName)</dd>
                     <dt>@Html.DisplayNameFor(modelItem => item.CustomerAddress)</dt>
                     <dd>@Html.DisplayFor(modelItem => item.CustomerAddress)</dd>
-
+                    <dt>@Html.DisplayNameFor(modelItem => item.CustomerLatitude)</dt>
+                    <dd>@Html.DisplayFor(modelItem => item.CustomerLatitude)</dd>
+                    <dt>@Html.DisplayNameFor(modelItem => item.CustomerLongitude)</dt>
+                    <dd>@Html.DisplayFor(modelItem => item.CustomerLongitude)</dd>
                     <br />
                     <h4 style="color:Red">Restaurant:</h4>
                     <dt>@Html.DisplayNameFor(modelItem => item.RestaurantName)</dt>
@@ -184,33 +187,40 @@
                         {
                             origin: { lat: @Model.Latitude, lng: @Model.Longitude },
 
-                            destination: { lat: @foreach (var item in Model.Order){@Html.DisplayFor(modelItem => item.RestaurantLatitude)}, lng:@foreach (var item in Model.Order){@Html.DisplayFor(modelItem => item.RestaurantLongitude)}},
+                            destination: { lat: @foreach (var item in Model.Order){@Html.DisplayFor(modelItem => item.CustomerLatitude)}, lng:@foreach (var item in Model.Order){@Html.DisplayFor(modelItem => item.CustomerLongitude)}},
+
+                            waypoints:
+                                [{
+                                    location: new google.maps.LatLng(@foreach (var item in Model.Order) {@Html.DisplayFor(modelItem => item.RestaurantLatitude)}, @foreach (var item in Model.Order){@Html.DisplayFor(modelItem => item.RestaurantLongitude)}),
+                                    stopover: false
+                                }],
 
 
-                            // Note that Javascript allows us to access the constant
-                            // using square brackets and a string value as its
-                            // "property."
+
                             travelMode: google.maps.TravelMode[selectedMode],
                         },
+
                         (response, status) => {
                             if (status == "OK") {
                                 directionsRenderer.setDirections(response);
+
+
                             } else {
                                 window.alert("Directions request failed due to " + status);
                             }
                         }
                     );
-                }
+                    }
+
                 </script>
                 <title>Travel Modes in Directions</title>
                 <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
                 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBggS3eBJImaqRo6yCIUtMtU1M7uufu_QE&callback=initMap&libraries=&v=weekly"
                         defer></script>
 
+               
 
-
-
-
+               
             </dd>
 
         </dl>

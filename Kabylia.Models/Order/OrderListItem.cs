@@ -29,5 +29,7 @@ namespace Kabylia.Models.Order
         public virtual List<MenuListItem> Menu { get; set; } = new List<MenuListItem>();
         public double RestaurantLatitude { get; set; }
         public double RestaurantLongitude { get; set; }
+        public double CustomerLatitude { get; set; }
+        public double CustomerLongitude { get; set; }
     }
 }

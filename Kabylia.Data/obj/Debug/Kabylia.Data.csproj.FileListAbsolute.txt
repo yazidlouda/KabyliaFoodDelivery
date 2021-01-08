@@ -48,3 +48,4 @@ C:\Users\yalou\OneDrive\Bureau\Red Badge\KabyliaFoodDelivery\Kabylia.Data\obj\De
 C:\Users\yalou\OneDrive\Bureau\Red Badge\KabyliaFoodDelivery\Kabylia.Data\obj\Debug\Kabylia.Data.Migrations.AddedLatitudeAndLongitude.resources
 C:\Users\yalou\OneDrive\Bureau\Red Badge\KabyliaFoodDelivery\Kabylia.Data\obj\Debug\Kabylia.Data.Migrations.AddedLatitudeAndLongitudetoRestaurant.resources
 C:\Users\yalou\OneDrive\Bureau\Red Badge\KabyliaFoodDelivery\Kabylia.Data\obj\Debug\Kabylia.Data.Migrations.DisplayRouteOnMap.resources
+C:\Users\yalou\OneDrive\Bureau\Red Badge\KabyliaFoodDelivery\Kabylia.Data\obj\Debug\Kabylia.Data.Migrations.addedgeolocalisationToCustomer.resources

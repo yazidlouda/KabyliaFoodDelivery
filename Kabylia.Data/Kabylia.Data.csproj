@@ -97,6 +97,10 @@
     <Compile Include="Migrations\202101060450090_DisplayRouteOnMap.Designer.cs">
       <DependentUpon>202101060450090_DisplayRouteOnMap.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202101080347173_addedgeolocalisationToCustomer.cs" />
+    <Compile Include="Migrations\202101080347173_addedgeolocalisationToCustomer.Designer.cs">
+      <DependentUpon>202101080347173_addedgeolocalisationToCustomer.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Order.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -125,6 +129,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202101060450090_DisplayRouteOnMap.resx">
       <DependentUpon>202101060450090_DisplayRouteOnMap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202101080347173_addedgeolocalisationToCustomer.resx">
+      <DependentUpon>202101080347173_addedgeolocalisationToCustomer.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -141,7 +141,9 @@ namespace Kabylia.Services
                                         RestaurantName = x.Restaurant.Name,
                                         RestaurantAddress=x.Restaurant.Address,
                                         RestaurantLatitude=x.Restaurant.Latitude,
-                                        RestaurantLongitude=x.Restaurant.Longitude
+                                        RestaurantLongitude=x.Restaurant.Longitude,
+                                        CustomerLatitude=x.Customer.Latitude,
+                                        CustomerLongitude=x.Customer.Longitude
                                     }
                                 ).ToList()
 
@@ -181,7 +183,9 @@ namespace Kabylia.Services
                                         RestaurantName = x.Restaurant.Name,
                                         RestaurantAddress = x.Restaurant.Address,
                                         RestaurantLatitude = x.Restaurant.Latitude,
-                                        RestaurantLongitude = x.Restaurant.Longitude
+                                        RestaurantLongitude = x.Restaurant.Longitude,
+                                        CustomerLatitude = x.Customer.Latitude,
+                                        CustomerLongitude = x.Customer.Longitude
                                     }
                                 ).ToList()
 

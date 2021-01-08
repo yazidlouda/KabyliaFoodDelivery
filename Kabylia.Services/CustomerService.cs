@@ -33,6 +33,8 @@ namespace Kabylia.Services
                    Email=model.Email,
                    Address=model.Address,
                    MembershipLevel=model.MembershipLevel,
+                   Latitude=model.Latitude,
+                   Longitude=model.Longitude
                    //RestaurantId=model.RestaurantId
                 };
 
@@ -55,7 +57,9 @@ namespace Kabylia.Services
                     Email = model.Email,
                     Address = model.Address,
                     MembershipLevel = model.MembershipLevel,
-                   //RestaurantId=model.RestaurantId
+                    Latitude = model.Latitude,
+                    Longitude = model.Longitude
+                    //RestaurantId=model.RestaurantId
 
                 };
 
@@ -86,6 +90,8 @@ namespace Kabylia.Services
                                     Email = e.Email,
                                     Address = e.Address,
                                     MembershipLevel = e.MembershipLevel,
+                                    Latitude=e.Latitude,
+                                    Longitude=e.Longitude
                                    //RestaurantName= e.Restaurant.Name
                                   
 
@@ -115,7 +121,9 @@ namespace Kabylia.Services
                                     Email = e.Email,
                                     Address = e.Address,
                                     MembershipLevel = e.MembershipLevel,
-                                   // RestaurantName = e.Restaurant.Name
+                                    Latitude = e.Latitude,
+                                    Longitude = e.Longitude
+                                    // RestaurantName = e.Restaurant.Name
 
                                 }
                         );
@@ -143,6 +151,8 @@ namespace Kabylia.Services
                         Email = entity.Email,
                         Address = entity.Address,
                         MembershipLevel = entity.MembershipLevel,
+                        Latitude=entity.Latitude,
+                        Longitude=entity.Longitude
                         //RestaurantName = entity.Restaurant.Name
 
                     };
@@ -167,7 +177,9 @@ namespace Kabylia.Services
                         Email = entity.Email,
                         Address = entity.Address,
                         MembershipLevel = entity.MembershipLevel,
-                       // RestaurantName = entity.Restaurant.Name
+                        Latitude = entity.Latitude,
+                        Longitude = entity.Longitude
+                        // RestaurantName = entity.Restaurant.Name
 
                     };
             }
@@ -188,6 +200,9 @@ namespace Kabylia.Services
                 entity.Email = note.Email;
                 entity.Address = note.Address;
                 entity.MembershipLevel = note.MembershipLevel;
+                entity.Latitude = note.Latitude;
+                entity.Longitude = note.Longitude;
+
                 //entity.RestaurantId = note.RestaurantId;
 
                 //ctx.Entry(entity).State = EntityState.Modified;
@@ -211,6 +226,8 @@ namespace Kabylia.Services
                 entity.Email = note.Email;
                 entity.Address = note.Address;
                 entity.MembershipLevel = note.MembershipLevel;
+                entity.Latitude = note.Latitude;
+                entity.Longitude = note.Longitude;
                 //entity.RestaurantId = note.RestaurantId;
 
 

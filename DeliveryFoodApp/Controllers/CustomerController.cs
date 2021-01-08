@@ -118,7 +118,9 @@ namespace DeliveryFoodApp.Controllers
                         Address = detail.Address,
                         Email= detail.Email,
                         ContactPreference=detail.ContactPreference,
-                        MembershipLevel=detail.MembershipLevel
+                        MembershipLevel=detail.MembershipLevel,
+                        Latitude=detail.Latitude,
+                        Longitude=detail.Longitude
                     };
 
                
