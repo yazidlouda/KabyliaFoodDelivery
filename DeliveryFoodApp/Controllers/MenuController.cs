@@ -87,7 +87,15 @@ namespace DeliveryFoodApp.Controllers
 
             return View();
         }
+        public async Task<ActionResult> CreateMenuSelectable()
+        {
+            var service = CreateMenuService();
 
+            ViewBag.SyncOrAsync = "Asynchronous";
+            ViewBag.RestaurantId = await GetRestaurantAsync();
+
+            return View();
+        }
 
 
         [HttpPost]

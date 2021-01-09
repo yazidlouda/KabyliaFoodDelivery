@@ -15,10 +15,10 @@ namespace DeliveryFoodApp.Controllers
     public class CustomerController : Controller
     {
         // GET: Customer
+
       
-        
-           // private readonly ApplicationDbContext _db = new ApplicationDbContext();
-            private CustomerService CreateCustomerService()
+        // private readonly ApplicationDbContext _db = new ApplicationDbContext();
+        private CustomerService CreateCustomerService()
             {
                // var userId = Guid.Parse(User.Identity.GetUserId());
                 var service = new CustomerService();
@@ -65,6 +65,7 @@ namespace DeliveryFoodApp.Controllers
             }
             public async Task<ActionResult> Create()
             {
+
                 var service = CreateCustomerService();
 
                 ViewBag.SyncOrAsync = "Asynchronous";

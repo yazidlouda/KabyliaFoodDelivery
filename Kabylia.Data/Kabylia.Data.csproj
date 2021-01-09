@@ -73,33 +73,17 @@
     <Compile Include="IdentityModels.cs" />
     <Compile Include="Menu.cs" />
     <Compile Include="MenuItem.cs" />
-    <Compile Include="Migrations\202101051826241_InitialCreate.cs" />
-    <Compile Include="Migrations\202101051826241_InitialCreate.Designer.cs">
-      <DependentUpon>202101051826241_InitialCreate.cs</DependentUpon>
+    <Compile Include="Migrations\202101090107281_InitialCreate.cs" />
+    <Compile Include="Migrations\202101090107281_InitialCreate.Designer.cs">
+      <DependentUpon>202101090107281_InitialCreate.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202101051936300_addedListOfOrdertoDelivryDriver.cs" />
-    <Compile Include="Migrations\202101051936300_addedListOfOrdertoDelivryDriver.Designer.cs">
-      <DependentUpon>202101051936300_addedListOfOrdertoDelivryDriver.cs</DependentUpon>
+    <Compile Include="Migrations\202101090132468_AddedLatLngtoOrder.cs" />
+    <Compile Include="Migrations\202101090132468_AddedLatLngtoOrder.Designer.cs">
+      <DependentUpon>202101090132468_AddedLatLngtoOrder.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202101052045012_updatingdatabase.cs" />
-    <Compile Include="Migrations\202101052045012_updatingdatabase.Designer.cs">
-      <DependentUpon>202101052045012_updatingdatabase.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202101060019348_AddedLatitudeAndLongitude.cs" />
-    <Compile Include="Migrations\202101060019348_AddedLatitudeAndLongitude.Designer.cs">
-      <DependentUpon>202101060019348_AddedLatitudeAndLongitude.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202101060415122_AddedLatitudeAndLongitudetoRestaurant.cs" />
-    <Compile Include="Migrations\202101060415122_AddedLatitudeAndLongitudetoRestaurant.Designer.cs">
-      <DependentUpon>202101060415122_AddedLatitudeAndLongitudetoRestaurant.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202101060450090_DisplayRouteOnMap.cs" />
-    <Compile Include="Migrations\202101060450090_DisplayRouteOnMap.Designer.cs">
-      <DependentUpon>202101060450090_DisplayRouteOnMap.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202101080347173_addedgeolocalisationToCustomer.cs" />
-    <Compile Include="Migrations\202101080347173_addedgeolocalisationToCustomer.Designer.cs">
-      <DependentUpon>202101080347173_addedgeolocalisationToCustomer.cs</DependentUpon>
+    <Compile Include="Migrations\202101090218231_CalculatedToTalPriceOfDelivery.cs" />
+    <Compile Include="Migrations\202101090218231_CalculatedToTalPriceOfDelivery.Designer.cs">
+      <DependentUpon>202101090218231_CalculatedToTalPriceOfDelivery.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Order.cs" />
@@ -112,26 +96,14 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202101051826241_InitialCreate.resx">
-      <DependentUpon>202101051826241_InitialCreate.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202101090107281_InitialCreate.resx">
+      <DependentUpon>202101090107281_InitialCreate.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202101051936300_addedListOfOrdertoDelivryDriver.resx">
-      <DependentUpon>202101051936300_addedListOfOrdertoDelivryDriver.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202101090132468_AddedLatLngtoOrder.resx">
+      <DependentUpon>202101090132468_AddedLatLngtoOrder.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202101052045012_updatingdatabase.resx">
-      <DependentUpon>202101052045012_updatingdatabase.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202101060019348_AddedLatitudeAndLongitude.resx">
-      <DependentUpon>202101060019348_AddedLatitudeAndLongitude.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202101060415122_AddedLatitudeAndLongitudetoRestaurant.resx">
-      <DependentUpon>202101060415122_AddedLatitudeAndLongitudetoRestaurant.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202101060450090_DisplayRouteOnMap.resx">
-      <DependentUpon>202101060450090_DisplayRouteOnMap.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202101080347173_addedgeolocalisationToCustomer.resx">
-      <DependentUpon>202101080347173_addedgeolocalisationToCustomer.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202101090218231_CalculatedToTalPriceOfDelivery.resx">
+      <DependentUpon>202101090218231_CalculatedToTalPriceOfDelivery.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

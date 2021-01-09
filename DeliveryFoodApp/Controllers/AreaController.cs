@@ -6,6 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Routing;
 
 namespace DeliveryFoodApp.Controllers
 {
@@ -83,9 +84,10 @@ namespace DeliveryFoodApp.Controllers
 
             if (await service.CreateAreaAsync(note))
             {
+                
                 TempData["SaveResult"] = "Area was created.";
+               
                 return RedirectToAction("Index");
-
             }
 
             ModelState.AddModelError("", "Area could not be created.");

@@ -20,6 +20,8 @@ namespace Kabylia.Models.Customer
         //public int RestaurantId { get; set; }
         public double Latitude { get; set; }
         public double Longitude { get; set; }
+        
+
         //public Restaurant FavortiteRestaurant {get;set;}
         //public Payment Payment {get;set;}
         //Public FoodCategory Category {get;set;}

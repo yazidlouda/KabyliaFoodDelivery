@@ -73,6 +73,26 @@ namespace DeliveryFoodApp.Controllers
 
             return catSelectList;
         }
+        public async Task<IEnumerable<SelectListItem>> GetMenuAsync()
+        {
+            // var userId = Guid.Parse(User.Identity.GetUserId());
+            var catService = new MenuService();
+            var categoryList = await catService.GetMenuAsync();
+            ViewBag.SyncOrAsync = "Asynchronous";
+
+            ViewBag.RestaurantId = await GetRestaurantAsync();
+
+            var catSelectList = categoryList.Select(
+                                        e =>
+                                            new SelectListItem
+                                            {
+                                                Value = e.RestaurantId.ToString(),
+                                                Text = e.Name
+                                            }
+                                        ).ToList();
+
+            return catSelectList;
+        }
         public async Task<IEnumerable<SelectListItem>> GetDriverAsync()
         {
             // var userId = Guid.Parse(User.Identity.GetUserId());
@@ -98,6 +118,8 @@ namespace DeliveryFoodApp.Controllers
             ViewBag.CustomerId = await GetCustomerAsync();
             ViewBag.RestaurantId = await GetRestaurantAsync();
             ViewBag.DriverId = await GetDriverAsync();
+            ViewBag.MenuId = await GetMenuAsync();
+
             return View();
         }
 
@@ -112,6 +134,7 @@ namespace DeliveryFoodApp.Controllers
                 ViewBag.CustomerId = await GetCustomerAsync();
                 ViewBag.RestaurantId = await GetRestaurantAsync();
                 ViewBag.DriverId = await GetDriverAsync();
+                ViewBag.MenuId = await GetMenuAsync();
 
                 return View(note);
 
@@ -130,6 +153,7 @@ namespace DeliveryFoodApp.Controllers
             ViewBag.CustomerId = await GetCustomerAsync();
             ViewBag.RestaurantId = await GetRestaurantAsync();
             ViewBag.DriverId = await GetDriverAsync();
+            ViewBag.MenuId = await GetMenuAsync();
 
             return View(note);
         }
@@ -142,6 +166,8 @@ namespace DeliveryFoodApp.Controllers
             ViewBag.CustomerId = await GetCustomerAsync();
             ViewBag.RestaurantId = await GetRestaurantAsync();
             ViewBag.DriverId = await GetDriverAsync();
+            ViewBag.MenuId = await GetMenuAsync();
+
             var service = CreateOrderService();
             var detail = await service.GetOrderByIdAsync(id);
             var model =
@@ -149,14 +175,16 @@ namespace DeliveryFoodApp.Controllers
                 {
                     OrderId=detail.OrderId,
                     //Menu = detail.Menu,
-                    Price = detail.Price,
+                    //Price = detail.Price,
                     DeliveryCharge = detail.DeliveryCharge,
                     CustomerName = detail.CustomerName,
                     RestaurantName = detail.RestaurantName,
                     RestaurantLatitude=detail.RestaurantLatitude,
                     RestaurantLongitude=detail.RestaurantLongitude,
                     CustomerLatitude = detail.CustomerLatitude,
-                    CustomerLongitude = detail.CustomerLongitude
+                    CustomerLongitude = detail.CustomerLongitude,
+                    DriverLatitude = detail.DriverLatitude,
+                    DriverLongitude = detail.DriverLongitude
                 };
 
             //ViewBag.CategoryID = await GetOrdersAsync();
@@ -175,6 +203,7 @@ namespace DeliveryFoodApp.Controllers
                 ViewBag.CustomerId = await GetCustomerAsync();
                 ViewBag.RestaurantId = await GetRestaurantAsync();
                 ViewBag.DriverId = await GetDriverAsync();
+                ViewBag.MenuId = await GetMenuAsync();
 
                 return View(note);
             }
@@ -187,6 +216,7 @@ namespace DeliveryFoodApp.Controllers
             ViewBag.CustomerId = await GetCustomerAsync();
             ViewBag.RestaurantId = await GetRestaurantAsync();
             ViewBag.DriverId = await GetDriverAsync();
+            ViewBag.MenuId = await GetMenuAsync();
 
             ModelState.AddModelError("", "Order could not be updated.");
             return View(note);

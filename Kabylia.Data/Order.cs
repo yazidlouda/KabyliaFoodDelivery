@@ -11,7 +11,7 @@ namespace Kabylia.Data
     {
         [Key]
         public int OrderId { get; set; }
-        public string Menu { get; set; }
+        public virtual List<Menu> Menu{ get; set; }
         public double Price { get; set; }
         public DateTime DateOfOrder { get; set; }
         public double DeliveryCharge { get; set; }
@@ -21,6 +21,7 @@ namespace Kabylia.Data
         public virtual Restaurant Restaurant { get; set; }
         public int DriverId { get; set; }
         public virtual DeliveryDriver DeliveryDriver { get; set; }
+       // public virtual Menu Menus { get; set; }
         //public  List<Menu> Menu { get; set; }
 
     }
