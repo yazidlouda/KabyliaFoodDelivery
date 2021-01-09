@@ -10,9 +10,6 @@ namespace Kabylia.Models.Order
     public class OrderEdit
     {
         public int OrderId { get; set; }
-        //public string Menu { get; set; }
-        public double Price { get; set; }
-       // public DateTime DateOfOrder { get; set; }
         public double DeliveryCharge { get; set; }
         public int CustomerId { get; set; }
         public string CustomerName { get; set; }
@@ -24,7 +21,8 @@ namespace Kabylia.Models.Order
         public double RestaurantLongitude { get; set; }
         public double CustomerLatitude { get; set; }
         public double CustomerLongitude { get; set; }
-        // public List<Menu> Menu { get; set; }
+        public double DriverLatitude { get; set; }
+        public double DriverLongitude { get; set; }
 
     }
 }

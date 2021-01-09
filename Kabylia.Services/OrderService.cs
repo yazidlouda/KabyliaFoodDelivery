@@ -1,4 +1,5 @@
 ﻿using Kabylia.Data;
+using Kabylia.Models.Menu;
 using Kabylia.Models.Order;
 using System;
 using System.Collections.Generic;
@@ -16,17 +17,13 @@ namespace Kabylia.Services
             var entity =
                 new Order()
                 {
-                    // OwnerID = _userId,
-
-                   // OrderId = model.OrderId,
-                   // Menu = model.,
-                    Price = model.Price,
+                    
                     DateOfOrder = DateTime.Now,
                     DeliveryCharge = model.DeliveryCharge,
                     CustomerId = model.CustomerId,
-                   // MembershipLevel = model.MembershipLevel,
                     RestaurantId = model.RestaurantId,
-                    DriverId=model.DriverId
+                    DriverId=model.DriverId,
+                  
                 };
 
             using (var ctx = new ApplicationDbContext())
@@ -41,16 +38,14 @@ namespace Kabylia.Services
                 new Order()
                 {
 
-                    //OrderId = model.OrderId,
-                   // Menu = model.Menu,
-                    Price = model.Price,
+                   
                     DateOfOrder = DateTime.Now,
                     DeliveryCharge = model.DeliveryCharge,
                     CustomerId = model.CustomerId,
-                    // MembershipLevel = model.MembershipLevel,
+                   
                     RestaurantId = model.RestaurantId,
-                    DriverId = model.DriverId
-
+                    DriverId = model.DriverId,
+                   
                 };
 
             using (var ctx = new ApplicationDbContext())
@@ -73,8 +68,6 @@ namespace Kabylia.Services
                                 new OrderListItem
                                 {
                                     OrderId =e.OrderId,
-                                    //Menu = e.Menu,
-                                    Price = e.Price,
                                     DateOfOrder = e.DateOfOrder,
                                     DeliveryCharge = e.DeliveryCharge,
                                     CustomerName = e.Customer.FirstName +" "+ e.Customer.LastName,
@@ -83,8 +76,10 @@ namespace Kabylia.Services
                                     RestaurantLatitude=e.Restaurant.Latitude,
                                     RestaurantLongitude=e.Restaurant.Longitude,
                                     CustomerLatitude=e.Customer.Latitude,
-                                    CustomerLongitude=e.Customer.Longitude
-
+                                    CustomerLongitude=e.Customer.Longitude,
+                                    DriverLatitude = e.DeliveryDriver.Latitude,
+                                    DriverLongitude = e.DeliveryDriver.Longitude,
+                                    Amount=e.Restaurant.Menu.Sum(item => (item.Price))
                                 }
                         ).ToListAsync();
                 return query.OrderBy(e => e.OrderId);
@@ -104,8 +99,6 @@ namespace Kabylia.Services
                                 new OrderListItem
                                 {
                                     OrderId = e.OrderId,
-                                    //Menu = e.Menu,
-                                    Price = e.Price,
                                     DateOfOrder = e.DateOfOrder,
                                     DeliveryCharge = e.DeliveryCharge,
                                     CustomerName = e.Customer.FirstName + " " + e.Customer.LastName,
@@ -114,7 +107,11 @@ namespace Kabylia.Services
                                      RestaurantLatitude = e.Restaurant.Latitude,
                                     RestaurantLongitude = e.Restaurant.Longitude,
                                     CustomerLatitude = e.Customer.Latitude,
-                                    CustomerLongitude = e.Customer.Longitude
+                                    CustomerLongitude = e.Customer.Longitude,
+                                    DriverLatitude = e.DeliveryDriver.Latitude,
+                                    DriverLongitude = e.DeliveryDriver.Longitude,
+                                    Amount = e.Restaurant.Menu.Sum(item => (item.Price))
+
                                 }
                         );
                 return query.ToList().OrderBy(e => e.OrderId);
@@ -134,8 +131,7 @@ namespace Kabylia.Services
                     new OrderDetails
                     {
                         OrderId = entity.OrderId,
-                        //Menu = entity.Menu,
-                        Price = entity.Price,
+                       
                         DateOfOrder = DateTime.Now,
                         DeliveryCharge = entity.DeliveryCharge,
                         CustomerName = entity.Customer.FirstName + " " + entity.Customer.LastName,
@@ -144,7 +140,11 @@ namespace Kabylia.Services
                         RestaurantLatitude=entity.Restaurant.Latitude,
                         RestaurantLongitude=entity.Restaurant.Longitude,
                         CustomerLatitude=entity.Customer.Latitude,
-                        CustomerLongitude=entity.Customer.Longitude
+                        CustomerLongitude=entity.Customer.Longitude,
+                        DriverLatitude = entity.DeliveryDriver.Latitude,
+                        DriverLongitude = entity.DeliveryDriver.Longitude,
+                        Amount = entity.Restaurant.Menu.Sum(item =>(item.Price)) 
+
                     };
             }
         }
@@ -161,8 +161,6 @@ namespace Kabylia.Services
                     new OrderDetails
                     {
                         OrderId = entity.OrderId,
-                        //Menu = entity.Menu,
-                        Price = entity.Price,
                         DateOfOrder = DateTime.Now,
                         DeliveryCharge = entity.DeliveryCharge,
                         CustomerName = entity.Customer.FirstName + " " + entity.Customer.LastName,
@@ -171,7 +169,11 @@ namespace Kabylia.Services
                         RestaurantLatitude = entity.Restaurant.Latitude,
                         RestaurantLongitude = entity.Restaurant.Longitude,
                         CustomerLatitude = entity.Customer.Latitude,
-                        CustomerLongitude = entity.Customer.Longitude
+                        CustomerLongitude = entity.Customer.Longitude,
+                        DriverLatitude = entity.DeliveryDriver.Latitude,
+                        DriverLongitude = entity.DeliveryDriver.Longitude,
+                        Amount = entity.Restaurant.Menu.Sum(item =>(item.Price)) 
+
                     };
             }
         }
@@ -184,15 +186,12 @@ namespace Kabylia.Services
                         .Orders
                         .Where(e => e.OrderId == note.OrderId )
                         .FirstOrDefaultAsync();
-               // entity.Menu = note.Menu;
-                entity.Price = note.Price;
+              
+                
                 entity.DeliveryCharge = note.DeliveryCharge;
                 entity.CustomerId = note.CustomerId;
                 entity.RestaurantId = note.RestaurantId;
                 entity.DriverId = note.DriverId;
-                //entity.Customer.FirstName = note.CustomerName;
-
-                //ctx.Entry(entity).State = EntityState.Modified;
                 return await ctx.SaveChangesAsync() == 1;
             }
         }
@@ -205,8 +204,6 @@ namespace Kabylia.Services
                         .Orders
                         .Where(e => e.OrderId == note.OrderId )
                         .FirstOrDefault();
-                //entity.Menu = note.Menu;
-                entity.Price = note.Price;
                 entity.DeliveryCharge = note.DeliveryCharge;
                 entity.CustomerId = note.CustomerId;
                 entity.RestaurantId = note.RestaurantId;

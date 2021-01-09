@@ -62,6 +62,7 @@ namespace Kabylia.Services
                             e =>
                                 new MenuListItem
                                 {
+                                    RestaurantId=e.Restaurant.RestaurantId,
                                     MenuId = e.MenuId,
                                     Name = e.Name,
                                     Description = e.Description,

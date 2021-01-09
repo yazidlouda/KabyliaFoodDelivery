@@ -1,4 +1,5 @@
 ﻿using Kabylia.Data;
+using Kabylia.Models.Area;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -24,6 +25,7 @@ namespace Kabylia.Models.Restaurant
         public int? MenuId { get; set; }
         public double Latitude { get; set; }
         public double Longitude { get; set; }
+        public List<AreaListItem> Area = new List<AreaListItem>();
         //public List<string> Menu { get; set; }
         // public int MenuId { get; set; }
 

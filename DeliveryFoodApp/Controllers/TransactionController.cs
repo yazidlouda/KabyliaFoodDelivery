@@ -105,7 +105,6 @@ namespace DeliveryFoodApp.Controllers
                 {
                     TransactionId= detail.TransactionId,
                     OrderId = detail.OrderId,
-                    Amount = detail.Amount,
                     CustomerId = detail.CustomerId,
                     RestaurantId = detail.RestaurantId,
                     CustomerName = detail.CustomerName,

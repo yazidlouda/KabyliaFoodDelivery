@@ -12,20 +12,19 @@ namespace Kabylia.Models.Order
    public class OrderDetails
     {
         public int OrderId { get; set; }
-        //public string Menu { get; set; }
-        public double Price { get; set; }
         public DateTime DateOfOrder { get; set; }
         public double DeliveryCharge { get; set; }
-       // public int CustomerId { get; set; }
+      
         public string CustomerName { get; set; }
-      //  public int RestaurantId { get; set; }
         public string RestaurantName { get; set; }
         public string DriverName { get; set; }
         public double RestaurantLatitude { get; set; }
         public double RestaurantLongitude { get; set; }
         public double CustomerLatitude { get; set; }
         public double CustomerLongitude { get; set; }
-        //public List<Menu> Menu { get; set; }
+        public double DriverLatitude { get; set; }
+        public double DriverLongitude { get; set; }
+        public double Amount { get; set; }
         public List<MenuListItem> Menu { get; set; } = new List<MenuListItem>();
 
 

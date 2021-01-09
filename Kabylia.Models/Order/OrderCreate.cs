@@ -1,4 +1,6 @@
 ﻿using Kabylia.Data;
+using Kabylia.Models.Menu;
+using Kabylia.Models.Restaurant;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -21,6 +23,7 @@ namespace Kabylia.Models.Order
         public int RestaurantId { get; set; }
         [Display(Name = "Driver")]
         public int DriverId { get; set; }
+        public RestaurantDetails Restaurant { get; set; } = new RestaurantDetails();
 
         // public  string RestaurantName { get; set; }
         //public List<Menu> Menu { get; set; }

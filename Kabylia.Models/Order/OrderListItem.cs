@@ -24,12 +24,12 @@ namespace Kabylia.Models.Order
         public string RestaurantAddress { get; set; }
         public string CustomerAddress { get; set; }
         public RestaurantDetails Restaurant { get; set; } = new RestaurantDetails();
-
-        // public List<Menu> Menu { get; set; }
-        public virtual List<MenuListItem> Menu { get; set; } = new List<MenuListItem>();
         public double RestaurantLatitude { get; set; }
         public double RestaurantLongitude { get; set; }
         public double CustomerLatitude { get; set; }
         public double CustomerLongitude { get; set; }
+        public double DriverLatitude { get; set; }
+        public double DriverLongitude { get; set; }
+        public double Amount { get; set; }
     }
 }

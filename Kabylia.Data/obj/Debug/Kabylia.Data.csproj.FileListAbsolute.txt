@@ -33,9 +33,6 @@ C:\Users\yalou\OneDrive\Bureau\Red Badge\KabyliaFoodDelivery\Kabylia.Data\obj\De
 C:\Users\yalou\OneDrive\Bureau\Red Badge\KabyliaFoodDelivery\Kabylia.Data\obj\Debug\Kabylia.Data.csproj.CopyComplete
 C:\Users\yalou\OneDrive\Bureau\Red Badge\KabyliaFoodDelivery\Kabylia.Data\obj\Debug\Kabylia.Data.dll
 C:\Users\yalou\OneDrive\Bureau\Red Badge\KabyliaFoodDelivery\Kabylia.Data\obj\Debug\Kabylia.Data.pdb
-C:\Users\yalou\OneDrive\Bureau\Red Badge\KabyliaFoodDelivery\Kabylia.Data\obj\Debug\Kabylia.Data.Migrations.InitialCreate.resources
-C:\Users\yalou\OneDrive\Bureau\Red Badge\KabyliaFoodDelivery\Kabylia.Data\obj\Debug\Kabylia.Data.csproj.GenerateResource.cache
-C:\Users\yalou\OneDrive\Bureau\Red Badge\KabyliaFoodDelivery\Kabylia.Data\obj\Debug\Kabylia.Data.Migrations.addedListOfOrdertoDelivryDriver.resources
 C:\Users\yalou\OneDrive\Bureau\Red Badge\KabyliaFoodDelivery\Kabylia.Data\bin\Debug\Newtonsoft.Json.dll
 C:\Users\yalou\OneDrive\Bureau\Red Badge\KabyliaFoodDelivery\Kabylia.Data\bin\Debug\System.Net.Http.Formatting.dll
 C:\Users\yalou\OneDrive\Bureau\Red Badge\KabyliaFoodDelivery\Kabylia.Data\bin\Debug\System.Web.Http.dll
@@ -44,8 +41,7 @@ C:\Users\yalou\OneDrive\Bureau\Red Badge\KabyliaFoodDelivery\Kabylia.Data\bin\De
 C:\Users\yalou\OneDrive\Bureau\Red Badge\KabyliaFoodDelivery\Kabylia.Data\bin\Debug\System.Net.Http.Formatting.xml
 C:\Users\yalou\OneDrive\Bureau\Red Badge\KabyliaFoodDelivery\Kabylia.Data\bin\Debug\System.Web.Http.xml
 C:\Users\yalou\OneDrive\Bureau\Red Badge\KabyliaFoodDelivery\Kabylia.Data\bin\Debug\System.Web.Http.WebHost.xml
-C:\Users\yalou\OneDrive\Bureau\Red Badge\KabyliaFoodDelivery\Kabylia.Data\obj\Debug\Kabylia.Data.Migrations.updatingdatabase.resources
-C:\Users\yalou\OneDrive\Bureau\Red Badge\KabyliaFoodDelivery\Kabylia.Data\obj\Debug\Kabylia.Data.Migrations.AddedLatitudeAndLongitude.resources
-C:\Users\yalou\OneDrive\Bureau\Red Badge\KabyliaFoodDelivery\Kabylia.Data\obj\Debug\Kabylia.Data.Migrations.AddedLatitudeAndLongitudetoRestaurant.resources
-C:\Users\yalou\OneDrive\Bureau\Red Badge\KabyliaFoodDelivery\Kabylia.Data\obj\Debug\Kabylia.Data.Migrations.DisplayRouteOnMap.resources
-C:\Users\yalou\OneDrive\Bureau\Red Badge\KabyliaFoodDelivery\Kabylia.Data\obj\Debug\Kabylia.Data.Migrations.addedgeolocalisationToCustomer.resources
+C:\Users\yalou\OneDrive\Bureau\Red Badge\KabyliaFoodDelivery\Kabylia.Data\obj\Debug\Kabylia.Data.Migrations.InitialCreate.resources
+C:\Users\yalou\OneDrive\Bureau\Red Badge\KabyliaFoodDelivery\Kabylia.Data\obj\Debug\Kabylia.Data.csproj.GenerateResource.cache
+C:\Users\yalou\OneDrive\Bureau\Red Badge\KabyliaFoodDelivery\Kabylia.Data\obj\Debug\Kabylia.Data.Migrations.AddedLatLngtoOrder.resources
+C:\Users\yalou\OneDrive\Bureau\Red Badge\KabyliaFoodDelivery\Kabylia.Data\obj\Debug\Kabylia.Data.Migrations.CalculatedToTalPriceOfDelivery.resources

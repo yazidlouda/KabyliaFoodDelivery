@@ -158,7 +158,7 @@ namespace DeliveryFoodApp.Controllers
                 {
                     OrderId = detail.OrderId,
                     //Menu = detail.Menu,
-                    Price = detail.Price,
+                   // Price = detail.Price,
                     DeliveryCharge = detail.DeliveryCharge,
                     CustomerName = detail.CustomerName,
                     RestaurantName = detail.RestaurantName,

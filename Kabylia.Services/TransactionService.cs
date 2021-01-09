@@ -16,11 +16,8 @@ namespace Kabylia.Services
             var entity =
                 new Transaction()
                 {
-                    // OwnerID = _userId,
-
-                    // OrderId = model.OrderId,
-                    Amount = model.Amount,
-                    DateOfTransaction = DateTime.Now,
+                   
+                   
                     OrderId = model.OrderId,
                    
                 };
@@ -37,9 +34,7 @@ namespace Kabylia.Services
                 new Transaction()
                 {
 
-                    //OrderId = model.OrderId,
-                    Amount = model.Amount,
-                    DateOfTransaction = DateTime.Now,
+                  
                     OrderId = model.OrderId,
 
                 };
@@ -65,7 +60,7 @@ namespace Kabylia.Services
                                 {
                                     TransactionId=e.TransactionId,
                                     OrderId = e.OrderId,
-                                    Amount = e.Order.Price+e.Order.DeliveryCharge+(e.Order.Price + e.Order.DeliveryCharge)*7/100,
+                                    Amount = (e.Order.Restaurant.Menu.Sum(item => (item.Price)) + e.Order.DeliveryCharge) + (e.Order.Restaurant.Menu.Sum(item => (item.Price)) + e.Order.DeliveryCharge) * 7 / 100,
                                     DateOfTransaction = e.DateOfTransaction,
                                     CustomerId = e.Order.Customer.CustomerId,
                                     RestaurantId = e.Order.Restaurant.RestaurantId,
@@ -93,7 +88,8 @@ namespace Kabylia.Services
                                 {
                                     TransactionId = e.TransactionId,
                                     OrderId = e.OrderId,
-                                    Amount = e.Amount,
+                                    Amount = (e.Order.Restaurant.Menu.Sum(item => (item.Price)) + e.Order.DeliveryCharge)+ (e.Order.Restaurant.Menu.Sum(item => (item.Price)) + e.Order.DeliveryCharge)*7/100,
+
                                     DateOfTransaction = e.DateOfTransaction,
                                     CustomerId = e.Order.Customer.CustomerId,
                                     RestaurantId = e.Order.Restaurant.RestaurantId,
@@ -122,7 +118,7 @@ namespace Kabylia.Services
                         DateOfTransaction = entity.DateOfTransaction,
                         CustomerId = entity.Order.Customer.CustomerId,
                         RestaurantId = entity.Order.Restaurant.RestaurantId,
-                        Amount=entity.Amount,
+                        Amount = (entity.Order.Restaurant.Menu.Sum(item => (item.Price)) + entity.Order.DeliveryCharge) + (entity.Order.Restaurant.Menu.Sum(item => (item.Price)) + entity.Order.DeliveryCharge) * 7 / 100,
                         CustomerName = entity.Order.Customer.FirstName + " " + entity.Order.Customer.LastName,
                         RestaurantName = entity.Order.Restaurant.Name
 
@@ -146,7 +142,8 @@ namespace Kabylia.Services
                         DateOfTransaction = entity.DateOfTransaction,
                         CustomerId = entity.Order.Customer.CustomerId,
                         RestaurantId = entity.Order.Restaurant.RestaurantId,
-                        Amount = entity.Amount,
+                        Amount = (entity.Order.Restaurant.Menu.Sum(item => (item.Price)) + entity.Order.DeliveryCharge)+ (entity.Order.Restaurant.Menu.Sum(item => (item.Price)) + entity.Order.DeliveryCharge)*7/100,
+
                         CustomerName = entity.Order.Customer.FirstName + " " + entity.Order.Customer.LastName,
                         RestaurantName = entity.Order.Restaurant.Name
 
@@ -162,7 +159,7 @@ namespace Kabylia.Services
                         .Transactions
                         .Where(e => e.TransactionId == note.TransactionId  )
                         .FirstOrDefaultAsync();
-                entity.Amount = note.Amount;
+              
                 entity.OrderId = note.OrderId;
                 entity.Order.Customer.CustomerId = note.CustomerId;
                 entity.Order.Restaurant.RestaurantId = note.CustomerId;
@@ -182,7 +179,7 @@ namespace Kabylia.Services
                         .Transactions
                         .Where(e => e.TransactionId == note.TransactionId)
                         .FirstOrDefault();
-                entity.Amount = note.Amount;
+              
                 entity.OrderId = note.OrderId;
                 entity.Order.Customer.CustomerId = note.CustomerId;
                 entity.Order.Restaurant.RestaurantId = note.CustomerId;
