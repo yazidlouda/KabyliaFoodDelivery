@@ -17,17 +17,6 @@
         <dd>
             @Html.DisplayFor(model => model.OrderId)
         </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Menu)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Menu)
-        </dd>
-
-
-
         <dt>
             @Html.DisplayNameFor(model => model.DateOfOrder)
         </dt>
@@ -42,22 +31,6 @@
 
         <dd>
             @Html.DisplayFor(model => model.DeliveryCharge)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.CustomerName)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.CustomerName)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.RestaurantName)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.RestaurantName)
         </dd>
         <dt>
             @Html.DisplayNameFor(model => model.DriverName)
@@ -86,81 +59,71 @@
     <h4 style="color:Red">Customer:</h4>
     <dt>@Html.DisplayNameFor(modelItem => modelItem.CustomerName)</dt>
     <dd>@Html.DisplayFor(modelItem => modelItem.CustomerName)</dd>
-
-    <dt>@Html.DisplayNameFor(modelItem => modelItem.CustomerLatitude)</dt>
-    <dd>@Html.DisplayFor(modelItem => modelItem.CustomerLatitude)</dd>
-    <dt>@Html.DisplayNameFor(modelItem => modelItem.CustomerLongitude)</dt>
-    <dd>@Html.DisplayFor(modelItem => modelItem.CustomerLongitude)</dd>
     <br />
     <h4 style="color:Red">Restaurant:</h4>
     <dt>@Html.DisplayNameFor(modelItem => modelItem.RestaurantName)</dt>
     <dd>@Html.DisplayFor(modelItem => modelItem.RestaurantName)</dd>
 
+    <dt>@Html.DisplayNameFor(modelItem => modelItem.Menu)</dt>
+    <dd>@Html.DisplayFor(modelItem => modelItem.Menu)</dd>
+    @foreach (var item in Model.Menu)
+    {
 
-    <dt>@Html.DisplayNameFor(modelItem => modelItem.RestaurantLatitude)</dt>
-    <dd>@Html.DisplayFor(modelItem => modelItem.RestaurantLatitude)</dd>
-    <dt>@Html.DisplayNameFor(modelItem => modelItem.RestaurantLongitude)</dt>
-    <dd>@Html.DisplayFor(modelItem => modelItem.RestaurantLongitude)</dd>
-    <dd>
-        @foreach (var item in Model.Menu)
-        {
-        <dt>@Html.DisplayNameFor(modelItem =>item.MenuId )</dt>
-        <dd>@Html.DisplayFor(modelItem => item.MenuId)</dd>
         <dt>@Html.DisplayNameFor(modelItem => item.Name)</dt>
         <dd>@Html.DisplayFor(modelItem => item.Name)</dd>
+        <dt>@Html.DisplayNameFor(modelItem => item.Description)</dt>
+        <dd>@Html.DisplayFor(modelItem => item.Description)</dd>
+        <dt>@Html.DisplayNameFor(modelItem => item.Price)</dt>
+        <dd>@Html.DisplayFor(modelItem => item.Price)</dd>
     }
-        </dd>
+
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.OrderId }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+    <dd>
+        <style>
+            #map {
+                height: 600px;
+                width: 600px;
+            }
 
 
+            html,
+            body {
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
 
-    </dl>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.OrderId }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
-<dd>
-    <style>
-        #map {
-            height: 600px;
-            width: 600px;
-        }
+            #floating-panel {
+                position: absolute;
+                z-index: 5;
+                background-color: #000000;
+                padding: 5px;
+                border: 1px solid #999;
+                text-align: center;
+                font-family: "Roboto", "sans-serif";
+                color: black;
+                line-height: 30px;
+                padding-left: 10px;
+            }
+        </style>
+        <br /><br />
+        <section>
+            <div id="map"></div>
+            <div id="floating-panel">
+                <b style="color:antiquewhite">Mode of Travel: </b>
+                <select id="mode">
+                    <option value="DRIVING">Driving</option>
+                    <option value="WALKING">Walking</option>
+                    <option value="BICYCLING">Bicycling</option>
+                    <option value="TRANSIT">Transit</option>
+                </select>
 
-
-        html,
-        body {
-            height: 100%;
-            margin: 0;
-            padding: 0;
-        }
-
-        #floating-panel {
-            position: absolute;
-            z-index: 5;
-            background-color: #000000;
-            padding: 5px;
-            border: 1px solid #999;
-            text-align: center;
-            font-family: "Roboto", "sans-serif";
-            color: black;
-            line-height: 30px;
-            padding-left: 10px;
-        }
-    </style>
-    <br /><br />
-    <section>
-        <div id="map"></div>
-        <div id="floating-panel">
-            <b style="color:antiquewhite">Mode of Travel: </b>
-            <select id="mode">
-                <option value="DRIVING">Driving</option>
-                <option value="WALKING">Walking</option>
-                <option value="BICYCLING">Bicycling</option>
-                <option value="TRANSIT">Transit</option>
-            </select>
-
-        </div>
-    </section>
-    <script>
+            </div>
+        </section>
+        <script>
 
         var map;
         function initMap() {
@@ -210,11 +173,11 @@ function calculateAndDisplayRoute(directionsService, directionsRenderer) {
     );
 }
 
-    </script>
-    <title>Travel Modes in Directions</title>
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBggS3eBJImaqRo6yCIUtMtU1M7uufu_QE&callback=initMap&libraries=&v=weekly"
-            defer></script>
-</dd>
+        </script>
+        <title>Travel Modes in Directions</title>
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBggS3eBJImaqRo6yCIUtMtU1M7uufu_QE&callback=initMap&libraries=&v=weekly"
+                defer></script>
+    </dd>
 
 

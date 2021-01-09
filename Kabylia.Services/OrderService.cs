@@ -110,7 +110,8 @@ namespace Kabylia.Services
                                     CustomerLongitude = e.Customer.Longitude,
                                     DriverLatitude = e.DeliveryDriver.Latitude,
                                     DriverLongitude = e.DeliveryDriver.Longitude,
-                                    Amount = e.Restaurant.Menu.Sum(item => (item.Price))
+                                    Amount = e.Restaurant.Menu.Sum(item => (item.Price)),
+
 
                                 }
                         );
@@ -143,7 +144,15 @@ namespace Kabylia.Services
                         CustomerLongitude=entity.Customer.Longitude,
                         DriverLatitude = entity.DeliveryDriver.Latitude,
                         DriverLongitude = entity.DeliveryDriver.Longitude,
-                        Amount = entity.Restaurant.Menu.Sum(item =>(item.Price)) 
+                        Amount = entity.Restaurant.Menu.Sum(item =>(item.Price)) ,
+                        Menu = entity.Restaurant.Menu.Select(x => new MenuListItem
+                        {
+                            MenuId=x.MenuId,
+                            Name = x.Name,
+                            Description = x.Description,
+                            Price = x.Price
+                        }
+                                ).ToList()
 
                     };
             }
@@ -172,7 +181,15 @@ namespace Kabylia.Services
                         CustomerLongitude = entity.Customer.Longitude,
                         DriverLatitude = entity.DeliveryDriver.Latitude,
                         DriverLongitude = entity.DeliveryDriver.Longitude,
-                        Amount = entity.Restaurant.Menu.Sum(item =>(item.Price)) 
+                        Amount = entity.Restaurant.Menu.Sum(item =>(item.Price)) ,
+                        Menu=entity.Restaurant.Menu.Select(x => new MenuListItem
+                        {
+                           MenuId=x.MenuId,
+                            Name = x.Name,
+                            Description = x.Description,
+                            Price = x.Price
+                        }
+                                ).ToList()
 
                     };
             }
