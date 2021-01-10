@@ -26,6 +26,7 @@ namespace Kabylia.Models.Order
         public double DriverLongitude { get; set; }
         public double Amount { get; set; }
         public List<MenuListItem> Menu { get; set; } = new List<MenuListItem>();
+        public string MenuName { get; set; }
 
 
     }

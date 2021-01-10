@@ -220,6 +220,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-dark.css" />
+    <Content Include="Content\bootstrap-mat.css" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -326,12 +327,12 @@
     <Content Include="Views\Area\Edit.cshtml" />
     <Content Include="Views\Area\Index.cshtml" />
     <Content Include="Views\Restaurant\MenuDetails.cshtml" />
-    <Content Include="Views\Menu\MenuSelectable.cshtml" />
-    <Content Include="Views\Restaurant\SelectableMenu.cshtml" />
     <Content Include="Views\Home\Create.cshtml" />
     <Content Include="Views\Home\OrderSummary.cshtml" />
     <Content Include="Views\Shared\Starred.cshtml" />
     <Content Include="Views\Menu\CreateMenuSelectable.cshtml" />
+    <Content Include="Views\Menu\PartialViewTest.cshtml" />
+    <Content Include="Views\Home\PartialViewTest.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
