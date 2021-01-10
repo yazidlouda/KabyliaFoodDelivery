@@ -3,9 +3,16 @@
 @{
     ViewBag.Title = "Index";
 }
-
-<h2>Index</h2>
-
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
@@ -49,36 +56,36 @@
 
     @foreach (var item in Model)
     {
-<tr>
-    <td>
-        @Html.DisplayFor(modelItem => item.OrderId)
-    </td>
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.OrderId)
+            </td>
 
 
-    <td>
-        @Html.DisplayFor(modelItem => item.DateOfOrder)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.DeliveryCharge)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.CustomerName)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.RestaurantName)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.DriverName)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.Amount)
-    </td>
-    <td>
-        @Html.ActionLink("Edit", "Edit", new { id = item.OrderId }) |
-        @Html.ActionLink("Details", "Details", new { id = item.OrderId }) |
-        @Html.ActionLink("Delete", "Delete", new { id = item.OrderId })
-    </td>
-</tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateOfOrder)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DeliveryCharge)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CustomerName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RestaurantName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DriverName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Amount)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.OrderId }) |
+                @Html.ActionLink("Details", "Details", new { id = item.OrderId }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.OrderId })
+            </td>
+        </tr>
     }
 
 </table>

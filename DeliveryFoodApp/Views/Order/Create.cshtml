@@ -3,62 +3,94 @@
 @{
     ViewBag.Title = "Create";
 }
+<br />
+<br />
+<br />
+<br />
 
-<h2>Create</h2>
 
 
-@using (Html.BeginForm()) 
+
+@using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
+    <br />
+    <br />
+    <br />
+    <br />
+<br />
+
 <div class="form-horizontal">
-    <h4>OrderCreate</h4>
-    <hr />
+    
     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
+    
+    <div class="container ">
+        <h2 class="text-center">Simulation</h2>
+        <div class="raw ">
+            <div class="col-md-4 ">
 
+                <div class="col-md-10 ">
+                    @Html.DropDownList("CustomerId", ViewBag.RestaurantList as SelectList, "Select Customer", htmlAttributes: new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.CustomerId, "", new { @class = "text-danger" })
+                    <img src="https://miro.medium.com/max/2800/1*frvi7_3_Vf57zV8XZ2-1YA.png" alt="pic1" border="0" style="width:300px;height:300px">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="col-md-10">
+                    @Html.DropDownList("DriverId", ViewBag.RestaurantList as SelectList, "Select Driver", htmlAttributes: new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.DriverId, "", new { @class = "text-danger" })
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJSimI_413zpIuhzacunzNAK4_DYTBiEft2A&usqp=CAU" alt="pic1" border="0" style="width:300px;height:300px">
+                </div>
 
+            </div>
+            <div class="col-md-4">
+                @Html.DropDownList("RestaurantId", ViewBag.RestaurantList as SelectList, "Select Restaurant", htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.RestaurantId, "", new { @class = "text-danger" })
+                <img src="https://lh3.googleusercontent.com/proxy/hyOHyJSUlIY2pr3IFngvKBOlsFiRUpf_iHTf7VeXiA40mkwaLDCgI2DKm6Kw7LIEWLgh41Y2ZWsBmWEtG2tAmDc2IOLbLlge8m9i3xhcwNoY3kMu0ie3UoHRyv8fJ3kh1r9vM-UZvKcPBVzEWpKVUCnfQgFobyklpUhn" alt="pic1" border="0" style="width:300px;height:300px">
 
-  
-
-
-    <div class="form-group">
-        @Html.LabelFor(model => model.DeliveryCharge, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.EditorFor(model => model.DeliveryCharge, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.DeliveryCharge, "", new { @class = "text-danger" })
+            </div>
         </div>
-    </div>
+        @Html.ActionLink("See Menu Details Here", "Index","Menu")
+        <div class="raw ">
+            <div class="col-md-4  ">
 
-    <div class="form-group">
-        @Html.LabelFor(model => model.CustomerId, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.DropDownList("CustomerId", ViewBag.RestaurantList as SelectList, "Select Customer", htmlAttributes: new { @class = "form-control" })
-            @Html.ValidationMessageFor(model => model.CustomerId, "", new { @class = "text-danger" })
-        </div>
-    </div>
+                <div class="col-md-10 ">
+                    @Html.DropDownList("MenuId", ViewBag.RestaurantList as SelectList, "Select Menu item 1", htmlAttributes: new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.RestaurantId, "", new { @class = "text-danger" })
 
-    <div class="form-group">
-        @Html.LabelFor(model => model.DriverId, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.DropDownList("DriverId", ViewBag.RestaurantList as SelectList, "Select Driver", htmlAttributes: new { @class = "form-control" })
-            @Html.ValidationMessageFor(model => model.DriverId, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="col-md-10">
+                    @Html.DropDownList("MenuId", ViewBag.RestaurantList as SelectList, "Select Menu item 2", htmlAttributes: new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.DriverId, "", new { @class = "text-danger" })
+                </div>
+
+            </div>
+            <div class="col-md-4">
+                @Html.DropDownList("MenuId", ViewBag.RestaurantList as SelectList, "Select Menu item 3", htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.RestaurantId, "", new { @class = "text-danger" })
+
+            </div>
+            <div class="form-group">
+                <div class="col-md-12 " align="center">
+
+                </div>
+            </div>
+            <div class="form-group">
+                  
+                <div class="col-md-12 ">
+                    <p>Delivery charge</p>
+                    @Html.EditorFor(model => model.DeliveryCharge, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.DeliveryCharge, "", new { @class = "text-danger" })
+                </div>
+            </div>
         </div>
+
     </div>
-    <div class="form-group">
-        @Html.LabelFor(model => model.RestaurantId, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.DropDownList("RestaurantId", ViewBag.RestaurantList as SelectList, "Select Restaurant", htmlAttributes: new { @class = "form-control" })
-            @Html.ValidationMessageFor(model => model.RestaurantId, "", new { @class = "text-danger" })
-        </div>
-    </div>
-    <div class="form-group">
-        @Html.LabelFor(model => model.Restaurant.Menu, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.DropDownList("MenuId", ViewBag.RestaurantList as SelectList, "Select Menu", htmlAttributes: new { @class = "form-control" })
-            @Html.ValidationMessageFor(model => model.Restaurant.Menu, "", new { @class = "text-danger" })
-        </div>
-    </div>
+    
+
     <div class="form-group">
         <div class="col-md-offset-2 col-md-10">
             <input type="submit" value="Create" class="btn btn-default" />

@@ -23,7 +23,7 @@ namespace DeliveryFoodApp
                       "~/Scripts/bootstrap.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/bootstrap-dark.css",
+                      "~/Content/bootstrap.css",
                       "~/Content/site.css"));
         }
     }

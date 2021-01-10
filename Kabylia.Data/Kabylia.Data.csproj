@@ -85,6 +85,10 @@
     <Compile Include="Migrations\202101090218231_CalculatedToTalPriceOfDelivery.Designer.cs">
       <DependentUpon>202101090218231_CalculatedToTalPriceOfDelivery.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202101091821079_FixedMenuOnOrder.cs" />
+    <Compile Include="Migrations\202101091821079_FixedMenuOnOrder.Designer.cs">
+      <DependentUpon>202101091821079_FixedMenuOnOrder.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Order.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -104,6 +108,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202101090218231_CalculatedToTalPriceOfDelivery.resx">
       <DependentUpon>202101090218231_CalculatedToTalPriceOfDelivery.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202101091821079_FixedMenuOnOrder.resx">
+      <DependentUpon>202101091821079_FixedMenuOnOrder.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

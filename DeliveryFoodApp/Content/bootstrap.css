@@ -4,6 +4,124 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
+
+/*--------------------*/
+/* BASIC TYPOGRAPHY */
+/*--------------------*/
+
+
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
+p {
+    font-size: 1.4em;
+    text-align: justify;
+}
+
+h2.underline {
+    margin: 30px;
+}
+
+    h2.underline:after {
+        width: 80px;
+        height: 2px;
+        background-color: #dd1616;
+        display: block;
+        content: "";
+        margin: 0 auto;
+        margin-top: 10px;
+    }
+
+
+.container {
+    padding: 80px 0;
+}
+
+
+.raw img {
+    padding: 10px;
+}
+
+
+
+
+
+
+/*--------------------*/
+/* HOME SECTION */
+/*--------------------*/
+#home {
+    background: url(https://res.cloudinary.com/sagacity/image/upload/c_crop,h_2865,w_3934,x_0,y_0/c_limit,dpr_auto,f_auto,fl_lossy,q_80,w_1080/photo_3_nxdhiw.jpg) no-repeat center fixed;
+    display: table;
+    height: 100%;
+    width: 100%;
+    position: relative;
+    background-size: cover;
+}
+
+.landing-text {
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+    color: #fff;
+}
+
+    .landing-text h1 {
+        font-size: 500%;
+        font-weight: 700;
+    }
+
+
+
+/*--------------------*/
+/* FOOTER SECTION */
+/*--------------------*/
+
+
+footer {
+    width: 100%;
+    background-color: #524b4b;
+    padding: 1%;
+    color: #fff;
+}
+
+
+    footer .container-fluid i {
+        font-size: 200%;
+        color: #c3d7df;
+        margin: 1%;
+        padding: 3%;
+    }
+
+        footer .container-fluid i:hover {
+            color: #f5f5f5;
+        }
+
+
+
+/*--------------------*/
+/* Media Queries */
+/*--------------------*/
+
+
+@media screen and (max-width:768px) {
+
+    .landing-text h1 {
+        font-size: 300%;
+    }
+
+    .item h2 {
+        font-size: 150%;
+    }
+} 
+
+
+
+
+
+
 html {
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;

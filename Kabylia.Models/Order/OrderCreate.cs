@@ -24,6 +24,7 @@ namespace Kabylia.Models.Order
         [Display(Name = "Driver")]
         public int DriverId { get; set; }
         public RestaurantDetails Restaurant { get; set; } = new RestaurantDetails();
+        public List<MenuListItem> Menu { get; set; } = new List<MenuListItem>();
 
         // public  string RestaurantName { get; set; }
         //public List<Menu> Menu { get; set; }
