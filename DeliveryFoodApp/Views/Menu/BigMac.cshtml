@@ -1,0 +1,42 @@
+﻿@model IEnumerable<Kabylia.Models.Menu.MenuListItem>
+
+@{
+    ViewBag.Title = "BigMac";
+}
+
+
+<div class="col-md-4 text-center align-content-lg-center">
+    <h4>Big Mac</h4>
+    <img src="https://images.ladbible.com/thumbnail?type=jpeg&url=http://beta.ems.ladbiblegroup.com/s3/content/895adf215df95202b6781ea888937fce.png&quality=70&height=700" alt="pic1" border="0" style="width:300px;height:300px">
+
+    <div> <a href="https://localhost:44308/Restaurant/Details/1">MacDonald's</a></div>
+</div>
+<table class="table">
+    <tr>
+       
+        <th>
+            @Html.DisplayNameFor(model => model.Price)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+       
+        <th></th>
+    </tr>
+
+        <tr>
+            <td>
+               <p>$5.99</p>
+            </td>
+            <td>
+                <p>Mouthwatering perfection starts with two 100% pure beef patties and Big <br />Mac sauce sandwiched between a sesame seed bun.
+                It's topped off with pickles, <br />crisp shredded lettuce, finely chopped onion and American cheese.</p>
+            </td>
+           
+          
+        </tr>
+
+</table>
+        <p>
+            @Html.ActionLink("Back", "Index","Home")
+        </p>
