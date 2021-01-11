@@ -92,6 +92,10 @@
     <Compile Include="Restaurant\RestaurantDetails.cs" />
     <Compile Include="Restaurant\RestaurantEdit.cs" />
     <Compile Include="Restaurant\RestaurantListItem.cs" />
+    <Compile Include="Review\ReviewCreate.cs" />
+    <Compile Include="Review\ReviewEdit.cs" />
+    <Compile Include="Review\ReviewDetails.cs" />
+    <Compile Include="Review\ReviewListItem.cs" />
     <Compile Include="Transaction\TransactionCreate.cs" />
     <Compile Include="Transaction\TransactionDetails.cs" />
     <Compile Include="Transaction\TransactionEdit.cs" />

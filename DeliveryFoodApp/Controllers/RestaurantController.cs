@@ -156,7 +156,7 @@ namespace DeliveryFoodApp.Controllers
                   OpeningTime=detail.OpeningTime,
                   ClosingTime=detail.ClosingTime,
                   AreaId=detail.AreaId,
-                  Review=detail.Review,
+                  //Review=detail.Review,
                   Latitude=detail.Latitude,
                   Longitude=detail.Longitude
                 };

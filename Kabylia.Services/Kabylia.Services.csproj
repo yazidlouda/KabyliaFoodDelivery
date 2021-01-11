@@ -73,6 +73,7 @@
     <Compile Include="OrderService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RestaurantService.cs" />
+    <Compile Include="ReviewService.cs" />
     <Compile Include="TransactionService.cs" />
   </ItemGroup>
   <ItemGroup>
