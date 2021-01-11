@@ -7,13 +7,13 @@ namespace Kabylia.Data.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.0-30225")]
-    public sealed partial class FixedMenuOnOrder : IMigrationMetadata
+    public sealed partial class addedReviewListToRestaurant : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(FixedMenuOnOrder));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(addedReviewListToRestaurant));
         
         string IMigrationMetadata.Id
         {
-            get { return "202101091821079_FixedMenuOnOrder"; }
+            get { return "202101111611562_addedReviewListToRestaurant"; }
         }
         
         string IMigrationMetadata.Source

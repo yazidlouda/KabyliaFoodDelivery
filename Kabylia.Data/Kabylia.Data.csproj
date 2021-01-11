@@ -85,14 +85,19 @@
     <Compile Include="Migrations\202101090218231_CalculatedToTalPriceOfDelivery.Designer.cs">
       <DependentUpon>202101090218231_CalculatedToTalPriceOfDelivery.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202101091821079_FixedMenuOnOrder.cs" />
-    <Compile Include="Migrations\202101091821079_FixedMenuOnOrder.Designer.cs">
-      <DependentUpon>202101091821079_FixedMenuOnOrder.cs</DependentUpon>
+    <Compile Include="Migrations\202101111424343_addedReviewTable.cs" />
+    <Compile Include="Migrations\202101111424343_addedReviewTable.Designer.cs">
+      <DependentUpon>202101111424343_addedReviewTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202101111611562_addedReviewListToRestaurant.cs" />
+    <Compile Include="Migrations\202101111611562_addedReviewListToRestaurant.Designer.cs">
+      <DependentUpon>202101111611562_addedReviewListToRestaurant.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Order.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Restaurant.cs" />
+    <Compile Include="Review.cs" />
     <Compile Include="Transaction.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -109,8 +114,11 @@
     <EmbeddedResource Include="Migrations\202101090218231_CalculatedToTalPriceOfDelivery.resx">
       <DependentUpon>202101090218231_CalculatedToTalPriceOfDelivery.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202101091821079_FixedMenuOnOrder.resx">
-      <DependentUpon>202101091821079_FixedMenuOnOrder.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202101111424343_addedReviewTable.resx">
+      <DependentUpon>202101111424343_addedReviewTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202101111611562_addedReviewListToRestaurant.resx">
+      <DependentUpon>202101111611562_addedReviewListToRestaurant.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

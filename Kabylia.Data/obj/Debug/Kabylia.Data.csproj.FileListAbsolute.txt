@@ -45,4 +45,5 @@ C:\Users\yalou\OneDrive\Bureau\Red Badge\KabyliaFoodDelivery\Kabylia.Data\obj\De
 C:\Users\yalou\OneDrive\Bureau\Red Badge\KabyliaFoodDelivery\Kabylia.Data\obj\Debug\Kabylia.Data.csproj.GenerateResource.cache
 C:\Users\yalou\OneDrive\Bureau\Red Badge\KabyliaFoodDelivery\Kabylia.Data\obj\Debug\Kabylia.Data.Migrations.AddedLatLngtoOrder.resources
 C:\Users\yalou\OneDrive\Bureau\Red Badge\KabyliaFoodDelivery\Kabylia.Data\obj\Debug\Kabylia.Data.Migrations.CalculatedToTalPriceOfDelivery.resources
-C:\Users\yalou\OneDrive\Bureau\Red Badge\KabyliaFoodDelivery\Kabylia.Data\obj\Debug\Kabylia.Data.Migrations.FixedMenuOnOrder.resources
+C:\Users\yalou\OneDrive\Bureau\Red Badge\KabyliaFoodDelivery\Kabylia.Data\obj\Debug\Kabylia.Data.Migrations.addedReviewTable.resources
+C:\Users\yalou\OneDrive\Bureau\Red Badge\KabyliaFoodDelivery\Kabylia.Data\obj\Debug\Kabylia.Data.Migrations.addedReviewListToRestaurant.resources

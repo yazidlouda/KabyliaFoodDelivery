@@ -20,10 +20,11 @@ namespace Kabylia.Data
         public string ClosingTime { get; set; }
         public int AreaId { get; set; }
         public virtual Area Area { get; set; }
-        public string Review { get; set; }
+       // public string Review { get; set; }
         public double Latitude { get; set; }
         public double Longitude { get; set; }
         public virtual List<Menu> Menu { get; set; } = new List<Menu>();
+        public virtual List<Review> Review { get; set; } = new List<Review>();
         [DefaultValue(false)]
         public bool IsStarred { get; set; }
         // public int MenuId { get; set; }
