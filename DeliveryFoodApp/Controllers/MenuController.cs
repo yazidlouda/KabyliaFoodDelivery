@@ -25,7 +25,24 @@ namespace DeliveryFoodApp.Controllers
             var model = await service.GetMenuAsync();
             return View(model);
         }
-
+        public async Task<ActionResult> BigMac()
+        {
+            var service = CreateMenuService();
+            var model = await service.GetMenuAsync();
+            return View(model);
+        }
+        public async Task<ActionResult> ChickenQuasadilla()
+        {
+            var service = CreateMenuService();
+            var model = await service.GetMenuAsync();
+            return View(model);
+        }
+        public async Task<ActionResult> CaramelFrapuccino()
+        {
+            var service = CreateMenuService();
+            var model = await service.GetMenuAsync();
+            return View(model);
+        }
         public async Task<ActionResult> MenuSelectable()
         {
             var service = CreateMenuService();

@@ -3,13 +3,6 @@
 @{
     ViewBag.Title = "Create";
 }
-<br />
-<br />
-<br />
-<br />
-
-
-
 
 @using (Html.BeginForm())
 {
@@ -47,7 +40,7 @@
             <div class="col-md-4">
                 @Html.DropDownList("RestaurantId", ViewBag.RestaurantList as SelectList, "Select Restaurant", htmlAttributes: new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.RestaurantId, "", new { @class = "text-danger" })
-                <img src="https://lh3.googleusercontent.com/proxy/hyOHyJSUlIY2pr3IFngvKBOlsFiRUpf_iHTf7VeXiA40mkwaLDCgI2DKm6Kw7LIEWLgh41Y2ZWsBmWEtG2tAmDc2IOLbLlge8m9i3xhcwNoY3kMu0ie3UoHRyv8fJ3kh1r9vM-UZvKcPBVzEWpKVUCnfQgFobyklpUhn" alt="pic1" border="0" style="width:300px;height:300px">
+                <img src="https://media.cntraveler.com/photos/5b22bfdff04a775484b99dfc/master/pass/Alo-Restaurant__2018_Raffi-Photo-2.jpg" alt="pic1" border="0" style="width:300px;height:300px">
 
             </div>
         </div>
