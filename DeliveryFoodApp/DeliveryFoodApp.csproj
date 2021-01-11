@@ -336,6 +336,8 @@
     <Content Include="Views\Menu\BigMac.cshtml" />
     <Content Include="Views\Menu\ChickenQuasadilla.cshtml" />
     <Content Include="Views\Menu\CaramelFrapuccino.cshtml" />
+    <Content Include="Views\Restaurant\McDonalds.cshtml" />
+    <Content Include="Views\Restaurant\Buffalo.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
