@@ -1,6 +1,7 @@
 ﻿using Kabylia.Data;
 using Kabylia.Models.Customer;
 using Kabylia.Models.Menu;
+using Kabylia.Models.Rating;
 using Kabylia.Models.Review;
 using System;
 using System.Collections.Generic;
@@ -31,6 +32,7 @@ namespace Kabylia.Models.Restaurant
         public bool Select { get; set; }
         public List<MenuListItem> Menu { get; set; } = new List<MenuListItem>();
         public List<ReviewListItem> Review { get; set; } = new List<ReviewListItem>();
+        public List<RatingListItem> Rating { get; set; } = new List<RatingListItem>();
         //public List<CustomerListItem> Customer { get; set; } = new List<CustomerListItem>();
 
     }

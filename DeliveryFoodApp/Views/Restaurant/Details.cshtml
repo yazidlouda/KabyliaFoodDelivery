@@ -135,6 +135,25 @@
         }
 
     </dl>
+    <hr />
+    <h4>Reviews</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        @foreach (var item in Model.Rating)
+        {
+
+            <dt>@Html.DisplayNameFor(modelItem => item.CustomerName)</dt>
+            <dd>@Html.DisplayFor(modelItem => item.CustomerName)</dd>
+            <dt>@Html.DisplayNameFor(modelItem => item.RestaurantRating)</dt>
+            <dd>@Html.DisplayFor(modelItem => item.RestaurantRating)</dd>
+
+
+            <dd></dd>
+            <dd>@Html.ActionLink("View Reviews", "Details", "Review", new { id = item.RatingId }, null)</dd>
+            <br />
+        }
+
+    </dl>
 </div>
 <p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.RestaurantId }) |

@@ -53,6 +53,46 @@ namespace DeliveryFoodApp.Controllers
 
             return View(model);
         }
+        public async Task<ActionResult> Taco(int id)
+        {
+
+            var svc = CreateRestaurantService();
+            var model = await svc.GetRestaurantByIdAsync(id);
+
+            return View(model);
+        }
+        public async Task<ActionResult> Starbucks(int id)
+        {
+
+            var svc = CreateRestaurantService();
+            var model = await svc.GetRestaurantByIdAsync(id);
+
+            return View(model);
+        }
+        public async Task<ActionResult> Dunkin(int id)
+        {
+
+            var svc = CreateRestaurantService();
+            var model = await svc.GetRestaurantByIdAsync(id);
+
+            return View(model);
+        }
+        public async Task<ActionResult> Texas(int id)
+        {
+
+            var svc = CreateRestaurantService();
+            var model = await svc.GetRestaurantByIdAsync(id);
+
+            return View(model);
+        }
+        public async Task<ActionResult> Chick(int id)
+        {
+
+            var svc = CreateRestaurantService();
+            var model = await svc.GetRestaurantByIdAsync(id);
+
+            return View(model);
+        }
         public async Task<ActionResult> MenuDetails(int id)
         {
 

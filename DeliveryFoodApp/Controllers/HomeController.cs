@@ -89,8 +89,6 @@ namespace DeliveryFoodApp.Controllers
 
             return catSelectList;
         }
-
-
         public async Task<IEnumerable<SelectListItem>> GetOrdersAsync()
         {
             // var userId = Guid.Parse(User.Identity.GetUserId());
@@ -118,9 +116,6 @@ namespace DeliveryFoodApp.Controllers
 
             return View();
         }
-
-
-
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Create(OrderCreate note)

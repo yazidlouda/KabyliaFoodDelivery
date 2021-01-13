@@ -40,6 +40,7 @@ namespace Kabylia.Data
         public DbSet<Menu> Menu { get; set; } //DB Set for Menu
         public DbSet<Area> Area { get; set; } //DB Set for Area
         public DbSet<Review> Review { get; set; } //DB Set for Area
+        public DbSet<Rating> Rating { get; set; } //DB Set for Area
         
 
 

@@ -93,9 +93,14 @@
     <Compile Include="Migrations\202101111611562_addedReviewListToRestaurant.Designer.cs">
       <DependentUpon>202101111611562_addedReviewListToRestaurant.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202101121536051_AddedRatingTable.cs" />
+    <Compile Include="Migrations\202101121536051_AddedRatingTable.Designer.cs">
+      <DependentUpon>202101121536051_AddedRatingTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Order.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Rating.cs" />
     <Compile Include="Restaurant.cs" />
     <Compile Include="Review.cs" />
     <Compile Include="Transaction.cs" />
@@ -119,6 +124,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202101111611562_addedReviewListToRestaurant.resx">
       <DependentUpon>202101111611562_addedReviewListToRestaurant.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202101121536051_AddedRatingTable.resx">
+      <DependentUpon>202101121536051_AddedRatingTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

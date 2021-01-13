@@ -1,6 +1,7 @@
 ﻿using Kabylia.Data;
 using Kabylia.Models.Customer;
 using Kabylia.Models.Menu;
+using Kabylia.Models.Rating;
 using Kabylia.Models.Restaurant;
 using Kabylia.Models.Review;
 using System;
@@ -177,7 +178,15 @@ namespace Kabylia.Services
                                         Reviews=x.Reviews
                                     }
                                 ).ToList(),
-
+                        Rating = entity.Rating
+                        .Select(
+                                    x => new RatingListItem
+                                    {
+                                        RatingId = x.RatingId,
+                                        CustomerName = x.Customer.FirstName + " " + x.Customer.LastName,
+                                        RestaurantRating = x.RestaurantRating
+                                    }
+                                ).ToList(),
 
                     };
             }
