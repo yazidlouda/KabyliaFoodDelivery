@@ -88,6 +88,10 @@
     <Compile Include="Order\OrderEdit.cs" />
     <Compile Include="Order\OrderListItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Rating\RatingCreate.cs" />
+    <Compile Include="Rating\RatingDetails.cs" />
+    <Compile Include="Rating\RatingEdit.cs" />
+    <Compile Include="Rating\RatingListItem.cs" />
     <Compile Include="Restaurant\RestaurantCreate.cs" />
     <Compile Include="Restaurant\RestaurantDetails.cs" />
     <Compile Include="Restaurant\RestaurantEdit.cs" />

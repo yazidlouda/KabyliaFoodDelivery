@@ -31,7 +31,67 @@ namespace DeliveryFoodApp.Controllers
             var model = await service.GetMenuAsync();
             return View(model);
         }
+        public async Task<ActionResult> Nuggets()
+        {
+            var service = CreateMenuService();
+            var model = await service.GetMenuAsync();
+            return View(model);
+        }
+        public async Task<ActionResult> IcedCoffe()
+        {
+            var service = CreateMenuService();
+            var model = await service.GetMenuAsync();
+            return View(model);
+        }
+        public async Task<ActionResult> Fries()
+        {
+            var service = CreateMenuService();
+            var model = await service.GetMenuAsync();
+            return View(model);
+        }
+        public async Task<ActionResult> Mcgriddle()
+        {
+            var service = CreateMenuService();
+            var model = await service.GetMenuAsync();
+            return View(model);
+        }
+        public async Task<ActionResult> QuarterPounder()
+        {
+            var service = CreateMenuService();
+            var model = await service.GetMenuAsync();
+            return View(model);
+        }
         public async Task<ActionResult> ChickenQuasadilla()
+        {
+            var service = CreateMenuService();
+            var model = await service.GetMenuAsync();
+            return View(model);
+        }
+        public async Task<ActionResult> Layer()
+        {
+            var service = CreateMenuService();
+            var model = await service.GetMenuAsync();
+            return View(model);
+        }
+        public async Task<ActionResult> ChickenBowl()
+        {
+            var service = CreateMenuService();
+            var model = await service.GetMenuAsync();
+            return View(model);
+        }
+        public async Task<ActionResult> CrunchyTaco()
+        {
+            var service = CreateMenuService();
+            var model = await service.GetMenuAsync();
+            return View(model);
+        }
+        public async Task<ActionResult> Quesarito()
+        {
+            var service = CreateMenuService();
+            var model = await service.GetMenuAsync();
+            return View(model);
+        }
+        public async Task<ActionResult> NachoFries()
         {
             var service = CreateMenuService();
             var model = await service.GetMenuAsync();

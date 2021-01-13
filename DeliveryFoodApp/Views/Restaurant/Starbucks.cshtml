@@ -1,0 +1,105 @@
+﻿@model Kabylia.Models.Restaurant.RestaurantDetails
+
+@{
+    ViewBag.Title = "Starbucks";
+}
+
+<h2>Starbucks</h2>
+
+<div>
+    <dl class="dl-horizontal">
+
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Phone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Phone)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Address)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Address)
+        </dd>
+
+
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Review)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Review)
+        </dd>
+
+    </dl>
+    <hr />
+    <div class="container text-center">
+        <h2>Menu</h2>
+
+        <div class="raw">
+            <div class="col-md-4">
+                <h3>McDonald'd</h3>
+                <a href="https://localhost:44308/Restaurant/Details/2">
+                    <img src="https://i1.wp.com/www.eatthis.com/wp-content/uploads/2018/12/the-golden-mcdonalds-arch.jpg?fit=1200%2C879&ssl=1" alt="p4" border="0" style="width:150px;height:150px">
+                </a>
+            </div>
+            <div class="col-md-4">
+                <h3>Texas Roadhouse</h3>
+                <a href="https://localhost:44308/Restaurant/Details/2">
+                    <img src="https://media-cdn.tripadvisor.com/media/photo-s/11/f8/8a/62/saltgrass-steak-house.jpg" alt="p4" border="0" style="width:150px;height:150px">
+                </a>
+            </div>
+            <div class="col-md-4">
+                <h3>Dunkin Donuts</h3>
+                <a href="https://localhost:44308/Restaurant/Details/2">
+                    <img src="https://www.gannett-cdn.com/presto/2018/09/25/USAT/791c82da-5ed1-4691-8dbb-ebf2e6782b60-AP_Dunkin__Donuts_Name_Change.jpg" alt="p4" border="0" style="width:150px;height:150px">
+                </a>
+            </div>
+        </div>
+        <div class="raw">
+            <div class="col-md-4">
+                <h3>Taco Bell</h3>
+                <a href="https://localhost:44308/Restaurant/Details/2">
+                    <img src="https://www.tacobell.com/medias/blog-2019-new-menu-header.jpg?context=bWFzdGVyfGltYWdlc3wxNjYyNzd8aW1hZ2UvanBlZ3xpbWFnZXMvaDFhL2g5OC84OTI4NTEyMTE0NzE4LmpwZ3xjMjA5YzZjNTQyMmM0MWM1ZWE5N2Q1OGQ0NDJjYWVkMzdiNTE0MjMyMjRhMzhmMTZjNGEwYTc4YmMwOGYwOWYx" alt="p4" border="0" style="width:150px;height:150px">
+                </a>
+            </div>
+            <div class="col-md-4">
+                <h3>Chick fil A</h3>
+                <a href="https://localhost:44308/Restaurant/Details/2">
+                    <img src="https://www.chick-fil-a.com/-/media/images/cfacom/default-images/chick-fil-a-logo-vector.ashx" alt="p4" border="0" style="width:150px;height:150px">
+                </a>
+            </div>
+            <div class="col-md-4">
+                <h3>Starbucks</h3>
+                <a href="https://localhost:44308/Restaurant/Details/2">
+                    <img src="https://upload.wikimedia.org/wikipedia/en/thumb/d/d3/Starbucks_Corporation_Logo_2011.svg/1200px-Starbucks_Corporation_Logo_2011.svg.png" alt="p4" border="0" style="width:150px;height:150px">
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

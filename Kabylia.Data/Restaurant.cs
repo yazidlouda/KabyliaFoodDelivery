@@ -25,6 +25,7 @@ namespace Kabylia.Data
         public double Longitude { get; set; }
         public virtual List<Menu> Menu { get; set; } = new List<Menu>();
         public virtual List<Review> Review { get; set; } = new List<Review>();
+        public virtual List<Rating> Rating { get; set; } = new List<Rating>();
         [DefaultValue(false)]
         public bool IsStarred { get; set; }
         // public int MenuId { get; set; }

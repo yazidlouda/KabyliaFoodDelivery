@@ -184,6 +184,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MenuController.cs" />
     <Compile Include="Controllers\OrderController.cs" />
+    <Compile Include="Controllers\RatingController.cs" />
     <Compile Include="Controllers\RestaurantController.cs" />
     <Compile Include="Controllers\ReviewController.cs" />
     <Compile Include="Controllers\TransactionController.cs" />
@@ -344,6 +345,26 @@
     <Content Include="Views\Review\Create.cshtml" />
     <Content Include="Views\Review\Edit.cshtml" />
     <Content Include="Views\Review\DeleteReview.cshtml" />
+    <Content Include="Views\Rating\Index.cshtml" />
+    <Content Include="Views\Rating\Details.cshtml" />
+    <Content Include="Views\Rating\Create.cshtml" />
+    <Content Include="Views\Rating\Edit.cshtml" />
+    <Content Include="Views\Rating\DeleteRating.cshtml" />
+    <Content Include="Views\Restaurant\Taco.cshtml" />
+    <Content Include="Views\Restaurant\Starbucks.cshtml" />
+    <Content Include="Views\Restaurant\Dunkin.cshtml" />
+    <Content Include="Views\Restaurant\Texas.cshtml" />
+    <Content Include="Views\Restaurant\Chick.cshtml" />
+    <Content Include="Views\Menu\Nuggets.cshtml" />
+    <Content Include="Views\Menu\IcedCoffe.cshtml" />
+    <Content Include="Views\Menu\Fries.cshtml" />
+    <Content Include="Views\Menu\Mcgriddle.cshtml" />
+    <Content Include="Views\Menu\QuarterPounder.cshtml" />
+    <Content Include="Views\Menu\Layer.cshtml" />
+    <Content Include="Views\Menu\ChickenBowl.cshtml" />
+    <Content Include="Views\Menu\CrunchyTaco.cshtml" />
+    <Content Include="Views\Menu\Quesarito.cshtml" />
+    <Content Include="Views\Menu\NachoFries.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
