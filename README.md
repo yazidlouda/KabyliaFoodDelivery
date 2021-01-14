@@ -23,11 +23,12 @@ Microsoft .Net Framework Version 4.8.04084\
 
 # Data Structure
 ![DataTables](/Images/arrow.png)
+![DataTables](/Images/diagram2.png)
 # overview of the App
-![DataTables](/Images/home.png)
-![DataTables](/Images/home2.png)
+![DataTables](/Images/home.PNG)
+![DataTables](/Images/home2.PNG)
 # Maps
-![DataTables](/Images/map1.png)
-![DataTables](/Images/Map2.png)
+![DataTables](/Images/map1.PNG)
+![DataTables](/Images/Map2.PNG)
 # Transactions View
-![DataTables](/Images/Transaction.png)
+![DataTables](/Images/Transaction.PNG)
