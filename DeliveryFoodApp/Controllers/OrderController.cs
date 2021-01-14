@@ -144,12 +144,12 @@ namespace DeliveryFoodApp.Controllers
 
             if (await service.CreateOrderAsync(note))
             {
-                TempData["SaveResult"] = "Your Order was created.";
+                TempData["SaveResult"] = " Order was created.";
                 return RedirectToAction("Index");
 
             }
 
-            ModelState.AddModelError("", "Note could not be created.");
+            ModelState.AddModelError("", "Order could not be created.");
             ViewBag.CustomerId = await GetCustomerAsync();
             ViewBag.RestaurantId = await GetRestaurantAsync();
             ViewBag.DriverId = await GetDriverAsync();
@@ -210,7 +210,7 @@ namespace DeliveryFoodApp.Controllers
             var service = CreateOrderService();
             if (await service.UpdateOrderAsync(note))
             {
-                TempData["SaveResult"] = "Order was successfully updated.";
+                TempData["SaveResult"] = "Order successfully updated.";
                 return RedirectToAction("Index");
             }
             ViewBag.CustomerId = await GetCustomerAsync();
@@ -236,7 +236,7 @@ namespace DeliveryFoodApp.Controllers
         {
             var service = CreateOrderService();
             await service.DeleteOrderAsync(id);
-            TempData["SaveResult"] = "Your note was successfully deleted.";
+            TempData["SaveResult"] = "Order was successfully deleted.";
 
             return RedirectToAction("Index");
         }

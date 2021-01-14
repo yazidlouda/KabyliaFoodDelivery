@@ -17,15 +17,11 @@
         <th>
             @Html.DisplayNameFor(model => model.RestaurantRating)
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.RestaurantName)
-        </th>
+       
         <th>
             @Html.DisplayNameFor(model => model.DeliveryDriverRating)
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.DeliveryDriverName)
-        </th>
+       
        
         <th>
             @Html.DisplayNameFor(model => model.DeliveryDriverId)
@@ -44,9 +40,7 @@
         <td>
             @Html.DisplayFor(modelItem => item.RestaurantRating)
         </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.RestaurantName)
-        </td>
+       
         <td>
             @Html.DisplayFor(modelItem => item.DeliveryDriverRating)
         </td>
@@ -57,9 +51,7 @@
             @Html.DisplayFor(modelItem => item.RestaurantId)
         </td>
        
-        <td>
-            @Html.DisplayFor(modelItem => item.CustomerName)
-        </td>
+      
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.RatingId }) |
             @Html.ActionLink("Details", "Details", new { id = item.RatingId }) |

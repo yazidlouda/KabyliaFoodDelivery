@@ -80,7 +80,7 @@ namespace Kabylia.Services
                                     new RestaurantListItem
                                     {
                                         RestaurantId = e.RestaurantId,
-                                       // MenuId=e.MenuId,
+                                      
                                         Name = e.Name,
                                         Phone=e.Phone,
                                         Email=e.Email,
@@ -111,8 +111,6 @@ namespace Kabylia.Services
                                     new RestaurantListItem
                                     {
                                         RestaurantId = e.RestaurantId,
-                                       // MenuId = e.MenuId,
-
                                         Name = e.Name,
                                         Phone = e.Phone,
                                         Email = e.Email,
@@ -187,7 +185,7 @@ namespace Kabylia.Services
                                         RestaurantRating = x.RestaurantRating
                                     }
                                 ).ToList(),
-
+                        AverageRating=entity.Rating.Average(m=>m.RestaurantRating)
                     };
             }
         }

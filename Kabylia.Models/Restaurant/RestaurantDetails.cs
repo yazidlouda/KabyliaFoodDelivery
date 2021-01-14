@@ -33,6 +33,8 @@ namespace Kabylia.Models.Restaurant
         public List<MenuListItem> Menu { get; set; } = new List<MenuListItem>();
         public List<ReviewListItem> Review { get; set; } = new List<ReviewListItem>();
         public List<RatingListItem> Rating { get; set; } = new List<RatingListItem>();
+        public double? AverageRating { get; set; }
+
         //public List<CustomerListItem> Customer { get; set; } = new List<CustomerListItem>();
 
     }
