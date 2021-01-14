@@ -1,9 +1,9 @@
 # KabyliaFoodDelivery
-HappyMusic.WebAPI
-What is HappyMusic?
-HappyMusic is an application for a person to use that stores all their music--Think something similar to Spotify. A User can go in and create a playlist, adding their favorite songs to it. A user can also see the songs on a particular Album, or Artists that have collaborated on a particular Album. A User's Playlist will show how many songs are on the playlist.
 
-How To Use This API
+
+KabyliaFoodDelivery is an application for a person to Order their food online and get it delevred to his address--Think something similar to Doordash or grubhub. A User can go in and create a playlist, adding their favorite songs to it. A user can also see the songs on a particular Album, or Artists that have collaborated on a particular Album. A User's Playlist will show how many songs are on the playlist.
+
+#How To Use This API
 This API is run in Visual Studio. To run this application, please clone the master and run it on Visual Studio 2019 version 4.8 or higher. When you use the API, please start by creating a Username and a Password. The password must be at least 6 characters long, must have an uppercase letter, and a special character in it. Once you have done so, a token will be given to you. The token should then be used when creating/reading/updating/deleting any other infomation in this application.
 
 There are a few caveats with this API:
