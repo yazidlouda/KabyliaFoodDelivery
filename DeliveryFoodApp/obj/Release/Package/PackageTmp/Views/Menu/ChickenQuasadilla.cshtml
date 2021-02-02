@@ -1,0 +1,44 @@
+﻿@model IEnumerable<Kabylia.Models.Menu.MenuListItem>
+
+@{
+    ViewBag.Title = "ChickenQuasadilla";
+}
+
+<div class="col-md-4 text-center align-content-lg-center">
+    <h4>Chicken quesadilla</h4>
+    <img src="https://media.foodnetwork.ca/recipetracker/dmm/S/O/Southwestern_Chicken_Quesadillas_001.jpg" alt="pic1" border="0" style="width:300px;height:300px">
+
+    <div> <a href="https://localhost:44308/Restaurant/Details/1">Taco Bell</a></div>
+</div>
+<table class="table">
+    <tr>
+
+        <th>
+            @Html.DisplayNameFor(model => model.Price)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+
+        <th></th>
+    </tr>
+
+    <tr>
+        <td>
+            <p>$3.39</p>
+        </td>
+        <td>
+            <p>
+                The Chicken Quesadilla is a purist's meal; and we say “purist” in the most complimenting way possible.<br />
+                It's a simple flour tortilla with some grilled chicken,
+                a hefty portion of melted three-cheese blend,<br /> creamy jalapeño sauce, and absolutely zero bells and whistles.
+            </p>
+        </td>
+
+
+    </tr>
+
+</table>
+<p>
+    @Html.ActionLink("Back", "Index", "Home")
+</p>

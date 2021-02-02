@@ -1,0 +1,192 @@
+﻿@model Kabylia.Models.Restaurant.RestaurantDetails
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>RestaurantDetails</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.RestaurantId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RestaurantId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Phone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Phone)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Address)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Address)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OpeningTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OpeningTime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ClosingTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ClosingTime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AreaName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AreaName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.NumberOfMenu)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Menu.Count)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Latitude)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Latitude)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Longitude)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Longitude)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.AverageRating)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AverageRating)
+        </dd>
+    </dl>
+    <hr />
+    <h4>Menu</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        @foreach (var item in Model.Menu)
+        {
+
+            <dt>@Html.DisplayNameFor(modelItem => item.Name)</dt>
+            <dd>@Html.DisplayFor(modelItem => item.Name)</dd>
+            <dt>@Html.DisplayNameFor(modelItem => item.Description)</dt>
+            <dd>@Html.DisplayFor(modelItem => item.Description)</dd>
+            <dt>@Html.DisplayNameFor(modelItem => item.Price)</dt>
+            <dd>@Html.DisplayFor(modelItem => item.Price)</dd>
+
+            <dd></dd>
+            <dd>@Html.ActionLink("View Menu", "Details", "Menu", new { id = item.MenuId }, null)</dd>
+            <br />
+        }
+
+    </dl>
+    <hr />
+    <h4>Reviews</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        @foreach (var item in Model.Review)
+        {
+
+            <dt>@Html.DisplayNameFor(modelItem => item.CustomerName)</dt>
+            <dd>@Html.DisplayFor(modelItem => item.CustomerName)</dd>
+            <dt>@Html.DisplayNameFor(modelItem => item.Reviews)</dt>
+            <dd>@Html.DisplayFor(modelItem => item.Reviews)</dd>
+
+
+            <dd></dd>
+            <dd>@Html.ActionLink("View Reviews", "Details", "Review", new { id = item.ReviewId }, null)</dd>
+            <br />
+        }
+
+    </dl>
+    <hr />
+    <h4>Reviews</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        @foreach (var item in Model.Rating)
+        {
+
+            <dt>@Html.DisplayNameFor(modelItem => item.CustomerName)</dt>
+            <dd>@Html.DisplayFor(modelItem => item.CustomerName)</dd>
+            <dt>@Html.DisplayNameFor(modelItem => item.RestaurantRating)</dt>
+            <dd>@Html.DisplayFor(modelItem => item.RestaurantRating)</dd>
+
+
+            <dd></dd>
+            <dd>@Html.ActionLink("View Reviews", "Details", "Review", new { id = item.RatingId }, null)</dd>
+            <br />
+        }
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.RestaurantId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
+@section scripts {
+    <script language="javascript" type="text/javascript">
+        $(document).ready(function () {
+            $("i[data-toggle='star']")
+                .css({ "cursor": "pointer" })
+                .click(function (e) {
+                    var target = $(e.target);
+                    var RestaurantId = target.attr("data-id");
+                    var starSet = target.hasClass("glyphicon-star");
+                    $.ajax({
+                        method: starSet ? "DELETE" : "PUT",
+                        url: "/api/Restaurant/" + RestaurantId + "/starAsync",
+                        data: null
+                    })
+                        .done(function (r) {
+                            target.removeClass();
+                            target.addClass("glyphicon " + (starSet ? "glyphicon-star-empty" : "glyphicon-star"));
+                        })
+                        .fail(function (r) {
+                            alert("Failed to change star status");
+                        });
+                });
+        });
+    </script>
+}

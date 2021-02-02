@@ -1,0 +1,82 @@
+﻿@model Kabylia.Models.Rating.RatingDetails
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>RatingDetails</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.RatingId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RatingId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RestaurantRating)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RestaurantRating)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RestaurantName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RestaurantName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DeliveryDriverRating)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DeliveryDriverRating)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DeliveryDriverName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DeliveryDriverName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RestaurantId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RestaurantId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DeliveryDriverId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DeliveryDriverId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CustomerName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CustomerName)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
