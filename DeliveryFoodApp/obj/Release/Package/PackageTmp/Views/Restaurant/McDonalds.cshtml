@@ -1,0 +1,100 @@
+﻿@model Kabylia.Models.Restaurant.RestaurantDetails
+
+@{
+    ViewBag.Title = "McDonalds";
+}
+
+<h2>McDonalds</h2>
+
+<div>
+    <dl class="dl-horizontal">
+
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Phone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Phone)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Address)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Address)
+        </dd>
+
+
+    </dl>
+    <hr />
+    <div class="container text-center">
+        <h2>Menu</h2>
+
+        <div class="raw">
+            <div class="col-md-4">
+                <h3>Big Mac</h3>
+                <a href="https://localhost:44308/Menu/BigMac">
+                    <img src="https://www.mcdonalds.com/is/image/content/dam/usa/nfl/nutrition/items/regular/desktop/t-mcdonalds-Big-Mac.jpg?$Category_Desktop$" alt="p4" border="0" style="width:150px;height:150px">
+                </a>
+            </div>
+            <div class="col-md-4">
+                <h3>4 piece Chicken Mcnuggets</h3>
+                <a href="https://localhost:44308/Menu/nuggets">
+                    <img src="https://www.mcdonalds.com/is/image/content/dam/usa/nfl/nutrition/items/regular/desktop/t-mcdonalds-Chicken-McNuggets-4pc.jpg?$Category_Desktop$" alt="p4" border="0" style="width:150px;height:150px">
+                </a>
+            </div>
+            <div class="col-md-4">
+                <h3>Iced Coffe</h3>
+                <a href="https://localhost:44308/Menu/IcedCoffe">
+                    <img src="https://www.mcdonalds.com/is/image/content/dam/usa/nfl/nutrition/items/regular/desktop/t-mcdonalds-Premium-Roast-Iced-Coffee-Medium.jpg?$Category_Desktop$" alt="p4" border="0" style="width:150px;height:150px">
+                </a>
+            </div>
+        </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <div class="raw">
+            <div class="col-md-4">
+                <h3>Small Famous Fries</h3>
+                <a href="https://localhost:44308/Menu/Fries">
+                    <img src="https://www.mcdonalds.com/is/image/content/dam/usa/nfl/nutrition/items/regular/desktop/t-mcdonalds-fries-small.jpg?$Category_Desktop$" alt="p4" border="0" style="width:150px;height:150px">
+                </a>
+            </div>
+            <div class="col-md-4">
+                <h3>Daussage Eggs & Cheese McGriddles </h3>
+                <a href="https://localhost:44308/Menu/Mcgriddle">
+                    <img src="https://www.mcdonalds.com/is/image/content/dam/usa/nfl/nutrition/items/regular/desktop/t-mcdonalds-Sausage-Egg-Cheese-McGriddles.jpg?$Category_Desktop$" alt="p4" border="0" style="width:150px;height:150px">
+                </a>
+            </div>
+            <div class="col-md-4">
+                <h3>Quarter Pounder</h3>
+                <a href="https://localhost:44308/Menu/QuarterPounder">
+                    <img src="https://www.mcdonalds.com/is/image/content/dam/usa/nfl/nutrition/items/regular/desktop/t-mcdonalds-Quarter-Pounder-with-Cheese.jpg?$Category_Desktop$" alt="p4" border="0" style="width:150px;height:150px">
+                </a>
+            </div>
+        </div>
+    </div>
+    
+</div>
+<p>
+    @Html.ActionLink("Back", "Index","Home")
+</p>

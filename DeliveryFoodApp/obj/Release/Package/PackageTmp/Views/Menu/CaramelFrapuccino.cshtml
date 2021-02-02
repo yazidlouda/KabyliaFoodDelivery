@@ -1,0 +1,46 @@
+﻿@model IEnumerable<Kabylia.Models.Menu.MenuListItem>
+
+@{
+    ViewBag.Title = "CaramelFrapuccino";
+}
+
+<div class="col-md-4 text-center align-content-lg-center">
+    <h4>Caramel Frapuccino</h4>
+    <img src="https://globalassets.starbucks.com/assets/f2eb171093d84f5cb249dcf06925b0f9.jpg" alt="pic1" border="0" style="width:300px;height:300px">
+
+    <div> <a href="https://localhost:44308/Restaurant/Details/1">Starbucks</a></div>
+</div>
+<table class="table">
+    <tr>
+
+        <th>
+            @Html.DisplayNameFor(model => model.Price)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+
+        <th></th>
+    </tr>
+
+    <tr>
+        <td>
+            <p>L    $3.75</p>
+            <p>M    $3.95</p>
+            <p>S    $4.45</p>
+
+        </td>
+        <td>
+            <p>
+                Caramel syrup meets coffee, milk and ice for a rendezvous in the blender, <br />while whipped cream and buttery caramel sauce layer the love on top. 
+                To change things up,<br /> try it affogato-style with a hot espresso shot poured right over the top
+            </p>
+        </td>
+
+
+    </tr>
+
+</table>
+<p>
+    @Html.ActionLink("Back", "Index", "Home")
+</p>

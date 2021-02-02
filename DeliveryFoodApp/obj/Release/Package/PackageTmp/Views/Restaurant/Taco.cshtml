@@ -1,0 +1,96 @@
+﻿@model Kabylia.Models.Restaurant.RestaurantDetails
+
+@{
+    ViewBag.Title = "Taco";
+}
+
+<h2>Taco</h2>
+
+<div>
+    <dl class="dl-horizontal">
+
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Phone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Phone)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Address)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Address)
+        </dd>
+
+
+    </dl>
+    <hr />
+    <div class="container text-center">
+        <h2>Menu</h2>
+
+        <div class="raw">
+            <div class="col-md-4">
+                <h3>Chicken Quesadilla</h3>
+                <a href="https://localhost:44308/Menu/ChickenQuasadilla">
+                    <img src="https://www.tacobell.com/images/22321_quesadilla_269x269.jpg" alt="p4" border="0" style="width:150px;height:150px">
+                </a>
+            </div>
+            <div class="col-md-4">
+                <h3>5Layer Burrito</h3>
+                <a href="https://localhost:44308/Menu/Layer">
+                    <img src="https://www.tacobell.com/images/22167_beefy_5_layer_burrito_269x269.jpg" alt="p4" border="0" style="width:150px;height:150px">
+                </a>
+            </div>
+            <div class="col-md-4">
+                <h3>Chicken Bowl</h3>
+                <a href="https://localhost:44308/Menu/ChickenBowl">
+                    <img src="https://www.tacobell.com/images/22488_power_menu_bowl_269x269.jpg" alt="p4" border="0" style="width:150px;height:150px">
+                </a>
+            </div>
+        </div>
+        <div class="raw">
+            <div class="col-md-4">
+                <h3>Crunchy taco</h3>
+                <a href="https://localhost:44308/Menu/CrunchyTaco">
+                    <img src="https://www.tacobell.com/images/22100_crunchy_taco_269x269.jpg" alt="p4" border="0" style="width:150px;height:150px">
+                </a>
+            </div>
+            <div class="col-md-4">
+                <h3>Quesarito</h3>
+                <a href="https://localhost:44308/Menu/Quesarito">
+                    <img src="https://www.tacobell.com/images/22371_quesarito_269x269.jpg" alt="p4" border="0" style="width:150px;height:150px">
+                </a>
+            </div>
+            <div class="col-md-4">
+                <h3>Nacho Fries</h3>
+                <a href="https://localhost:44308/Menu/NachoFries">
+                    <img src="https://www.tacobell.com/images/28070_nacho_fries_bellgrande_269x269.jpg" alt="p4" border="0" style="width:150px;height:150px">
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<p>
+    
+    @Html.ActionLink("Back", "Index","Home")
+</p>
